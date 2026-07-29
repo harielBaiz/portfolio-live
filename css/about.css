@@ -1,0 +1,174 @@
+/*
+ * about.css
+ * Requires: tokens.css, base.css
+ */
+
+/* ── MAIN — single centered column, matching case-study .page-wrap ── */
+.about-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* ── WORK CAROUSEL ──────────────────────────────────────── */
+.work-carousel { padding: 1rem 0 3rem; }
+.work-carousel h2 {
+  font-family: var(--f-ui); font-weight: 700;
+  font-size: 24px; line-height: 32px;
+  letter-spacing: -0.25px; color: var(--text);
+  margin: 0 0 24px;
+}
+.carousel-viewport {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  /*-webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);*/
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: carousel-scroll 80s linear infinite;
+}
+.carousel-track img {
+  height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+}
+@media (max-width: 640px) {
+  .carousel-track img { height: 160px; }
+}
+
+/* ── BIO ────────────────────────────────────────────────── */
+.about-bio {
+  padding: 0 0 3rem;
+}
+.about-bio__text p {
+  font-family: var(--f-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-1);
+  margin-bottom: 1.1rem;
+}
+.about-bio__text p:last-child { margin-bottom: 0; }
+
+/* Same testimonial-card treatment as the case studies, incl. word-by-word reveal (driven by site.js) */
+.testimonial-card { margin: 3rem 0 2rem; }
+.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: 1.3rem; }
+.quote-icon {
+  margin-bottom: .5rem;
+  width: 3rem;
+  color: var(--text-on-inverse-2);
+}
+.quote-icon svg { width: 100%; height: auto; }
+.testimonial-meta { display: flex; flex-direction: row; gap: 8px; }
+.t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; }
+.t-moment { font-family: var(--f-ui); font-size: 1rem; color: var(--text-3); }
+
+/* Word-by-word reveal — as if the person were speaking the quote */
+.tq-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.testimonial-card.is-talking .tq-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tq-word { transition: none; opacity: 1; transform: none; }
+}
+
+
+/* ── SKILLS ─────────────────────────────────────────────── */
+.about-skills { padding: 3rem 0; }
+.about-skills h2 {
+  font-family: var(--f-ui); font-weight: 700;
+  font-size: 24px; line-height: 32px;
+  letter-spacing: -0.25px; color: var(--text); margin-bottom: 24px;
+}
+/* Plain-text variant, no cards */
+.about-skills__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+.about-skills__subhead {
+  font-family: var(--f-ui); font-weight: 600;
+  font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-3); margin: 0 0 8px;
+}
+.about-skills--plain .plain-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+}
+.about-skills--plain .plain-list li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-skills--plain .plain-list li:first-child { border-top: 1px solid var(--border); }
+.plain-list__name {
+  font-family: var(--f-ui); font-weight: 500;
+  font-size: 15px; color: var(--text);
+}
+.plain-list__cat {
+  font-family: var(--f-ui); font-size: 13px; color: var(--text-3);
+  text-align: right;
+}
+
+/* ── RESUME ─────────────────────────────────────────────── */
+.about-resume { padding: 3rem 0; }
+.about-resume h2 {
+  font-family: var(--f-ui); font-weight: 700;
+  font-size: 24px; line-height: 32px;
+  letter-spacing: -0.25px; color: var(--text); margin-bottom: 8px;
+}
+.about-resume > p {
+  font-family: var(--f-body); font-size: 20px;
+  line-height: 1.6; color: var(--text-1); margin-bottom: 24px;
+}
+.resume-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── CONTACT ────────────────────────────────────────────── */
+.contact-dark {
+  background: var(--bg-inverse); padding: 80px 48px; text-align: center;
+}
+.contact-dark h2 {
+  font-family: var(--f-display); font-weight: 700;
+  font-size: clamp(2rem, 4vw, 40px);
+  line-height: 1.1; letter-spacing: -1px;
+  color: var(--text-on-inverse); margin-bottom: 12px;
+}
+.contact-dark h2 em { font-style: italic; }
+.contact-dark > p {
+  font-family: var(--f-body); font-size: 16px;
+  line-height: 26px; color: var(--text-on-inverse-2); margin-bottom: 32px;
+}
+.contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-skills--plain .plain-list li { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .plain-list__cat { text-align: left; }
+}
+@media (max-width: 600px) {
+  .about-skills__columns { grid-template-columns: 1fr; gap: 24px 0; }
+}
+@media (max-width: 640px) {
+  .about-wrap { padding: 3rem 1rem 4rem; }
+  .contact-dark { padding: 64px 16px; }
+}

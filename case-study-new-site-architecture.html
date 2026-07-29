@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/tokens.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/case-study.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas & IA — Hariel's Portfolio</title>
+  <style>
+    /* ── Password gate ── */
+    body.cs3-locked > *:not(#cs3-gate) { display: none !important; }
+    /* #cs3-gate only shows while locked — this was previously unconditional,
+       which meant the overlay never disappeared even after a correct
+       password removed .cs3-locked from <body>. */
+    #cs3-gate { display: none; }
+    body.cs3-locked #cs3-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      padding: 1.5rem;
+    }
+    .cs3-gate-box { max-width: 340px; width: 100%; text-align: center; }
+    .cs3-gate-box h2 { font-family: var(--f-ui); font-weight: 700; font-size: 1.2rem; color: var(--text); margin: 0 0 0.5rem; }
+    .cs3-gate-box p { font-family: var(--f-body); font-size: 0.9rem; color: var(--text-3); margin: 0 0 1.5rem; line-height: 1.5; }
+    .cs3-gate-hint { margin: 1rem 0 0 !important; font-size: 0.82rem !important; }
+    .cs3-gate-hint a { color: var(--brand); text-decoration: underline; }
+    .cs3-gate-form { display: flex; gap: 0.5rem; }
+    .cs3-gate-form input[type="password"] {
+      flex: 1;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      background: var(--surface-card);
+      color: var(--text);
+      font-family: var(--f-ui);
+      font-size: 0.9rem;
+    }
+    .cs3-gate-form input[type="password"]:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+    .cs3-gate-form button {
+      padding: 0.65rem 1.1rem;
+      border: none;
+      border-radius: var(--r-md);
+      background: var(--brand);
+      color: #fff;
+      font-family: var(--f-ui);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .cs3-gate-error { margin-top: 0.75rem; font-family: var(--f-ui); font-size: 0.82rem; color: #c0392b; display: none; }
+    .cs3-gate-error.is-visible { display: block; }
+  </style>
+</head>
+<body class="cs3-locked">
+
+<!-- ── PASSWORD GATE ── -->
+<div id="cs3-gate">
+  <div class="cs3-gate-box">
+    <h2>This case study is password protected</h2>
+    <p>Enter the password to view Personas &amp; Information Architecture.</p>
+    <div class="cs3-gate-form">
+      <input type="password" id="cs3-gate-input" placeholder="Password" autocomplete="off" />
+      <button type="button" id="cs3-gate-btn">Unlock</button>
+    </div>
+    <div class="cs3-gate-error" id="cs3-gate-error">Incorrect password. Try again.</div>
+    <p class="cs3-gate-hint">Don't have the password yet? Reach me out at <a href="mailto:hariel.baiz@gmail.com">hariel.baiz@gmail.com</a></p>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-name" href="index.html" data-i18n="nav.brand">Hariel Baiz</a>
+  <ul class="nav-links">
+    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Case Study · UX Research &amp; Strategy</div>
+    <h1>The research that <em>split a product in two</em></h1>
+    <div class="hero-meta">
+      <span class="chip">User Research</span>
+      <span class="chip">Personas</span>
+      <span class="chip">Information Architecture</span>
+      <span class="chip">Affinity Diagramming</span>
+      <span class="chip outline">Bitsight · B2B SaaS</span>
+      <span class="chip outline">Lead Designer</span>
+    </div>
+  </div>
+  <figure class="hero-cover hero-cover--placeholder">
+    <span>Cover image — add when ready</span>
+  </figure>
+</header>
+
+<div class="cs-layout">
+  <nav class="cs-index" aria-label="Case study sections">
+    <ol>
+      <li><a href="#context">01 — Context</a></li>
+      <li><a href="#problem">02 — Problem</a></li>
+      <li><a href="#research">03 — Research</a></li>
+      <li><a href="#insights">04 — Insights</a></li>
+      <li><a href="#feedback-patterns">05 — Feedback Patterns</a></li>
+      <li><a href="#architecture">06 — Architecture</a></li>
+      <li><a href="#reflection">07 — Reflection</a></li>
+    </ol>
+  </nav>
+
+  <main class="page-wrap">
+
+    <p class="hero-sub">ThirdPartyTrust served two completely different user types in one shared UI, and neither felt like it fit. I was part of the research that drove the decision to split it into two dedicated products, Bitsight VRM and TMH, then redesigned the navigation and feedback patterns around each one.</p>
+
+    <!-- OUTCOME BANNER -->
+    <div class="outcome-banner" aria-label="Key outcomes">
+      <div class="outcome-stat">
+        <div class="number">2</div>
+        <div class="label">Separate products born from one shared UI — VRM and TMH</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">10+</div>
+        <div class="label">Flows redesigned after the product split — 3 shown in detail below</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">3</div>
+        <div class="label">Research methods — interviews, affinity diagramming, usability studies</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">−60%</div>
+        <div class="label">Support tickets on onboarding and core tasks, after the Pendo guides and clearer empty states shipped</div>
+      </div>
+    </div>
+
+
+    <!-- 01 — CONTEXT -->
+    <section id="context">
+      <div class="section-label">01 — Context</div>
+      <h2>A platform built without a design team</h2>
+      <p>ThirdPartyTrust was a third-party risk management (TPRM) platform. Before Bitsight acquired it in Q3 2021, it had been built entirely by engineers — solid technically, but without a user-centered design process from the start.</p>
+      <p>When I joined, there was no UX team, no research infrastructure, and no clear picture of who was actually using the product. Two completely different user types — <strong>customers</strong> (companies managing vendor risk) and <strong>vendors</strong> (companies being assessed) — were navigating the same interface, with the same navigation, even though their goals had almost nothing in common.</p>
+      <div class="callout">
+        <p>The signal was already there: a high volume of support tickets, no subscription support for many users, no way to distinguish what was a usability problem from what was a feature gap. My job was to build the process to read the signal — and then act on it.</p>
+      </div>
+      <p>Once the product split into two teams, I landed on VRM, the customer-facing side. I kept working closely with the TMH team throughout, since I carried the product context forward from the original ThirdPartyTrust platform, back when both experiences still lived in one codebase and one team.</p>
+    </section>
+
+
+    <!-- 02 — PROBLEM -->
+    <section id="problem">
+      <div class="section-label">02 — Problem</div>
+      <h2>Two users. One navigation. Zero clarity.</h2>
+      <p>The platform's core problem wasn't any single broken feature. It was structural: customers and vendors were forced to share the same mental model of the product, even though they were there for completely different reasons.</p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-title">Navigation confusion</div>
+          <p>The top bar and left sidebar served both user types at once. Customers looking for their vendor list and vendors looking for their pending assessments landed in the same place — with no clear path forward.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">No system feedback</div>
+          <p>Users couldn't tell if an action had succeeded. No confirmation after sending a questionnaire. No status on submitted responses. Empty screens with no guidance on what to do next.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Invisible failure mode</div>
+          <p>Users without a subscription had no support channel. Their frustration generated support tickets — but without research, there was no way to distinguish a usability problem from a missing feature.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 03 — RESEARCH -->
+    <section id="research">
+      <div class="section-label">03 — Research</div>
+      <h2>Understanding two different worlds</h2>
+      <p>The research goal was exploratory: understand how each user type thought about their work, what they needed from the platform, and where the experience was breaking down. I used three methods, each chosen for a specific purpose.</p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-title">User interviews</div>
+          <p>To understand motivations, mental models, and day-to-day workflows. We talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Affinity diagramming</div>
+          <p>To synthesize observations across participants and surface shared themes. I ran sessions with the VRM and TMH teams together — so the findings weren't just mine. They became a shared understanding across the two product teams.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Usability studies</div>
+          <p>To validate the new IA after the product split decision was made. Testing whether users could navigate the new structure before committing to building it.</p>
+        </div>
+      </div>
+
+      <h3>The research team</h3>
+      <p>This wasn't something I did alone. I worked with 2 product designers, 2 product managers, and 5 customer success teammates to plan and run the interviews — customer success in particular gave us direct access to users on both sides of the platform, since they were already talking to them every day. Subscribed users were the primary signal; unsubscribed users, who had no support channel to complain through, showed us where the experience was silently failing.</p>
+
+        <div class="media-block">
+            <img src="images/affinityDiagram-journeyMap.png" alt="Affinity diagram — User research findings" />
+            <p class="media-caption">Affinity diagram and Journey map — User research findings</p>
+        </div>
+
+      <h3>Two personas emerged</h3>
+      <p>Out of the interviews and the affinity diagramming sessions, two personas emerged, one per side of the platform. They became the shared reference point for design decisions on both the VRM and TMH teams — proof that customers and vendors needed genuinely different products, not just different views of the same one.</p>
+          <div class="media-block">
+              <img src="images/user_personas.png" alt="User personas — Sarah Chen and Tiago Ferreira" />
+              <p class="media-caption">Sarah Chen and Tiago Ferreira — the customer-side and vendor-side personas that came out of this research.</p>
+          </div>
+    </section>
+
+
+    <!-- 05 — KEY INSIGHTS -->
+    <section id="insights">
+      <div class="section-label">04 — Key Insights</div>
+      <h2>What the affinity diagram surfaced</h2>
+      <p>After clustering observations across all participants, five themes emerged consistently. Each one became a design principle for the new IA.</p>
+
+      <ul class="theme-list">
+        <li><strong>Time.</strong> Customers needed to jump between the Requirements tab, Data, and External Questionnaires just to review what a single vendor had submitted. Workflows had to be linear and fast, with no dead ends or unnecessary steps.</li>
+        <li><strong>Customization.</strong> Neither user type felt the platform was built for their context. Customers needed control over how their assessments were set up, like custom questionnaires; vendors needed control over their profile. Customization had to be a first-class concept, not a buried settings page.</li>
+        <li><strong>Collaboration.</strong> Both sides described their work as inherently cross-functional. Customers coordinated with internal security teams; vendors coordinated across legal, engineering, and finance. Contacts, roles, and delegation needed to be core objects in the navigation, not utility features.</li>
+        <li><strong>Automation.</strong> Manual repetitive work was the biggest source of frustration on both sides: chasing vendors, tracking progress in spreadsheets, re-sending the same documents. Automation touchpoints needed to be integrated into primary flows, not optional add-ons.</li>
+        <li><strong>Navigation.</strong> Users couldn't orient themselves: a customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place. Navigation was the symptom, not the cause, since the platform had no conceptual model matching how either user thought about their work. The IA needed to be rebuilt around user mental models instead.</li>
+      </ul>
+    </section>
+
+
+    <!-- 05 — FEEDBACK PATTERNS -->
+    <section id="feedback-patterns">
+      <div class="section-label">05 — Feedback Patterns</div>
+      <h2>A product that finally talks back</h2>
+      <p>The "No system feedback" problem identified early on (section 02) had a simple root cause: there was no shared vocabulary for how the product talked back to users. Before any of the structural redesign work began, the very first patch shipped on ThirdPartyTrust was smaller: setting up Pendo guides for user onboarding. Those guides carried over when the platform moved to Bitsight and are still in use today.</p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-title">Before — ThirdPartyTrust</div>
+          <p>No confirmation after sending a questionnaire. No status on submitted responses. Empty screens with no guidance on what to do next. Users landed on the platform and didn't know what to do without reaching out for technical support.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">After — Bitsight DS feedback patterns</div>
+          <p>Every screen accounts for the same four states: empty, loading, success, and error. Actions confirm themselves. Empty states point to the next step instead of leaving a blank screen.</p>
+        </div>
+      </div>
+
+      <h3>Feedback patterns, standardized</h3>
+      <p>Bitsight DS already had a complete feedback pattern library — the gap wasn't a missing pattern, it was inconsistent use. I made a point of running every new design against it, covering the four states every screen needs to account for, so none of the four got skipped.</p>
+
+      <p>Empty states guide users on what to do before there's any data, instead of showing a blank screen. Loading and progress states confirm an action is in motion, so a click never feels like it went nowhere. Success confirmations give a clear signal when something completes, like sending a questionnaire. Inline errors surface next to the field or action that caused them, not in a disconnected banner.</p>
+
+      <div class="media-block">
+          <img src="images/feedback-patterns-checklist.png" alt="Feedback patterns checklist" />
+          <p class="media-caption">The four-state checklist, kept close at hand on every project since.</p>
+      </div>
+
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div class="testimonial-quote">The empty states were really helpful — they made it clear what to do to complete the task.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">PURE usability test participant</span>
+          <span class="t-moment">On the redesigned empty states</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 06 — ARCHITECTURE -->
+    <section id="architecture">
+      <div class="section-label">06 — Architecture</div>
+      <h2>Objects first, not features</h2>
+      <p>The research revealed something deeper than a usability problem. Customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Merging them in the same navigation was the root cause of the confusion.</p>
+      <div class="media-block">
+          <img src="images/products-core-objects.png" alt="Core objects — Customers and Vendors" />
+          <p class="media-caption">Core objects — Customers and Vendors</p>
+      </div>  
+      
+
+      <div class="callout">
+        <p>These two object sets didn't overlap at all. Sharing a navigation between them was the root cause — not a symptom. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
+      </div>
+
+      <h3>Before &amp; after</h3>
+      <p>ThirdPartyTrust used a dual navigation — a top bar for primary sections and a context-sensitive left sidebar. The redesign moved to a single left sidebar per product, each organized around its own object model.</p>
+
+      <div class="seg-defs">
+        <div class="cs-card">
+          <div class="card-title">Before — ThirdPartyTrust</div>
+          <p>Top navigation bar + context-sensitive left sidebar. Both user types shared the same primary nav. The sidebar changed depending on which section you were in, but both customers and vendors saw the same top-level structure.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">After — Bitsight VRM + TMH</div>
+          <p>Two separate products. Each with a single left sidebar organized around its own core objects. Customers navigate Vendors, Assessments, and Findings. Vendors navigate Profile, Requests, and Certificates.</p>
+        </div>
+      </div>
+
+      <div class="media-block">
+          <img src="images/new-information-architecture.png" alt="before and after information architecture diagrams" />
+          <p class="media-caption">New information architecture — Before and After</p>
+      </div>
+
+      <p>Inside the customer-facing product, that same "objects, not features" thinking went one level deeper. In the old UI, opening a vendor meant launching a full-screen dialog with its own internal tab bar (Tiering, Requirements, Data, and several more), a completely separate navigation paradigm bolted onto a global top bar and an unlabeled icon-only sidebar. There was no URL-level "you are here," no way to tell from the nav that you were even inside a vendor. The redesign folded Vendor Profile into a single, unified left sidebar as a real nested section. Overview, Tiering, Requirements, and the rest each became genuine nav destinations with persistent context and an active-state indicator, instead of tabs trapped inside a modal.</p>
+      <div class="media-block">
+          <img src="images/navigationAndVendorProfile-beforeAfter.png" alt="Navigation and vendor profile — Before and After" />
+          <p class="media-caption">Vendor Profile moves from a full-screen dialog disconnected from the main nav to a nested section inside one unified sidebar. Every former tab becomes a real, addressable destination.</p>
+      </div>
+
+      <div class="callout">
+        <p>Two things brought support ticket volume down: splitting the UI into two products meant customers and vendors were each looking at a navigation built around their own objects instead of someone else's, and the feedback patterns from the previous section meant that once they were there, the system actually told them what was happening instead of leaving them to guess.</p>
+      </div>
+
+      <h3>The same object pattern, reused twice</h3>
+      <p>Once Vendor was modeled as an object with defined sub-pages, two of those sub-pages, Security Profile and Requirements, got redesigned around the same underlying idea: stop treating each artifact type as its own UI pattern, and start treating every artifact as an instance of the same object, a <strong>requirement with a status</strong>. These two are only a sample: the same redesign process touched 10+ flows across the integration. Security Profile and Requirements are shown here because they illustrate the pattern most clearly.</p>
+      <p>The two pages answer different questions, and they render differently on purpose. <strong>Security Profile</strong> shows everything a vendor has shared, published once to their Trust Management Hub profile and often more than what's strictly required, so it's a card grid built for browsing an open-ended set. <strong>Requirements</strong> shows the specific checklist of artifacts a customer's program actually requires from that vendor, so it's rows grouped inside an accordion, built for checking a defined list. Both are the customer's view into the vendor relationship: a reviewer looking first at everything a vendor shared, then at their own requirement checklist mapped against it.</p>
+
+      <h4>Security Profile — what a vendor has shared</h4>
+      <p>On ThirdPartyTrust, a vendor's shared documentation didn't even live in one place for the reviewer. It was split across two separate sections, Assurance Program and Questionnaires, each with its own navigation and its own UI pattern: large cards with logo thumbnails for Questionnaires and Certifications, plain tables for Insurance and Audits/Assessments. Metadata was buried under visual noise, and nothing looked consistent from one section to the next, let alone between the two sections. The redesign merged both into a single Security Program section and collapsed all four object types into one card grid: one card per item, a type label, a status chip, and inline metadata, all using the same chip style whether it's flagging severity or marking an item as "Required," since vendors often share more than what's asked for. The information got easier to scan for two reasons at once: it stopped pretending to be four different things, and it stopped being split across two pages.</p>
+      <div class="media-block">
+          <img src="images/UIArtifacts-beforeAfter.png" alt="Security Profile — Before and After" />
+          <p class="media-caption">Security Profile — four inconsistent card/table patterns become one unified card grid, one card per shared artifact, using the same chip style to flag severity or mark an item as required.</p>
+      </div>
+      <div class="media-block">
+        <video autoplay loop muted playsinline>
+          <source src="images/securityProfile.mp4" type="video/mp4">
+        </video>
+        <p class="media-caption">Security Profile — the redesign in action</p>
+      </div>
+
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div class="testimonial-quote">It will be just much easier for us and the suppliers to have everything in one place.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">On the redesigned Security Profile</span>
+        </div>
+      </div>
+
+      <h4>Requirements — reviewer's view</h4>
+      <p>The Requirements page took that same row pattern and reused it a level up, but the bigger problem here wasn't visual inconsistency: the tab couldn't do anything. Requirements lived inside a giant modal packed with tabs (Tiering, Data, External Questionnaires, and others), and the Requirements tab itself was read-only. It could only tell a reviewer what was required, not let them act on it. To actually review a questionnaire response or a piece of documentation, the reviewer had to leave the tab entirely, jump over to Data or External Questionnaires, do the review there, and come back, repeating that trip for every artifact in every requirement.</p>
+      <p>The redesign made Requirements fully actionable. Documentation opens inline in a side sheet, without leaving the page. Questionnaires open in their own dedicated page instead, since their size doesn't work in a sheet, but reviewers get there directly from the requirement rather than hunting through Data or External Questionnaires first. Either way, review starts from the requirement itself, not from a separate tab. The accordion, the summary, and the per-artifact status all sit on top of that one change.</p>
+      <div class="media-block">
+          <img src="images/Requirements.png" alt="Requirements page — Before and After" />
+          <p class="media-caption">Requirements — from a read-only tab that sent reviewers back and forth to Data and External Questionnaires, to a fully actionable view with direct questionnaire access and inline document sheets.</p>
+      </div>
+      <div class="media-block">
+        <video autoplay loop muted playsinline>
+          <source src="images/requirements.mp4" type="video/mp4">
+        </video>
+        <p class="media-caption">Requirements — the redesign in action</p>
+      </div>
+
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div class="testimonial-quote">It's just much more efficient for us than reviewing requirements in one tool and the questionnaire responses in another, and having to make notes on the side to connect the two.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">On the redesigned Requirements review</span>
+        </div>
+      </div>
+      <div class="testimonial-card testimonial-card--inline">
+        <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div class="testimonial-quote">I am not seeing enough value in the product today but I can see the vision and look forward to moving away from Excel once VRM has more features introduced.</div>
+        <div class="testimonial-meta">
+          <span class="t-role">VRM customer</span>
+          <span class="t-moment">Early adopter, migrating off Excel</span>
+        </div>
+      </div>
+      <div class="callout">
+        <p>The through-line across all three: define the object once, a requirement with a status, and reuse it everywhere it shows up, in a single artifact row, in an accordion of requirements, and in the nav hierarchy that gets you there.</p>
+      </div>
+      <!-- AI BONUS -->
+      <div class="ai-banner" style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
+        <div style="flex:1;min-width:260px;">
+          <div class="ai-banner-tag">Bonus · Hackathon Project</div>
+          <h3>From questionnaire review to AI-powered SOC2 analysis</h3>
+          
+          <p>
+            During this project, I participated in an internal hackathon exploring generative AI within the Bitsight product. The idea: instead of manually reviewing SOC2 Type II reports, a process that could take hours, hand that work to an agent that reads, extracts, and analyzes the report on its own, then summarizes it into actionable insights. Designing it meant deciding how the agent shows its work: what it found, where in the report, and how confident it was, so reviewers could trust the output without redoing the analysis themselves. The prototype was compelling enough to become a real product, Instant Insights, in the Vendor Risk Management application. Manual review time went from hours to minutes.
+          </p>
+          <img src="hackathon.gif" alt="Instant Insights hackathon demo" style="width:100%;max-width:100%;flex-shrink:0;border-radius:var(--r-md); margin-top:1.25rem;" />
+        </div>
+      </div>
+
+      
+    </section>
+
+
+
+    <!-- 07 — REFLECTION -->
+    <section id="reflection">
+      <div class="section-label">07 — Reflection</div>
+      <h2>What I'd do differently</h2>
+      <p>Loop customer success in earlier. Customer success teammates were part of the research team, but mainly to help recruit and run sessions. They had direct, daily contact with these users. If I'd brought them in to help shape the research questions from the start, not just to execute them, we probably would have surfaced some of these insights faster.</p>
+      <p>Use the affinity diagram as a kickoff, not a synthesis. The cross-team affinity session was one of the most valuable moments of the project. VRM and TMH stakeholders building the diagram together, instead of receiving a report, meant they owned the insights. I'd use this format at the start of the research phase, not just at the end.</p>
+      <p>IA decisions precede UI changes. The rename from "Connections" to "Vendors," and the move from dual navigation to a single sidebar, these were IA decisions first, UI decisions second. I'd be more explicit about documenting that sequence, so the team understands what's driving what.</p>
+    </section>
+
+  </main>
+</div><!-- /cs-layout -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to all work</a> &nbsp;·&nbsp; Hariel Baiz · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
+</footer>
+
+<script src="js/site.js" defer></script>
+<script>
+  // ── Password gate ──
+  // Client-side only: gates casual viewing, not a real access control.
+  // Uses a small dependency-free hash (not Web Crypto) so this also
+  // works when the file is opened directly (file://), where
+  // crypto.subtle is unavailable in most browsers.
+  (function () {
+    var STORAGE_KEY = 'cs3-unlocked';
+    var HASH = '5b382597';
+
+    function unlock() {
+      document.body.classList.remove('cs3-locked');
+      // Belt-and-suspenders: hide the overlay directly too, so this
+      // doesn't depend solely on the CSS rule being scoped correctly.
+      var gateEl = document.getElementById('cs3-gate');
+      if (gateEl) gateEl.style.display = 'none';
+    }
+
+    // localStorage can throw (private browsing, strict cookie/storage
+    // blocking, some browser extensions) — never let that stop the gate
+    // from working, it just means "not remembered" instead of "unlocked".
+    function getStored() {
+      try { return localStorage.getItem(STORAGE_KEY); } catch (err) { return null; }
+    }
+    function setStored() {
+      try { localStorage.setItem(STORAGE_KEY, 'true'); } catch (err) { /* ignore */ }
+    }
+
+    if (getStored() === 'true') {
+      unlock();
+      return;
+    }
+
+    function simpleHash(str) {
+      var h = 0x811c9dc5;
+      for (var i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 0x01000193);
+      }
+      return (h >>> 0).toString(16);
+    }
+
+    var input = document.getElementById('cs3-gate-input');
+    var button = document.getElementById('cs3-gate-btn');
+    var error = document.getElementById('cs3-gate-error');
+    if (!input || !button || !error) {
+      console.warn('cs3 password gate: expected elements not found in the page.');
+      return;
+    }
+
+    // Plain button + keydown handling — deliberately not a <form>/submit,
+    // so there's no native-submission fallback path if anything above
+    // ever fails silently.
+    function tryUnlock() {
+      if (simpleHash(input.value) === HASH) {
+        setStored();
+        error.classList.remove('is-visible');
+        unlock();
+      } else {
+        error.classList.add('is-visible');
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    button.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        tryUnlock();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

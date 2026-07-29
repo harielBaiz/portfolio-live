@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="css/tokens.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/landing.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hariel Baiz — Product Designer</title>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#" data-i18n="nav.brand">Hariel Baiz</a>
+  <ul class="nav-links">
+    <li><a href="#work" aria-current="page" data-i18n="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+    </button>
+    <button class="lang-toggle" aria-label="Toggle language">
+      <span class="lang-active">EN</span>
+      <span class="lang-label">ES</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO — single column, no stack ── -->
+<section class="hero">
+  <div>
+    <h1 class="fade-in">Hi! I'm Hariel, a Senior Product Designer based in Buenos Aires. With 6+ years of experience in B2B SaaS web products, I specialize in design systems and enterprise UX — working at the intersection of design, engineering, and product to ship scalable systems that teams actually adopt.</h1>
+    <div class="hero-actions fade-in">
+      <a href="#work" class="btn-primary"><span data-i18n="hero.cta.work">See my work</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+      <a href="about.html" class="btn-secondary" data-i18n="hero.cta.about">About me</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── WORK — one row per case study ── -->
+<section id="work" class="section">
+  <span class="section-label reveal" data-i18n="work.label">Featured Work</span>
+
+  <div class="case-list">
+
+    <!-- Case Study 01 — Design Tokens -->
+    <a href="case-study-design-tokens.html" class="case-row reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-tokens-cover.jpg"
+             alt="Design token system"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">Design Systems</span>
+          <span class="card-tag">Design Tokens</span>
+          <span class="card-tag">Figma</span>
+          <span class="card-tag">Design/Eng Alignment</span>
+        </div>
+        <h3 class="case-row__title">Design Token Adoption at Bitsight DS</h3>
+        <p class="case-row__desc">Bitsight's design and engineering teams were out of sync. I built a semantic token system covering 160+ variables — enabling light, dark, and color-blind modes with a single source of truth.</p>
+        <span class="case-row__cta"><span data-i18n="card.cta">Read Case Study</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Case Study 02 — InfoSec Questionnaire -->
+    <a href="case-study-infosec-questionnaire.html" class="case-row case-row--reverse reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-questionnaire-cover.jpg"
+             alt="InfoSec Questionnaire redesign"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">Product Design</span>
+          <span class="card-tag">User Research</span>
+          <span class="card-tag">Design Systems</span>
+          <span class="card-tag">B2B SaaS</span>
+        </div>
+        <h3 class="case-row__title">InfoSec Questionnaire Redesign</h3>
+        <p class="case-row__desc">After Bitsight acquired ThirdPartyTrust, the questionnaire feature needed a new foundation. I led the UI redesign and research plan for a complex, high-stakes workflow. Review time dropped 40%, clarification requests fell 60%.</p>
+        <span class="case-row__cta"><span data-i18n="card.cta">Read Case Study</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    <!-- Case Study 03 -->
+    <a href="case-study-new-site-architecture.html" class="case-row reveal">
+      <figure class="case-row__image">
+        <img src="images/cs-product-split-cover.png"
+             alt="Personas and IA redesign"
+             onerror="this.parentElement.classList.add('case-row__image--placeholder'); this.style.display='none'"/>
+        <span class="case-row__lock" aria-label="Password protected case study">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Password protected
+        </span>
+      </figure>
+      <div class="case-row__body">
+        <div class="card-tags">
+          <span class="card-tag">User Research</span>
+          <span class="card-tag">Personas</span>
+          <span class="card-tag">Information Architecture</span>
+          <span class="card-tag">UX Strategy</span>
+        </div>
+        <h3 class="case-row__title">The Research That Split a Product in Two</h3>
+        <p class="case-row__desc">ThirdPartyTrust, a third-party risk management platform, served two completely different user types in one shared UI. I was part of the research that drove the decision to split it into two dedicated products, then redesigned the navigation and feedback patterns around each one.</p>
+        <span class="case-row__cta"><span data-i18n="card.cta">Read Case Study</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+<div class="divider"></div>
+
+
+<!-- ── CONTACT ── -->
+<section class="contact-dark">
+  <h2 class="reveal" data-i18n="contact.title">Let's work <em>together</em></h2>
+  <p class="reveal" data-i18n="contact.sub">Open to product design and design systems roles. Remote-friendly.</p>
+  <div class="contact-links reveal">
+    <a href="#" class="btn-white" data-email>hariel.baiz@gmail.com</a>
+    <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-ghost-dark">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+    <a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-ghost-dark">Resume <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <p data-i18n="footer.copy">© 2026 Hariel Baiz · Product Designer</p>
+  <a href="#" data-email>hariel.baiz@gmail.com</a>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>

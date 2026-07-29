@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/tokens.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/case-study.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas & IA — Hariel's Portfolio</title>
+  <style>
+    /* ── JTBD grid ── */
+    .jtbd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .jtbd-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .jtbd-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .jtbd-persona {
+      font-family: var(--f-serif);
+      font-size: 1.05rem;
+      color: var(--text-1);
+    }
+    .jtbd-type {
+      font-family: var(--f-ui);
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--r-pill);
+      white-space: nowrap;
+    }
+    .jtbd-type.customer         { background: var(--brand-tag-bg); color: var(--brand); }
+    .jtbd-type.vendor           { background: #edf6ff; color: #1a6bbf; }
+    .jtbd-type.secondary        { opacity: 0.75; }
+    .jtbd-statement {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text-2);
+      border-left: 3px solid var(--border);
+      padding-left: 0.85rem;
+    }
+    .jtbd-when  { font-weight: 600; color: var(--brand);   }
+    .jtbd-want  { font-weight: 600; color: #1a6bbf;        }
+    .jtbd-so    { font-weight: 600; color: var(--text-1);  }
+    .jtbd-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .jtbd-layer {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .jtbd-layer-label {
+      font-family: var(--f-ui);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding-top: 2px;
+    }
+    .jtbd-layer-text {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    @media (max-width: 640px) {
+      .jtbd-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-name" href="index.html" data-i18n="nav.brand">Hariel Baiz</a>
+  <ul class="nav-links">
+    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About</a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
+      <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+    </button>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Case Study · UX Research &amp; Strategy</div>
+    <h1>The research that <em>split a product in two</em></h1>
+    <div class="hero-meta">
+      <span class="chip">User Research</span>
+      <span class="chip">Personas</span>
+      <span class="chip">Information Architecture</span>
+      <span class="chip">Affinity Diagramming</span>
+      <span class="chip outline">Bitsight · B2B SaaS</span>
+      <span class="chip outline">Lead Designer</span>
+    </div>
+  </div>
+  <figure class="hero-cover hero-cover--placeholder">
+    <span>Cover image — add when ready</span>
+  </figure>
+</header>
+
+<div class="cs-layout">
+  <nav class="cs-index" aria-label="Case study sections">
+    <ol>
+      <li><a href="#context">01 — Context</a></li>
+      <li><a href="#problem">02 — Problem</a></li>
+      <li><a href="#research">03 — Research</a></li>
+      <li><a href="#personas">04 — Personas</a></li>
+      <li><a href="#insights">05 — Insights</a></li>
+      <li><a href="#architecture">06 — Architecture</a></li>
+      <li><a href="#outcomes">07 — Outcomes</a></li>
+      <li><a href="#reflection">08 — Reflection</a></li>
+    </ol>
+  </nav>
+
+  <main class="page-wrap">
+
+    <p class="hero-sub">ThirdPartyTrust served two completely different user types in one shared UI. I led the research that defined 4 personas, ran affinity diagramming sessions across teams, and drove the decision to split the product into two dedicated products — Bitsight VRM and TMH.</p>
+
+    <!-- OUTCOME BANNER -->
+    <div class="outcome-banner" aria-label="Key outcomes">
+      <div class="outcome-stat">
+        <div class="number">4</div>
+        <div class="label">Research-backed personas — 2 primary, 2 secondary</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">15→2</div>
+        <div class="label">Days to complete a vendor assessment, before and after</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">2</div>
+        <div class="label">Separate products born from one shared UI — VRM and TMH</div>
+      </div>
+      <div class="outcome-stat">
+        <div class="number">3</div>
+        <div class="label">Research methods — interviews, affinity diagramming, usability studies</div>
+      </div>
+    </div>
+
+
+    <!-- 01 — CONTEXT -->
+    <section id="context">
+      <div class="section-label">01 — Context</div>
+      <h2>A platform built without a design team</h2>
+      <p>ThirdPartyTrust is a third-party risk management (TPRM) platform. Before Bitsight acquired it in Q3 2021, it had been built entirely by engineers — solid technically, but without a user-centered design process from the start.</p>
+      <p>When I joined, there was no UX team, no research infrastructure, and no clear picture of who was actually using the product. Two completely different user types — <strong>customers</strong> (companies managing vendor risk) and <strong>vendors</strong> (companies being assessed) — were navigating the same interface, with the same navigation, even though their goals had almost nothing in common.</p>
+      <div class="callout">
+        <p>The signal was already there: a high volume of support tickets, no subscription support for many users, no way to distinguish what was a usability problem from what was a feature gap. My job was to build the process to read the signal — and then act on it.</p>
+      </div>
+    </section>
+
+
+    <!-- 02 — PROBLEM -->
+    <section id="problem">
+      <div class="section-label">02 — Problem</div>
+      <h2>Two users. One navigation. Zero clarity.</h2>
+      <p>The platform's core problem wasn't any single broken feature. It was structural: customers and vendors were forced to share the same mental model of the product, even though they were there for completely different reasons.</p>
+
+      <div class="methods-grid">
+        <div class="cs-card">
+          <div class="card-title">Navigation confusion</div>
+          <p>The top bar and left sidebar served both user types at once. Customers looking for their vendor list and vendors looking for their pending assessments landed in the same place — with no clear path forward.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">No system feedback</div>
+          <p>Users couldn't tell if an action had succeeded. No confirmation after sending a questionnaire. No status on submitted responses. The gap extended to document sharing too — when a vendor sent a SOC 2 report or certificate by email, there was no way to know if the customer had received or reviewed it. Both sides were operating blind.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Invisible failure mode</div>
+          <p>Users without a subscription had no support channel. Their frustration generated support tickets — but without research, there was no way to distinguish a usability problem from a missing feature.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 03 — RESEARCH -->
+    <section id="research">
+      <div class="section-label">03 — Research</div>
+      <h2>Understanding two different worlds</h2>
+      <p>The research goal was exploratory: understand how each user type thought about their work, what they needed from the platform, and where the experience was breaking down. I used three methods, each chosen for a specific purpose.</p>
+
+      <div class="methods-grid">
+        <div class="cs-card">
+          <div class="card-title">User interviews</div>
+          <p>To understand motivations, mental models, and day-to-day workflows. I talked to subscribed and unsubscribed users on both sides — customers and vendors. The goal was to hear how they described their own work before asking how the product fit into it.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Affinity diagramming</div>
+          <p>To synthesize observations across participants and surface shared themes. I ran sessions with the VRM and TMH teams together — so the findings weren't just mine. They became a shared understanding across the two product teams.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">Usability studies</div>
+          <p>To validate the new IA after the product split decision was made. Testing whether users could navigate the new structure before committing to building it.</p>
+        </div>
+      </div>
+
+      <h3>Who I talked to</h3>
+      <p>Not all users had equal weight in driving decisions. I defined 2 primary and 2 secondary personas based on subscription status, engagement level, and signal strength from support data.</p>
+
+      <table class="participant-table">
+        <thead>
+          <tr>
+            <th>Participants</th>
+            <th>User type</th>
+            <th>Subscription</th>
+            <th>Support access</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Carlos, Emma</td>
+            <td>Customer</td>
+            <td>Yes</td>
+            <td>Customer Success team</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+          </tr>
+          <tr>
+            <td>Lucas, Priya</td>
+            <td>Vendor</td>
+            <td>Yes</td>
+            <td>Customer Success team</td>
+            <td><span class="badge badge-primary">Primary</span></td>
+          </tr>
+          <tr>
+            <td>Tom, Ana</td>
+            <td>Customer</td>
+            <td>No</td>
+            <td>None</td>
+            <td><span class="badge badge-secondary">Secondary</span></td>
+          </tr>
+          <tr>
+            <td>David, Nina</td>
+            <td>Vendor</td>
+            <td>No</td>
+            <td>None</td>
+            <td><span class="badge badge-secondary">Secondary</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Jobs to be done</h3>
+      <p>Interviews revealed that each user type wasn't just doing different tasks — they were trying to accomplish fundamentally different things. Mapping the functional, emotional, and social job behind each persona made the product split argument impossible to ignore.</p>
+
+      <div class="jtbd-grid">
+
+        <!-- SARAH -->
+        <div class="jtbd-card">
+          <div class="jtbd-header">
+            <div class="jtbd-persona">Sarah Chen</div>
+            <div class="jtbd-type customer">Customer · Primary</div>
+          </div>
+          <div class="jtbd-statement">
+            <span class="jtbd-when">When</span> I need to report compliance status to my CISO,
+            <span class="jtbd-want">I want to</span> see the risk status of all my vendors at a glance,
+            <span class="jtbd-so">so I can</span> act on gaps without chasing anyone by email.
+          </div>
+          <div class="jtbd-layers">
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Functional</div>
+              <div class="jtbd-layer-text">Track 100–200 vendor assessments without external spreadsheets</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Emotional</div>
+              <div class="jtbd-layer-text">Feel in control of the program — not constantly catching up</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Social</div>
+              <div class="jtbd-layer-text">Be seen as the person who has vendor risk under control</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TIAGO -->
+        <div class="jtbd-card">
+          <div class="jtbd-header">
+            <div class="jtbd-persona">Tiago Ferreira</div>
+            <div class="jtbd-type vendor">Vendor · Primary</div>
+          </div>
+          <div class="jtbd-statement">
+            <span class="jtbd-when">When</span> I receive a new assessment request,
+            <span class="jtbd-want">I want to</span> coordinate my team's responses in one place,
+            <span class="jtbd-so">so I can</span> submit on time without running everything through email.
+          </div>
+          <div class="jtbd-layers">
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Functional</div>
+              <div class="jtbd-layer-text">Delegate sections and track progress without leaving the platform</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Emotional</div>
+              <div class="jtbd-layer-text">Feel confident the submission went through and was received</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Social</div>
+              <div class="jtbd-layer-text">Be seen as a responsive, well-organized security partner by customers</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIANA -->
+        <div class="jtbd-card">
+          <div class="jtbd-header">
+            <div class="jtbd-persona">Diana Morales</div>
+            <div class="jtbd-type customer secondary">Customer · Secondary</div>
+          </div>
+          <div class="jtbd-statement">
+            <span class="jtbd-when">When</span> my manager asks me to assess a vendor,
+            <span class="jtbd-want">I want to</span> understand what to do next without training,
+            <span class="jtbd-so">so I can</span> complete the task without asking for help.
+          </div>
+          <div class="jtbd-layers">
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Functional</div>
+              <div class="jtbd-layer-text">Send a questionnaire and confirm the vendor received it</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Emotional</div>
+              <div class="jtbd-layer-text">Feel capable of doing this independently, without IT support</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Social</div>
+              <div class="jtbd-layer-text">Show her manager the task is handled — professionally</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JAMES -->
+        <div class="jtbd-card">
+          <div class="jtbd-header">
+            <div class="jtbd-persona">James Park</div>
+            <div class="jtbd-type vendor secondary">Vendor · Secondary</div>
+          </div>
+          <div class="jtbd-statement">
+            <span class="jtbd-when">When</span> a client sends me an assessment link,
+            <span class="jtbd-want">I want to</span> know exactly what's expected and track my progress,
+            <span class="jtbd-so">so I can</span> respond confidently without following up to confirm receipt.
+          </div>
+          <div class="jtbd-layers">
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Functional</div>
+              <div class="jtbd-layer-text">Complete 90 questions with clear progress, section by section</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Emotional</div>
+              <div class="jtbd-layer-text">Feel certain the submission was received — not anxious about it</div>
+            </div>
+            <div class="jtbd-layer">
+              <div class="jtbd-layer-label">Social</div>
+              <div class="jtbd-layer-text">Be seen as a competent, reliable vendor by the client</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /jtbd-grid -->
+
+      <div class="callout">
+        <p>📎 Affinity diagrams from FigJam — to be added</p>
+      </div>
+    </section>
+
+
+    <!-- 04 — PERSONAS -->
+    <section id="personas">
+      <div class="section-label">04 — Personas</div>
+      <h2>Four people. Two sides of the same platform.</h2>
+      <p>Primary personas drove design decisions. Secondary personas revealed where the experience was silently failing. Both were necessary — subscribed users showed the potential; unsubscribed users showed the cracks.</p>
+
+      <div class="personas-grid">
+
+        <!-- SARAH -->
+        <div class="persona-card primary">
+          <div class="persona-header">
+            <div class="persona-avatar">👩</div>
+            <div class="persona-meta">
+              <div class="persona-type">Primary · Customer with subscription</div>
+              <div class="persona-name">Sarah Chen</div>
+              <div class="persona-role">Third-Party Risk Manager · New York, USA</div>
+            </div>
+          </div>
+          <div class="persona-quote">"I need to know the risk status of all my vendors at a glance — without chasing anyone by email."</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>38</span></div>
+              <div class="persona-field"><label>Role</label><span>TPRM Manager</span></div>
+              <div class="persona-field"><label>Company</label><span>Financial services, 2,000+</span></div>
+              <div class="persona-field"><label>Background</label><span>CISA · 8+ yrs GRC</span></div>
+            </div>
+            <div class="persona-section-title">What she does</div>
+            <ul class="persona-list">
+              <li>Manages 100–200 vendor assessments per year</li>
+              <li>Sends questionnaires, tracks certifications and insurance</li>
+              <li>Reports compliance status to the CISO</li>
+            </ul>
+            <div class="persona-section-title">What was breaking</div>
+            <p>The shared UI mixed customer and vendor content. No bulk actions, no automated reminders, no audit-ready export. She was running her risk program from Excel and email alongside the platform.</p>
+            <div class="persona-section-title">Story of use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              Sarah sees 3 overdue assessments. She manually sends individual follow-up emails. 45 minutes.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Sarah filters by "Overdue," selects all three, sends a bulk reminder. 2 minutes.
+            </div>
+          </div>
+        </div>
+
+        <!-- TIAGO -->
+        <div class="persona-card primary">
+          <div class="persona-header">
+            <div class="persona-avatar">👨</div>
+            <div class="persona-meta">
+              <div class="persona-type">Primary · Vendor with subscription</div>
+              <div class="persona-name">Tiago Ferreira</div>
+              <div class="persona-role">Security Compliance Manager · Lisbon, Portugal</div>
+            </div>
+          </div>
+          <div class="persona-quote">"I answer the same questionnaire 20 times a year. I need to do it once and share it everywhere."</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>41</span></div>
+              <div class="persona-field"><label>Role</label><span>Compliance Manager</span></div>
+              <div class="persona-field"><label>Company</label><span>Fintech SaaS, 180 employees</span></div>
+              <div class="persona-field"><label>Background</label><span>ISO 27001 Lead Impl.</span></div>
+            </div>
+            <div class="persona-section-title">What he does</div>
+            <ul class="persona-list">
+              <li>Receives 25–40 assessment requests per year from different customers</li>
+              <li>Coordinates responses across legal, engineering, and finance</li>
+              <li>Manages SOC 2, cyber insurance, and other certifications</li>
+            </ul>
+            <div class="persona-section-title">What was breaking</div>
+            <p>No way to delegate sections in-platform, no renewal tracking, no submission confirmation. Every request required manual coordination outside the tool.</p>
+            <div class="persona-section-title">Story of use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              New 80-question assessment arrives. Tiago emails his engineer the questions. Three weeks of follow-ups later, all sections are complete. He submits — no confirmation.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Tiago assigns the technical section to his engineer in two clicks. Submits in 5 days. Receives confirmation the customer started reviewing.
+            </div>
+          </div>
+        </div>
+
+        <!-- DIANA -->
+        <div class="persona-card secondary">
+          <div class="persona-header">
+            <div class="persona-avatar">👩</div>
+            <div class="persona-meta">
+              <div class="persona-type">Secondary · Customer without subscription</div>
+              <div class="persona-name">Diana Morales</div>
+              <div class="persona-role">IT Security Analyst · Austin, Texas</div>
+            </div>
+          </div>
+          <div class="persona-quote">"I just need to send one questionnaire to a vendor. I've been trying to figure this out for an hour."</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>31</span></div>
+              <div class="persona-field"><label>Role</label><span>IT Security Analyst</span></div>
+              <div class="persona-field"><label>Company</label><span>Tech startup, 80 employees</span></div>
+              <div class="persona-field"><label>Background</label><span>CompTIA Security+</span></div>
+            </div>
+            <div class="persona-section-title">What was breaking</div>
+            <p>Accessed the platform with no onboarding, no support contact, no training. Her workaround: download the questionnaire as a PDF and send it by email. The platform generated a ticket she could never resolve.</p>
+            <div class="persona-section-title">Story of use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              Blank dashboard, generic error, one hour of trial and error. Sends questionnaire as a PDF by email instead.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Guided empty state walks her through the first step. Completes the task in 10 minutes. Gets an email when the vendor responds.
+            </div>
+            <div class="callout">
+              <p><strong>Design impact:</strong> Diana's experience drove the feedback pattern redesign — empty states, inline errors, success confirmation, and notification emails.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JAMES -->
+        <div class="persona-card secondary">
+          <div class="persona-header">
+            <div class="persona-avatar">👨</div>
+            <div class="persona-meta">
+              <div class="persona-type">Secondary · Vendor without subscription</div>
+              <div class="persona-name">James Park</div>
+              <div class="persona-role">Junior Security Engineer · Toronto, Canada</div>
+            </div>
+          </div>
+          <div class="persona-quote">"A client sent me a link to fill in a security questionnaire. I've never heard of this platform."</div>
+          <div class="persona-body">
+            <div class="persona-row">
+              <div class="persona-field"><label>Age</label><span>27</span></div>
+              <div class="persona-field"><label>Role</label><span>Junior Security Eng.</span></div>
+              <div class="persona-field"><label>Company</label><span>Software consultancy, 40</span></div>
+              <div class="persona-field"><label>Background</label><span>CS grad · 2 yrs exp.</span></div>
+            </div>
+            <div class="persona-section-title">What was breaking</div>
+            <p>Arrived via an invitation link. Signed up and landed on a dashboard with no questionnaire in sight. 90 questions, no progress indicator, no way to delegate, no confirmation on submit.</p>
+            <div class="persona-section-title">Story of use</div>
+            <div class="persona-story">
+              <span class="story-label before">Before</span>
+              10 minutes finding the questionnaire. No progress bar. No confirmation. Emails the client to verify the submission went through.
+            </div>
+            <div class="story-after">
+              <span class="story-label after">After redesign</span>
+              Invitation link goes directly to the questionnaire. Progress indicator shows 6 sections, ~30 min. Section delegation in-platform. Confirmation screen and email on submit.
+            </div>
+            <div class="callout">
+              <p><strong>Design impact:</strong> James's experience drove the direct-link invitation flow, progress indicator, section delegation, and submission confirmation — all standardized in the Bitsight Design System.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /personas-grid -->
+    </section>
+
+
+    <!-- 05 — KEY INSIGHTS -->
+    <section id="insights">
+      <div class="section-label">05 — Key Insights</div>
+      <h2>What the affinity diagram surfaced</h2>
+      <p>After clustering observations across all participants, five themes emerged consistently. Each one became a design principle for the new IA.</p>
+
+      <div class="themes-grid">
+        <div class="cs-card">
+          <div class="theme-number">01</div>
+          <div class="theme-title">Time</div>
+          <p>Customers were running risk programs from spreadsheets alongside the platform. Vendors were copy-pasting the same answers into different tools.</p>
+          <div class="theme-implication">Workflows had to be linear and fast. No dead ends, no unnecessary steps.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">02</div>
+          <div class="theme-title">Customization</div>
+          <p>Neither user type felt the platform was built for their context. Customers needed control over risk criteria. Vendors needed control over their profile.</p>
+          <div class="theme-implication">Customization had to be a first-class concept — not a buried settings page.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">03</div>
+          <div class="theme-title">Collaboration</div>
+          <p>Both sides described their work as inherently cross-functional. Customers coordinated with internal security teams. Vendors coordinated across legal, engineering, and finance. Delegation technically existed in the platform — but the invitation experience was broken. Colleagues received generic emails with no context about what they needed to do or why.</p>
+          <div class="theme-implication">Contacts, roles, and delegation needed to be core objects in the navigation — not utility features. And delegation had to carry context with it, not just access.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">04</div>
+          <div class="theme-title">Automation</div>
+          <p>Manual repetitive work was the biggest source of frustration on both sides: chasing vendors, tracking progress in spreadsheets, re-sending the same documents.</p>
+          <div class="theme-implication">Automation touchpoints needed to be integrated into primary flows — not optional add-ons.</div>
+        </div>
+        <div class="cs-card">
+          <div class="theme-number">05</div>
+          <div class="theme-title">Navigation</div>
+          <p>Users couldn't orient themselves. A customer looking for their vendor list and a vendor looking for their active assessments ended up in the same place. Worse, unsubscribed users could see features they had no access to — creating a second layer of confusion on top of the structural one. Navigation was the symptom. The cause was structural: the platform had no conceptual model that matched how either user thought about their work.</p>
+          <div class="theme-implication">The IA itself needed to be rebuilt around user mental models — which is where the object-oriented design approach became critical. Feature visibility also needed to match access level, so users were never shown doors they couldn't open.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 06 — ARCHITECTURE -->
+    <section id="architecture">
+      <div class="section-label">06 — Architecture</div>
+      <h2>Objects first, not features</h2>
+      <p>The research revealed something deeper than a usability problem. Customers and vendors weren't just different personas — they were operating with fundamentally different conceptual objects. Merging them in the same navigation was the root cause of the confusion.</p>
+
+      <div class="objects-grid">
+        <div class="objects-col">
+          <h3>Customer (VRM) — core objects</h3>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Vendor</div><div class="object-desc">The company being assessed</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Requirement</div><div class="object-desc">A questionnaire, certification, or audit assigned to a vendor</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Assessment</div><div class="object-desc">The active evaluation lifecycle</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot"></div>
+            <div><div class="object-name">Finding</div><div class="object-desc">A risk identified during assessment</div></div>
+          </div>
+        </div>
+        <div class="objects-col">
+          <h3>Vendor (TMH) — core objects</h3>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Profile</div><div class="object-desc">Their security posture, visible to all customers</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Request</div><div class="object-desc">An incoming requirement — questionnaire, certification, insurance, or audit</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Questionnaire</div><div class="object-desc">Security assessment sent by a customer — to complete, delegate, and submit</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Certificate</div><div class="object-desc">SOC 2, ISO 27001 — with expiry tracking and renewal alerts</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Insurance</div><div class="object-desc">Cyber liability policy with renewal date</div></div>
+          </div>
+          <div class="object-item">
+            <div class="object-dot secondary"></div>
+            <div><div class="object-name">Audit / Assurance</div><div class="object-desc">Third-party audit reports or assurance documents shared proactively with customers</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>These two object sets didn't overlap at all. Sharing a navigation between them was the root cause — not a symptom. The IA decision followed directly: <strong>split the products</strong>. VRM for customers. TMH for vendors.</p>
+      </div>
+
+      <h3>Before &amp; after</h3>
+      <p>ThirdPartyTrust used a dual navigation — a top bar for primary sections and a context-sensitive left sidebar. The redesign moved to a single left sidebar per product, each organized around its own object model.</p>
+
+      <div class="methods-grid">
+        <div class="cs-card">
+          <div class="card-title">Before — ThirdPartyTrust</div>
+          <p>Top navigation bar + context-sensitive left sidebar. Both user types shared the same primary nav. The sidebar changed depending on which section you were in, but both customers and vendors saw the same top-level structure.</p>
+        </div>
+        <div class="cs-card">
+          <div class="card-title">After — Bitsight VRM + TMH</div>
+          <p>Two separate products. Each with a single left sidebar organized around its own core objects. Customers navigate Vendors, Assessments, and Findings. Vendors navigate Profile, Requests, Questionnaires, Certificates, Insurance, and Audits.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>📎 IA diagrams (before / after) — to be added</p>
+      </div>
+    </section>
+
+
+    <!-- 07 — OUTCOMES -->
+    <section id="outcomes">
+      <div class="section-label">07 — Outcomes</div>
+      <h2>What shipped. What changed.</h2>
+
+      <div class="outcomes-grid">
+        <div class="cs-card">
+          <div class="outcome-area">Assessment speed</div>
+          <span class="outcome-highlight">15→2</span>
+          <div class="outcome-result">Days to complete a vendor assessment, before and after</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Product architecture</div>
+          <div class="outcome-result">VRM and TMH launched as dedicated products — each built around their user's core objects, with a single left sidebar navigation</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Support volume</div>
+          <div class="outcome-result">Customer success tickets dropped — users could now read the system state and complete tasks without guessing</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Shared personas</div>
+          <div class="outcome-result">4 research-backed personas became the common language between the ThirdPartyTrust team (VRM) and the Bitsight team (TMH)</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Feedback patterns</div>
+          <div class="outcome-result">New feedback pattern library added to Bitsight DS — empty states, progress states, success confirmation, inline errors — standardized across both products</div>
+        </div>
+        <div class="cs-card">
+          <div class="outcome-area">Design system</div>
+          <div class="outcome-result">Patterns built for this project became reusable DS components, reducing design and dev time on future features across the Bitsight platform</div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">
+          "We were assessing our third-parties using Excel spreadsheets and it was hard to keep track of everything. With ThirdPartyTrust, our average assessment turnaround went from 15 days to 2 days."
+        </div>
+        <div class="testimonial-meta">
+          <span class="t-role">Thiago Ribeiro</span>
+          <span class="t-moment">Associate Director for Information Security Engineering, Charles River Laboratories</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 08 — REFLECTION -->
+    <section id="reflection">
+      <div class="section-label">08 — Reflection</div>
+      <h3>What I'd do differently</h3>
+      <p>Run tree testing before committing to the split. The product split decision was driven by research, but we validated it with usability studies after the decision was made. Running a quick tree test earlier would have given us structural confidence before committing, and would have reduced risk at the most critical point of the project.</p>
+      <p>Reach secondary personas earlier. Unsubscribed users, Diana and James, turned out to be the clearest signal of where the platform was silently failing. But because they had no support relationship, they were harder to recruit. I'd invest more in reaching them early in any future project where there's a free-tier or low-access user type.</p>
+      <p>Use the affinity diagram as a kickoff, not a synthesis. The cross-team affinity session was one of the most valuable moments of the project. VRM and TMH stakeholders building the diagram together, instead of receiving a report, meant they owned the insights. I'd use this format at the start of the research phase, not just at the end.</p>
+      <p>IA decisions precede UI changes. The rename from "Connections" to "Vendors," and the move from dual navigation to a single sidebar, these were IA decisions first, UI decisions second. I'd be more explicit about documenting that sequence, so the team understands what's driving what.</p>
+    </section>
+
+  </main>
+</div><!-- /cs-layout -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to all work</a> &nbsp;·&nbsp; Hariel Baiz · Product Designer &nbsp;·&nbsp; <a href="#" data-email-href>Contact</a></p>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>

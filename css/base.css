@@ -1,0 +1,392 @@
+/*
+ * base.css
+ * ─────────────────────────────────────────────────────────
+ * Reset · Nav · Footer · Buttons · Chips · Utilities
+ * Shared by every page in the portfolio
+ * ─────────────────────────────────────────────────────────
+ */
+
+/* ── RESET ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+img, video { max-width: 100%; display: block; }
+
+/* ── BASE ──────────────────────────────────────────────── */
+body {
+  font-family: var(--f-ui);
+  font-size: 20px;
+  background: var(--bg-subtle);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ── NAV ───────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-opacity);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--nav-border);
+  height: 64px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Logo — Space Grotesk Bold 18px */
+.nav-name,
+.nav-logo {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+
+/* Nav/Default — DM Sans Regular 14px */
+.nav-links a {
+  font-family: var(--f-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  /* Nav/Active — DM Sans Medium */
+  font-weight: 500;
+  color: var(--nav-link);
+}
+
+/* Contact CTA — DM Sans Medium 14px brand */
+.nav-cta {
+  font-family: var(--f-ui);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: var(--nav-text);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.nav-cta:hover { 
+  font-weight: 500; 
+  color: var(--nav-link);
+}
+
+/* ── NAV CONTROLS (theme + lang) ────────────────────────── */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  padding: 0;
+  line-height: 1;
+}
+.theme-toggle:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-mid);
+  color: var(--text);
+}
+/* Icon swap via data-theme on <html> */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.theme-toggle .icon-sun svg,
+.theme-toggle .icon-moon svg { width: 16px; height: 16px; display: block; }
+
+/* Mobile nav toggle (hamburger) — hidden on desktop, shown below 640px */
+.nav-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text-2);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.nav-toggle:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-mid);
+  color: var(--text);
+}
+.nav-toggle svg { width: 18px; height: 18px; display: block; }
+.nav-toggle .icon-close { display: none; }
+.nav-toggle.is-open .icon-menu  { display: none; }
+.nav-toggle.is-open .icon-close { display: block; }
+
+/* ── DIVIDER ────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── BUTTONS ────────────────────────────────────────────── */
+
+/* Button/MD — DM Sans Medium 14px/20px */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--f-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: #fff;
+  background: var(--brand-fill);
+  padding: 10px 20px;
+  border-radius: var(--r-md);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: var(--brand-fill-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--f-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border-mid);
+  padding: 10px 20px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  border-color: var(--border-str);
+  transform: translateY(-1px);
+}
+
+/* Used on dark background (contact section) */
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-on-inverse);
+  background: var(--bg-inverse);
+  padding: 10px 22px;
+  border-radius: var(--r-md);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-white:hover { opacity: 0.88; }
+
+.btn-ghost-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-on-inverse);
+  border: 1px solid var(--border-on-inverse);
+  padding: 10px 22px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  transition: border-color 0.15s;
+}
+.btn-ghost-dark:hover { border-color: var(--text-on-inverse); }
+
+/* ── CHIPS / TAGS ───────────────────────────────────────── */
+
+/* Filled brand tag (cards, hero chips) */
+.chip, .card-tag, .tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  color: var(--text-2);
+  background: var(--brand-tag-bg);
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+
+/* Outline chip variant */
+.chip.outline {
+  background: transparent;
+  color: var(--text-3);
+  border: 1px solid var(--border-mid);
+}
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--bg-inverse);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--border-on-inverse);
+}
+footer p,
+footer a {
+  font-family: var(--f-ui);
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--text-on-inverse);
+  text-decoration: none;
+}
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+footer a:hover { font-weight: 600; }
+
+/* ── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Triggered on load (hero elements) */
+.js .fade-in {
+  opacity: 0;
+  animation: fadeUp 0.55s ease both;
+}
+.fade-in:nth-child(1) { animation-delay: 0.0s; }
+.fade-in:nth-child(2) { animation-delay: 0.1s; }
+.fade-in:nth-child(3) { animation-delay: 0.2s; }
+.fade-in:nth-child(4) { animation-delay: 0.3s; }
+.fade-in:nth-child(5) { animation-delay: 0.4s; }
+
+/* Triggered on scroll (IntersectionObserver in site.js) */
+/* Only hide .reveal when JS has loaded — content always visible without JS */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; opacity: 1; }
+  .reveal  { transition: none; opacity: 1; transform: none; }
+}
+
+/* ── PROGRESS BAR (case studies) ────────────────────────── */
+.progress-bar {
+  position: sticky;
+  top: 64px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 99;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--brand-fill);
+  transition: width 0.1s linear;
+}
+
+/* ── RESPONSIVE SHARED ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  nav { padding: 0 24px; }
+  footer { padding: 20px 24px; }
+}
+@media (max-width: 640px) {
+  nav { padding: 0 16px; gap: 16px; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg-subtle);
+    border-bottom: 1px solid var(--nav-border);
+    padding: 8px 16px 16px;
+    margin: 0;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a,
+  .nav-links .nav-cta { width: 100%; padding: 12px 0; }
+  footer { padding: 16px; flex-direction: column; text-align: center; }
+}

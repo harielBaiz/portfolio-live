@@ -1,0 +1,244 @@
+/*
+ * tokens.css
+ * ─────────────────────────────────────────────────────────
+ * HAriel Baiz · Portfolio Design System
+ * Source: Figma portfolio-DS  ·  Reference: doc.cc
+ *
+ * STRUCTURE
+ *   1. Google Fonts
+ *   2. Primitives  (raw neutral scale + brand)
+ *   3. Light mode  (semantic tokens  →  :root)
+ *   4. Dark mode   (overrides        →  [data-theme="dark"])
+ *   5. Typography tokens
+ *   6. Spacing & radius
+ *
+ * COLOR RULES
+ *   · UI uses neutral scale exclusively
+ *   · --brand (#1e2fc2, blue) = interactive only:
+ *     buttons, links, active nav, focus ring, tags text
+ *   · Accent illustration palette (orange, yellow) = NOT for UI
+ *
+ * TYPOGRAPHY RULES (from Figma Typography page)
+ *   Display  → Space Grotesk Bold    72/56/40px  tracking -2/-1.5/-1px
+ *   Heading  → DM Sans ExtraBold     32/24px     tracking -0.5/-0.25px
+ *              DM Sans Medium        20/18px
+ *   Body     → Lora Regular          18/16px     lh 30/26px
+ *   UI       → DM Sans Medium        16/14/12px
+ *   Nav      → DM Sans Regular       14px
+ * ─────────────────────────────────────────────────────────
+ */
+
+/* ── 1. FONTS ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,800;1,9..40,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── 2. PRIMITIVES ─────────────────────────────────────── */
+:root {
+  /* Neutral scale — doc.cc foundation */
+  --n-0:   #ffffff;
+  --n-0-opacity: #fafafa9f;
+  --n-50:  #fafafa;
+  --n-100: #f5f5f5;
+  --n-200: #e8e8e8;
+  --n-300: #d4d4d4;
+  --n-400: #a3a3a3;
+  --n-500: #737373;
+  --n-600: #525252;
+  --n-700: #3d3d3d;
+  --n-800: #262626;
+  --n-900: #171717;
+  --n-950: #0a0a0a;
+  --n-950-opacity: #1717179f;
+
+  /* Brand primitives — blue scale (poster reference)
+     Dark mode needs separate values for TEXT (must be light enough to
+     read on near-black bg) vs FILL (must be dark enough for white
+     button text to pass AA on top of it) — a single mid-blue can't
+     satisfy both. See blue-400 (text) vs blue-500 (fill) below. */
+  --blue-300: #8CA0FF;   /* lightest — dark-mode text hover (WCAG AA verified) */
+  --blue-400: #6E86FF;   /* dark-mode default TEXT (links, tags, CTAs) — AA verified */
+  --blue-500: #3350F0;   /* dark-mode button/progress FILL (pairs with white text) — AA verified */
+  --blue-600: #1E2FC2;   /* primary interactive — light-mode default (text + fill) */
+  --blue-700: #131F94;   /* deepest blue — light-mode hover */
+
+  /* Accent primitives — illustration / decorative use only, not for core UI */
+  --orange-500: #E2601C;
+  --yellow-500: #E3A72A;
+
+  /* Legacy purple aliases kept for reference — no longer used as brand */
+  --purple-600: #3a149a;
+  --purple-700: #2b0c7d;
+  --purple-300: #9b7dff;
+  --purple-500: #4B1EBA;
+  --purple-400: #673CD8;
+}
+
+/* ── 3. LIGHT MODE (default) ────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:         var(--n-0);
+  --bg-subtle:  var(--n-50);
+  --bg-muted:   var(--n-100);
+  --bg-inverse: var(--n-900);  /* used for dark CTA / contact section */
+  --bg-opacity: var(--n-0-opacity);
+
+  /* Surfaces */
+  --surface-card:    var(--n-100);
+  --surface-card-inverse: var(--n-800);  /* dark card surface, e.g. outcome stats */
+  --surface-overlay: rgba(255,255,255,0.95);
+
+  /* Text */
+  --text:    var(--n-950);   /* primary   #0a0a0a */
+  --text-2:  var(--n-700);   /* secondary #525252 */
+  --text-3:  var(--n-500);   /* tertiary  #737373 */
+  --text-on-inverse: var(--n-0);
+  --text-on-inverse-2: var(--n-400);
+  /* Paired with --surface-card-inverse (brand-blue fill) — verified AA against
+     both light-mode fill (#1E2FC2, 9.37:1 / 7.98:1) and dark-mode fill (#3350F0,
+     5.92:1 / 5.04:1). --blue-300 fails on both (3.83:1 / 2.42:1) — don't use it here. */
+  --text-on-brand:   var(--n-0);     /* #ffffff */
+  --text-on-brand-2: #E8ECFF;
+
+  /* Borders */
+  --border:     var(--n-200);   /* default #e8e8e8 */
+  --border-mid: var(--n-300);   /* medium  #d4d4d4 */
+  --border-str: var(--n-400);   /* strong  #a3a3a3 */
+  --border-on-inverse: var(--n-400);  /* 7.11:1 vs --bg-inverse here (near-black #171717) */
+
+  /* Brand — interactive elements only */
+  --brand:       var(--blue-600);  /* #1E2FC2 — text/link use */
+  --brand-hover: var(--blue-700);  /* #131F94 */
+  --brand-fill:       var(--brand);        /* button/progress-bar backgrounds */
+  --brand-fill-hover: var(--brand-hover);
+  --brand-tag-bg: var(--n-200);    /* tag pill background */
+
+  /* Nav */
+  --nav-bg:      var(--surface-overlay);
+  --nav-border:  var(--border);
+  --nav-text:    var(--text-3);
+  --nav-link:   var(--text);
+
+  /* Callout / feature card backgrounds */
+  --surface-feature: var(--n-100);
+  --surface-win:  #f0faf5;
+  --surface-pain: #fdf5f2;
+  --border-win:   #b8e4cc;
+  --border-pain:  #f5d0c5;
+  --surface-shipped:  #f0faf5;
+  --border-shipped:   #b8e4cc;
+  --surface-deferred: #fdf5f2;
+  --border-deferred:  #f5d0c5;
+}
+
+/* ── 4. DARK MODE ───────────────────────────────────────── */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg:         var(--n-950);  /* #0a0a0a */
+  --bg-subtle:  var(--n-900);
+  --bg-muted:   var(--n-800);
+  --bg-inverse: var(--n-100);    /* contact section flips to white in dark mode */
+  --bg-opacity:var(--n-950-opacity);
+
+  /* Surfaces */
+  --surface-card:    var(--n-800);
+  --surface-card-inverse: var(--n-200);  /* light card surface, e.g. outcome stats */
+  --surface-overlay: rgba(10,10,10,0.95);
+
+  /* Text */
+  --text:    var(--n-0);     /* #ffffff */
+  --text-2:  var(--n-200);   /* #a3a3a3 */
+  --text-3:  var(--n-400);   /* #737373 */
+  --text-on-inverse: var(--n-950);
+  --text-on-inverse-2: var(--n-600);
+
+  /* Borders */
+  --border:     var(--n-700);   /* #262626 */
+  --border-mid: var(--n-600);   /* #3d3d3d */
+  --border-str: var(--n-500);   /* #525252 */
+  /* --bg-inverse flips to near-white here — was missing this override
+     entirely, so .btn-ghost-dark's border fell back to the light-mode
+     value (n-600) or, worse, a hardcoded white that vanished. */
+  --border-on-inverse: var(--n-500);  /* 4.35:1 vs --bg-inverse here (near-white #f5f5f5) */
+
+  /* Brand — text use: lighter blue, AA-verified against --bg and --bg-subtle */
+  --brand:       var(--blue-400);
+  --brand-hover: var(--blue-300);
+  /* Fill use (buttons, progress bar): darker blue so white text stays AA-compliant */
+  --brand-fill:       var(--blue-500);
+  --brand-fill-hover: var(--blue-600);
+  /* n-600 was too light for blue-400 text (1.2:1) — n-800 gives 4.7:1 */
+  --brand-tag-bg: var(--n-700);
+
+  /* Nav */
+  --nav-bg:     var(--surface-overlay);
+  --nav-border: var(--border);
+  --nav-text:   var(--text-3);
+  --nav-link:   var(--text);
+
+  /* Callout surfaces */
+  --surface-feature: var(--n-800);
+  --surface-win:  #0d1f15;
+  --surface-pain: #1f0f0a;
+  --border-win:   #1d4a30;
+  --border-pain:  #4a2010;
+  --surface-shipped:  #0d1f15;
+  --border-shipped:   #1d4a30;
+  --surface-deferred: #1f0f0a;
+  --border-deferred:  #4a2010;
+}
+
+/* ── 5. TYPOGRAPHY TOKENS ───────────────────────────────── */
+:root {
+  --f-display: 'DM Sans', sans-serif;
+  --f-ui:      'DM Sans', system-ui, sans-serif;
+  --f-body:    'Lora', Georgia, serif;
+  --f-mono:    'DM Mono', monospace;
+
+  /* Display — Space Grotesk Bold */
+  --t-display-2xl: 700 72px/80px var(--f-display);
+  --t-display-xl:  700 56px/64px var(--f-display);
+  --t-display-lg:  700 40px/48px var(--f-display);
+
+  /* Heading — DM Sans */
+  --t-heading-xl: 700 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
+  --t-heading-lg: 700 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
+  --t-heading-md: 500 20px/28px var(--f-ui);
+  --t-heading-sm: 500 18px/26px var(--f-ui);
+
+  /* Body — Lora */
+  --t-body-lg: 400 18px/30px var(--f-body);
+  --t-body-md: 400 16px/26px var(--f-body);
+
+  /* UI — DM Sans */
+  --t-label-lg: 500 16px/24px var(--f-ui);
+  --t-label-md: 500 14px/20px var(--f-ui);
+  --t-label-sm: 500 12px/16px var(--f-ui);
+  --t-caption:  400 12px/16px var(--f-ui);
+  --t-nav:      400 14px/20px var(--f-ui);
+}
+
+/* ── 6. SPACING & RADIUS ────────────────────────────────── */
+:root {
+  --r-sm:   6px;
+  --r-md:   12px;
+  --r-lg:   20px;
+  --r-pill: 999px;
+
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  48px;
+  --space-xl:  80px;
+  --space-2xl: 96px;
+
+  /* Legacy aliases — referenced by case study components */
+  --radius-sm:  var(--r-sm);
+  --radius-md:  var(--r-md);
+  --radius-lg:  var(--r-lg);
+  --purple:     var(--brand);        /* now resolves to blue */
+  --purple-mid: var(--brand-hover);  /* now resolves to blue */
+  --magenta:    var(--brand);        /* now resolves to blue */
+  --bg-soft:    var(--bg-subtle);
+  --bg-card:    var(--surface-card);
+  --text-mid:   var(--text-2);
+  --text-mute:  var(--text-3);
+}
