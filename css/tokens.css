@@ -13,9 +13,11 @@
  *   6. Spacing & radius
  *
  * COLOR RULES
- *   · UI uses neutral scale exclusively
- *   · --brand (#1e2fc2, blue) = interactive only:
- *     buttons, links, active nav, focus ring, tags text
+ *   · UI uses neutral scale exclusively — including --brand (2026:
+ *     replaced blue with neutral. See section 3/4 for values).
+ *   · --brand = interactive only: buttons, links, active nav,
+ *     focus ring, tag text — now a dark/light neutral flip instead
+ *     of a hue, reusing the same --bg-inverse pairing as buttons
  *   · Accent illustration palette (orange, yellow) = NOT for UI
  *
  * TYPOGRAPHY RULES (from Figma Typography page)
@@ -49,16 +51,14 @@
   --n-950: #0a0a0a;
   --n-950-opacity: #1717179f;
 
-  /* Brand primitives — blue scale (poster reference)
-     Dark mode needs separate values for TEXT (must be light enough to
-     read on near-black bg) vs FILL (must be dark enough for white
-     button text to pass AA on top of it) — a single mid-blue can't
-     satisfy both. See blue-400 (text) vs blue-500 (fill) below. */
-  --blue-300: #8CA0FF;   /* lightest — dark-mode text hover (WCAG AA verified) */
-  --blue-400: #6E86FF;   /* dark-mode default TEXT (links, tags, CTAs) — AA verified */
-  --blue-500: #3350F0;   /* dark-mode button/progress FILL (pairs with white text) — AA verified */
-  --blue-600: #1E2FC2;   /* primary interactive — light-mode default (text + fill) */
-  --blue-700: #131F94;   /* deepest blue — light-mode hover */
+  /* Brand primitives — blue scale (poster reference), kept for history/
+     reference only. No longer wired to --brand (see section 3/4 below,
+     2026: brand color replaced with neutral scale across the whole site). */
+  --blue-300: #8CA0FF;
+  --blue-400: #6E86FF;
+  --blue-500: #3350F0;
+  --blue-600: #1E2FC2;
+  --blue-700: #131F94;
 
   /* Accent primitives — illustration / decorative use only, not for core UI */
   --orange-500: #E2601C;
@@ -91,12 +91,14 @@
   --text-2:  var(--n-700);   /* secondary #525252 */
   --text-3:  var(--n-500);   /* tertiary  #737373 */
   --text-on-inverse: var(--n-0);
-  --text-on-inverse-2: var(--n-400);
+  --text-on-inverse-2: var(--n-300);
   /* Paired with --surface-card-inverse (brand-blue fill) — verified AA against
      both light-mode fill (#1E2FC2, 9.37:1 / 7.98:1) and dark-mode fill (#3350F0,
      5.92:1 / 5.04:1). --blue-300 fails on both (3.83:1 / 2.42:1) — don't use it here. */
-  --text-on-brand:   var(--n-0);     /* #ffffff */
-  --text-on-brand-2: #E8ECFF;
+  /* Resolves to --text-on-inverse so it always pairs correctly with
+     --brand-fill below, which is itself just --bg-inverse. */
+  --text-on-brand:   var(--text-on-inverse);
+  --text-on-brand-2: var(--text-on-inverse-2);
 
   /* Borders */
   --border:     var(--n-200);   /* default #e8e8e8 */
@@ -104,12 +106,16 @@
   --border-str: var(--n-400);   /* strong  #a3a3a3 */
   --border-on-inverse: var(--n-400);  /* 7.11:1 vs --bg-inverse here (near-black #171717) */
 
-  /* Brand — interactive elements only */
-  --brand:       var(--blue-600);  /* #1E2FC2 — text/link use */
-  --brand-hover: var(--blue-700);  /* #131F94 */
-  --brand-fill:       var(--brand);        /* button/progress-bar backgrounds */
-  --brand-fill-hover: var(--brand-hover);
-  --brand-tag-bg: var(--n-200);    /* tag pill background */
+  /* Brand — interactive elements only. Neutral scale, not blue:
+     text/link use is a dark neutral, hover deepens further.
+     Fill reuses --bg-inverse so buttons automatically get the
+     correct dark/light flip (and contrast) per theme — same
+     verified pairing as the inverse contact-section card. */
+  --brand:       var(--n-900);     /* text/link use */
+  --brand-hover: var(--n-950);     /* darker on hover */
+  --brand-fill:       var(--bg-inverse);   /* button/progress-bar backgrounds */
+  --brand-fill-hover: var(--n-950);
+  --brand-tag-bg: var(--n-200);    /* tag pill background — already neutral */
 
   /* Nav */
   --nav-bg:      var(--surface-overlay);
@@ -159,13 +165,14 @@
      value (n-600) or, worse, a hardcoded white that vanished. */
   --border-on-inverse: var(--n-500);  /* 4.35:1 vs --bg-inverse here (near-white #f5f5f5) */
 
-  /* Brand — text use: lighter blue, AA-verified against --bg and --bg-subtle */
-  --brand:       var(--blue-400);
-  --brand-hover: var(--blue-300);
-  /* Fill use (buttons, progress bar): darker blue so white text stays AA-compliant */
-  --brand-fill:       var(--blue-500);
-  --brand-fill-hover: var(--blue-600);
-  /* n-600 was too light for blue-400 text (1.2:1) — n-800 gives 4.7:1 */
+  /* Brand — text use: light neutral, readable against the dark page bg */
+  --brand:       var(--n-100);
+  --brand-hover: var(--n-0);
+  /* Fill use (buttons, progress bar): --bg-inverse flips light here, so it
+     still pops against the dark page — paired text uses --text-on-inverse
+     (dark), which flips automatically along with it. */
+  --brand-fill:       var(--bg-inverse);
+  --brand-fill-hover: var(--n-0);
   --brand-tag-bg: var(--n-700);
 
   /* Nav */
@@ -234,9 +241,9 @@
   --radius-sm:  var(--r-sm);
   --radius-md:  var(--r-md);
   --radius-lg:  var(--r-lg);
-  --purple:     var(--brand);        /* now resolves to blue */
-  --purple-mid: var(--brand-hover);  /* now resolves to blue */
-  --magenta:    var(--brand);        /* now resolves to blue */
+  --purple:     var(--brand);        /* now resolves to neutral */
+  --purple-mid: var(--brand-hover);  /* now resolves to neutral */
+  --magenta:    var(--brand);        /* now resolves to neutral */
   --bg-soft:    var(--bg-subtle);
   --bg-card:    var(--surface-card);
   --text-mid:   var(--text-2);

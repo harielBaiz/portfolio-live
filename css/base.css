@@ -261,6 +261,60 @@ nav {
 }
 .btn-ghost-dark:hover { border-color: var(--text-on-inverse); }
 
+/* Email + copy-to-clipboard button, sits next to the email pill in .contact-dark */
+.email-copy-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.copy-btn {
+  width: auto;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: none;
+  border:none;
+  background: transparent;
+  color: var(--text-on-inverse-2);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.copy-btn:hover {
+  border-color: var(--text-on-inverse);
+  color: var(--text-on-inverse);
+}
+.copy-btn svg { width: 14px; height: 14px; display: block; }
+.copy-btn .icon-check { display: none; }
+.copy-btn.is-copied .icon-copy  { display: none; }
+.copy-btn.is-copied .icon-check { display: block; }
+.copy-btn.is-copied {
+  border-color: var(--text-on-inverse);
+  color: var(--text-on-inverse);
+}
+
+/* Plain text button — no border/fill, for secondary links on dark backgrounds */
+.btn-text-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--f-ui);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-on-inverse-2);
+  text-decoration: none;
+  padding: 10px 4px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.btn-text-dark:hover {
+  color: var(--text-on-inverse);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ── CHIPS / TAGS ───────────────────────────────────────── */
 
 /* Filled brand tag (cards, hero chips) */
@@ -283,6 +337,52 @@ nav {
   background: transparent;
   color: var(--text-3);
   border: 1px solid var(--border-mid);
+}
+
+/* ── TESTIMONIALS ───────────────────────────────────────────
+   Shared across case studies and about.html — single source
+   so the two stop drifting out of sync with each other. */
+.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
+.testimonial-card { margin: 3rem 0 5rem; }
+.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: 1.3rem; }
+.quote-icon {
+  margin-bottom: .5rem;
+  width: 3rem;
+  color: var(--text-on-inverse-2);
+}
+.quote-icon svg { width: 100%; height: auto; }
+.testimonial-quote code { font-family: var(--f-mono); font-size: 0.85em; background: var(--bg-muted); padding: 0.1em 0.4em; border-radius: var(--r-sm); color: var(--text-2); font-style: normal; }
+.testimonial-meta { display: flex; flex-direction: row; gap: 8px; }
+.t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; }
+.t-moment { font-family: var(--f-ui); font-size: 1rem; color: var(--text-3); }
+
+/* Word-by-word reveal — as if the person were speaking the quote */
+.tq-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.testimonial-card.is-talking .tq-word {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tq-word { transition: none; opacity: 1; transform: none; }
+}
+
+/* Simple quote variant — plain italic quote + cite, no icon/word-reveal */
+.testimonial { background: var(--surface-feature); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; margin: 2rem 0; }
+.testimonial p { font-family: var(--f-body); font-style: italic; font-size: 1rem; color: var(--text); margin-bottom: 0.75rem; }
+.testimonial cite { font-family: var(--f-ui); font-size: 0.82rem; color: var(--text-3); font-style: normal; }
+
+@media (max-width: 1024px) {
+  .testimonial-quote { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+  .testimonial-quote { font-size: 1.8rem; }
+  .quote-icon { width: 2.5rem; }
+  .t-role, .t-moment { font-size: 0.8rem; }
 }
 
 /* ── FOOTER ─────────────────────────────────────────────── */

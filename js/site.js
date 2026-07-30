@@ -42,93 +42,75 @@ function toggleTheme() {
    Call setLang('en') to switch back to English.
 
    Keys follow BEM-ish dot notation: "section.key"
-   Add Spanish translations to the `es` object below.
+
+   IMPORTANT — this dictionary is the source of truth for
+   every element that has a data-i18n attribute, on every
+   page. setLang('en') runs on load (see init below), so the
+   `en` value here always overwrites whatever text currently
+   sits in the HTML. To change copy for a data-i18n'd element:
+     1. Find the key on the element in the HTML (e.g. nav.brand)
+     2. Update the value for that key below (both `en` and,
+        once ready, `es`)
+   Editing the HTML text alone will NOT stick — it gets
+   overwritten by this dictionary on the next load.
+   Only nav.brand/nav.linkedin-style keys used identically
+   across all 6 pages belong here; body copy that's unique
+   to one page (About bio, case study prose) is NOT wired to
+   data-i18n and can be edited directly in its HTML file.
 ───────────────────────────────────────────────────────── */
 const i18n = {
   en: {
-    /* Nav */
-    'nav.work':    'Work',
-    'nav.about':   'About',
-    'nav.resume':  'Resume',
-    'nav.contact': 'Contact',
+    /* Nav — identical across all 6 pages */
+    'nav.brand':    'HAB',
+    'nav.work':     'Work',
+    'nav.about':    'About',
+    'nav.resume':   'Resume',
+    'nav.contact':  'Contact',
+    'nav.linkedin': 'LinkedIn',
 
     /* Landing — hero */
-    'hero.eyebrow': 'Product Designer · Design Systems',
-    'hero.title':   'I design products that scale — and systems that hold them together.',
-    'hero.sub':     '6+ years building B2B SaaS at Bitsight. I bridge design and engineering through token-based systems, research-driven decisions, and interfaces that make sense.',
     'hero.cta.work':  'See my work',
     'hero.cta.about': 'About me',
 
     /* Landing — work section */
     'work.label': 'Featured Work',
-    'work.title': 'Three projects. One consistent thread.',
-    'work.sub':   'Research-backed decisions, systems thinking, and a focus on outcomes — not just deliverables.',
 
     /* Card CTAs */
     'card.cta': 'Read Case Study',
 
-    /* Landing — skills */
-    'skills.label': 'Skills & Tools',
-    'skills.title': 'What I bring to the table',
-
-    /* Landing — about */
-    'about.label': 'About',
-    'about.title': 'Design that earns its place',
-    'about.p1': "I'm a product designer with 6+ years building B2B SaaS tools. Most of that time was spent at Bitsight — a cybersecurity company where design decisions have real consequences for security teams managing hundreds of vendors.",
-    'about.p2': "I care most about the work that happens between wireframes and shipping: the alignment conversations, the edge-case inventory, the moment a token system makes a color-blind mode trivially easy to add. Good design is often invisible. Broken design always isn't.",
-    'about.p3': 'Outside of product work, I\'m drawn to typography, editorial design, and building things that feel considered — not assembled.',
-    'about.cta.resume': 'View Resume ↗',
-    'about.cta.hello':  'Say hello',
-
-    /* Landing — contact */
+    /* Landing — contact (em tag intentional, rendered via innerHTML) */
     'contact.title': "Let's work together",
     'contact.sub':   'Open to product design and design systems roles. Remote-friendly.',
 
     /* Footer */
-    'footer.copy': '© 2026 Hariel Baiz · Product Designer',
+    'footer.copy': '© 2026 H. Ariel Baiz · Senior Product Designer',
   },
 
   es: {
-    /* Nav */
-    'nav.work':    'Proyectos',
-    'nav.about':   'Sobre mí',
-    'nav.resume':  'CV',
-    'nav.contact': 'Contacto',
+    /* Nav — identical across all 6 pages */
+    'nav.brand':    'HAB',
+    'nav.work':     'Proyectos',
+    'nav.about':    'Sobre mí',
+    'nav.resume':   'CV',
+    'nav.contact':  'Contacto',
+    'nav.linkedin': 'LinkedIn',
 
     /* Landing — hero */
-    'hero.eyebrow': 'Diseñador de Producto · Design Systems',
-    'hero.title':   'Diseño productos que escalan — y los sistemas que los sostienen.',
-    'hero.sub':     'Más de 6 años construyendo SaaS B2B en Bitsight. Conecto diseño e ingeniería a través de sistemas de tokens, decisiones basadas en investigación e interfaces que realmente tienen sentido.',
     'hero.cta.work':  'Ver proyectos',
     'hero.cta.about': 'Sobre mí',
 
     /* Landing — work */
     'work.label': 'Proyectos',
-    'work.title': 'Tres proyectos. Un hilo conductor.',
-    'work.sub':   'Decisiones respaldadas por investigación, pensamiento sistémico y foco en resultados — no solo en entregables.',
 
     /* Card CTAs */
     'card.cta': 'Ver Case Study',
 
-    /* Landing — skills */
-    'skills.label': 'Habilidades y Herramientas',
-    'skills.title': 'Lo que aporto al equipo',
-
-    /* Landing — about */
-    'about.label': 'Sobre mí',
-    'about.title': 'Diseño que se justifica solo',
-    'about.p1': 'Soy diseñador de producto con más de 6 años construyendo herramientas SaaS B2B. La mayor parte de ese tiempo lo pasé en Bitsight — una empresa de ciberseguridad donde las decisiones de diseño tienen consecuencias reales para los equipos de seguridad.',
-    'about.p2': 'Me importa el trabajo que ocurre entre los wireframes y el lanzamiento: las conversaciones de alineación, el inventario de edge cases, el momento en que un sistema de tokens hace que el modo daltónico sea trivialmente fácil de implementar.',
-    'about.p3': 'Fuera del trabajo de producto, me atrae la tipografía, el diseño editorial y construir cosas que se sientan pensadas — no ensambladas.',
-    'about.cta.resume': 'Ver CV ↗',
-    'about.cta.hello':  'Hola',
-
-    /* Landing — contact */
-    'contact.title': 'Trabajemos juntos',
+    /* Landing — contact (em tag intentional, rendered via innerHTML) */
+    'contact.title': 'Trabajemos <em>juntos</em>',
     'contact.sub':   'Abierto a roles de diseño de producto y design systems. Trabajo remoto.',
 
     /* Footer */
-    'footer.copy': '© 2026 Hariel Baiz · Diseñador de Producto',
+    'footer.copy': '© 2026 H. Ariel Baiz · Diseñador de Producto Senior',
   },
 };
 
@@ -141,10 +123,12 @@ function setLang(lang) {
   document.documentElement.setAttribute('lang', lang);
 
   // Update all elements with data-i18n attribute
+  // (innerHTML, not textContent — some values like contact.title carry
+  // an intentional <em> tag that textContent would silently strip)
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     const str = i18n[lang][key];
-    if (str !== undefined) el.textContent = str;
+    if (str !== undefined) el.innerHTML = str;
   });
 
   // Update all elements with data-i18n-placeholder (inputs)
@@ -374,6 +358,32 @@ function initMobileNav() {
   });
 }
 
+/* ─────────────────────────────────────────────────────────
+   10. COPY EMAIL TO CLIPBOARD
+   ─────────────────────────────────────────────────────────
+   Button next to the contact email pill. Reads the already-
+   injected email text from the sibling [data-email] element
+   and copies it, swapping the icon to a checkmark briefly.
+───────────────────────────────────────────────────────── */
+function initCopyEmail() {
+  document.querySelectorAll('[data-copy-email]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const emailEl = btn.closest('.email-copy-group')?.querySelector('[data-email]');
+      const email = emailEl ? emailEl.textContent.trim() : '';
+      if (!email) return;
+
+      navigator.clipboard.writeText(email).then(() => {
+        btn.classList.add('is-copied');
+        btn.setAttribute('aria-label', 'Email copied');
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          btn.setAttribute('aria-label', 'Copy email address');
+        }, 1800);
+      });
+    });
+  });
+}
+
 function initCarouselHoverSlow() {
   const viewport = document.querySelector('.carousel-viewport');
   const track = document.querySelector('.carousel-track');
@@ -418,6 +428,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Testimonial word-by-word reveal
   initTestimonialReveal();
+
+  // Copy email to clipboard button
+  initCopyEmail();
 
   // Carousel slows on hover instead of pausing
   initCarouselHoverSlow();

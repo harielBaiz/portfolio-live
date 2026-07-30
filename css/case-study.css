@@ -440,39 +440,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 [data-theme="dark"] .before-label { color: #f5a080; }
 [data-theme="dark"] .after-label  { color: #80d8a8; }
 
-/* ── TESTIMONIALS ───────────────────────────────────────── */
-.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
-.testimonial-card { margin: 3rem 0 5rem;}
-.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: 1.3rem; }
-.quote-icon{
-  margin-bottom: .5rem;
-  width: 3rem;
-  color: var(--text-on-inverse-2);
-}
-.quote-icon svg { width: 100%; height: auto; }
-.testimonial-quote code { font-family: var(--f-mono); font-size: 0.85em; background: var(--bg-muted); padding: 0.1em 0.4em; border-radius: var(--r-sm); color: var(--text-2); font-style: normal; }
-.testimonial-meta { display: flex; flex-direction: row; gap: 8px; }
-
-/* Word-by-word reveal — as if the person were speaking the quote */
-.tq-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.testimonial-card.is-talking .tq-word {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .tq-word { transition: none; opacity: 1; transform: none; }
-}
-.t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; }
-.t-moment { font-family: var(--f-ui); font-size: 1rem; color: var(--text-3); }
-
-.testimonial { background: var(--surface-feature); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; margin: 2rem 0; }
-.testimonial p { font-family: var(--f-body); font-style: italic; font-size: 1rem; color: var(--text); margin-bottom: 0.75rem; }
-.testimonial cite { font-family: var(--f-ui); font-size: 0.82rem; color: var(--text-3); font-style: normal; }
+/* Testimonial styles moved to base.css (shared with about.html) */
 
 /* ── PERSONA CARDS (cs3) ────────────────────────────────── */
 .personas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 2rem 0; }
@@ -570,6 +538,23 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .secondary-bg { background: var(--bg-subtle); }
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
+
+/* Tablet (≤1024px) — iPad portrait/landscape and similar */
+@media (max-width: 1024px) {
+   .hero { padding: 2rem 24px 0; }
+   .callout p {line-height: 1.6;}
+  /* Ariel: add tablet-specific values here */
+}
+
+/* Smartphone (≤480px) — covers iPhone SE (375px) and similar phones */
+@media (max-width: 480px) {
+  .page-wrap { padding: 0 16px 4rem;}
+  .hero { padding: 2rem 16px 0; }
+  .hero-sub { font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; }
+  .callout p {line-height: 1.6;}
+  /* Ariel: add more smartphone-specific values here */
+}
+
 @media (max-width: 768px) {
   .personas-grid   { grid-template-columns: 1fr; }
   .objects-grid    { grid-template-columns: 1fr; }

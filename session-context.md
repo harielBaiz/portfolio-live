@@ -44,9 +44,11 @@ Portfolio brand name changed from "Héctor Ariel Baiz" to **"Hariel Baiz"** ever
 ## Repository
 
 - **Dev repo (this one):** https://github.com/harielBaiz/portfolio — where Claude sessions work, iterate, and commit freely
-- **Live repo (2026-07-29):** https://github.com/harielBaiz/portfolio-live — clean-history mirror Ariel pushes to manually when a version is ready to publish. Not auto-synced; no commits pushed there yet as of this note.
-- **Live site:** https://harielbaiz.com/ _(custom domain, GitHub Pages served from main branch via CNAME — will point at `portfolio-live` once it has content)_
+- **Live repo:** https://github.com/harielBaiz/portfolio-live — clean-history mirror Ariel pushes to manually when a version is ready to publish.
+- **Live site:** https://harielbaiz.com/ — **confirmed working 2026-07-29**, both apex and `www`. DNS is on Cloudflare: 4 apex `A` records to GitHub's Pages IPs (185.199.108/109/110/111.153) + `www` CNAME to `harielbaiz.github.io`, all set to **DNS only** (grey cloud, not proxied) so GitHub can issue the Let's Encrypt cert. Custom domain is configured in `portfolio-live` → Settings → Pages.
 - **Publish workflow:** copy working files (excluding `.git`) from `portfolio` into a fresh folder, `git init` + single commit, push to `portfolio-live` main. Keeps the live repo's history to one clean commit per publish rather than carrying the dev repo's full commit trail.
+- **`CNAME` file:** lives only in `portfolio-live` (auto-committed by GitHub when the custom domain was saved in Pages settings) — removed from `portfolio` (dev repo) on 2026-07-29 so the dev repo can never claim the domain and conflict with the live one.
+- **Troubleshooting note for next time (2026-07-29 postmortem):** after DNS + custom domain were configured, the site still 404'd on both the custom domain *and* the plain `harielbaiz.github.io/portfolio-live/` URL. Cause: GitHub Pages had never actually run a build — no `github-pages` entry existed yet under the repo's Environments sidebar, and the Actions tab was a red herring (this repo uses the legacy "Deploy from a branch" source, which doesn't show up under Actions at all). Fix: `git commit --allow-empty -m "Trigger Pages build"` + `git push` forced the first real deployment. Also hit a `non-fast-forward` push rejection along the way because GitHub had auto-committed the `CNAME` file directly to the remote (via the Settings UI) — resolved with a plain `git pull origin main` before pushing again. If a future push to `portfolio-live` gets rejected as non-fast-forward, check whether Settings → Pages auto-committed something (CNAME changes, etc.) before assuming a real conflict.
 
 ---
 
