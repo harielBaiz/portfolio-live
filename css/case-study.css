@@ -92,12 +92,12 @@
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 .hero-cover--placeholder {
   background: var(--bg);
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +265,6 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .media-block {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
-  border-radius: var(--r-md);
   overflow: hidden;
   /* Wider than the text column: 89% of viewport, capped at 900px, never
      narrower than the paragraph column (min-width: 100% of .page-wrap).
@@ -296,7 +295,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .media-icon  { font-size: 2rem; color: var(--border-str); }
 .media-label { font-family: var(--f-mono); font-size: 0.85rem; color: var(--text-3); line-height: 1.5; }
 .media-hint  { font-family: var(--f-ui); font-size: 0.75rem; color: var(--text-3); opacity: 0.6; margin-top: 0.25rem; }
-.media-caption { font-family: var(--f-ui); font-size: 0.8125rem; color: var(--text-3); text-align: center; margin-top: 0.5rem; }
+.media-caption { font-family: var(--f-ui); font-size: 0.8125rem; color: var(--text-3); text-align: left; margin-top: 0.5rem; }
 
 /* ── Media Lightbox (images + videos) ── */
 .media-block video,
@@ -358,9 +357,31 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   padding: 0.9rem 1rem; font-family: var(--f-body); font-size: 0.9rem; line-height: 1.65; color: var(--text-2);
 }
 .insight-list li strong { font-family: var(--f-ui); color: var(--text); }
-.insight-icon { font-size: 1rem; line-height: 1.6; }
+.insight-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+.insight-icon svg { width: 100%; height: 100%; display: block; }
 .insight-list li.win  { border-color: var(--border-win);  background: var(--surface-win); }
 .insight-list li.pain { border-color: var(--border-pain); background: var(--surface-pain); }
+.insight-list li.win  .insight-icon { color: #1a6a48; }
+.insight-list li.pain .insight-icon { color: #7a3010; }
+[data-theme="dark"] .insight-list li.win  .insight-icon { color: #80d8a8; }
+[data-theme="dark"] .insight-list li.pain .insight-icon { color: #f5a080; }
+
+/* Plain-bullet variant — no card background/border/padding, just icon + text rows */
+.insight-list--plain li {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.insight-list--plain li.win  .insight-icon,
+.insight-list--plain li.pain .insight-icon { color: var(--text-3); }
+.insight-list--plain li.win  { color: var(--text-2); border-color:none; background:none; font-size: 1.2rem; line-height: 1.4; }
 
 /* ── PRIORITY MATRIX ────────────────────────────────────── */
 .matrix-note { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }

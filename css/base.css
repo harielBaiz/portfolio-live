@@ -43,8 +43,8 @@ nav {
 .nav-name,
 .nav-logo {
   font-family: var(--f-display);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 20px;
   line-height: 1;
   letter-spacing: -0.3px;
   color: var(--text);
@@ -464,11 +464,11 @@ footer a:hover { font-weight: 600; }
 
 /* ── RESPONSIVE SHARED ─────────────────────────────────── */
 @media (max-width: 1024px) {
-  nav { padding: 0 24px; }
-  footer { padding: 20px 24px; }
+  nav { padding: 0 32px; }
+  footer { padding: 20px 32px; }
 }
 @media (max-width: 640px) {
-  nav { padding: 0 16px; gap: 16px; }
+  nav { padding: 0 24px; gap: 16px; }
   .nav-toggle { display: flex; }
   .nav-links {
     display: none;
@@ -488,5 +488,5 @@ footer a:hover { font-weight: 600; }
   .nav-links li { width: 100%; }
   .nav-links a,
   .nav-links .nav-cta { width: 100%; padding: 12px 0; }
-  footer { padding: 16px; flex-direction: column; text-align: center; }
+  footer { padding: 24px; flex-direction: column; text-align: center; }
 }

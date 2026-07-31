@@ -104,7 +104,7 @@
   --border:     var(--n-200);   /* default #e8e8e8 */
   --border-mid: var(--n-300);   /* medium  #d4d4d4 */
   --border-str: var(--n-400);   /* strong  #a3a3a3 */
-  --border-on-inverse: var(--n-400);  /* 7.11:1 vs --bg-inverse here (near-black #171717) */
+  --border-on-inverse: var(--n-600);  /* 7.11:1 vs --bg-inverse here (near-black #171717) */
 
   /* Brand — interactive elements only. Neutral scale, not blue:
      text/link use is a dark neutral, hover deepens further.
@@ -163,7 +163,7 @@
   /* --bg-inverse flips to near-white here — was missing this override
      entirely, so .btn-ghost-dark's border fell back to the light-mode
      value (n-600) or, worse, a hardcoded white that vanished. */
-  --border-on-inverse: var(--n-500);  /* 4.35:1 vs --bg-inverse here (near-white #f5f5f5) */
+  --border-on-inverse: var(--n-300);  /* 4.35:1 vs --bg-inverse here (near-white #f5f5f5) */
 
   /* Brand — text use: light neutral, readable against the dark page bg */
   --brand:       var(--n-100);

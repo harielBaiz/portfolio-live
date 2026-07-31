@@ -275,7 +275,7 @@
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 48px);
   line-height: 1.1;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   color: var(--text-on-inverse);
   margin-bottom: 14px;
 }
