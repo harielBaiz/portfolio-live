@@ -1,0 +1,50 @@
+Hariel Baiz (Héctor Ariel Baiz)
+Senior Product Designer — Buenos Aires, Argentina
+www.harielbaiz.com | hariel.baiz@gmail.com | linkedin.com/in/hariel-baiz
+
+RESUMEN
+Con más de 6 años de experiencia en productos web B2B SaaS, me especializo en design systems y UI de alta calidad, creando sistemas centrados en el usuario que permiten que el buen diseño se sostenga a medida que los productos escalan.
+
+HABILIDADES
+Design Systems, Interaction Design, WCAG/A11y, User Research, Graphic Design
+
+HERRAMIENTAS
+Figma, Claude, Adobe Creative Suite, Jira, Notion, HTML/CSS, Github, Pendo
+
+EXPERIENCIA
+
+Bitsight — Senior Product Designer
+Sep 2022 – May 2024
+- Diseñé e impulsé la adopción de un sistema de design tokens para el design system de Bitsight, creando una fuente única de referencia para todos los equipos de producto.
+- Me encargué de la integración de features principales de ThirdPartyTrust en Bitsight tras la fusión: identifiqué las diferencias en workflows, diseñé componentes faltantes y amplié el design system para ofrecer una experiencia unificada.
+- Hice de puente entre el rebranding de Bitsight y el producto, traduciendo el nuevo sistema de marca a los componentes existentes y cerrando la brecha entre la nueva identidad visual y las interfaces del producto.
+- Planifiqué y estructuré programas de user research (workshops de journey mapping, guiones de usabilidad) para identificar puntos de fricción y orientar la priorización del roadmap.
+- Colaboré con los equipos de ingeniería, gestión de proyectos y customer success para validar diseños y alinearnos en el roadmap, equilibrando las necesidades de los usuarios con las limitaciones técnicas.
+
+ThirdPartyTrust — Product Designer
+Feb 2020 – Sep 2022
+- Desarrollé el design system de ThirdPartyTrust desde cero: definí la arquitectura de componentes, convenciones de nomenclatura y guías de uso, creando una estructura escalable adoptada por el equipo de producto.
+- Lideré el rediseño integral de funciones principales de la plataforma, reduciendo la confusión señalada por usuarios y mejorando la finalización de tareas.
+- Definí user stories y acceptance criteria que sirvieron de puente entre los equipos de producto, diseño y desarrollo en torno a objetivos comunes.
+- Implementé Pendo en la plataforma, etiquetando flujos clave de usuarios y creando guías dentro de la aplicación que mejoraron la finalización del onboarding y redujeron la dependencia del soporte técnico.
+
+Entornos — UI Designer
+Ago 2018 – Feb 2020
+- Adapté Moodle para clientes de los sectores bancario, sanitario y educativo, personalizando userflows, sistemas visuales y plantillas HTML/CSS para ajustarse a la identidad de cada marca y sus requisitos funcionales.
+- Diseñé una experiencia de aprendizaje al estilo Netflix para un importante banco argentino, permitiendo a empleados subir contenido específico para cada puesto y mejorando el intercambio de conocimientos a gran escala.
+
+Earlier career — Graphic Designer
+2007 – Presente
+- Más de 15 años de experiencia como diseñador gráfico en identidad de marca, diseño editorial y animación, incluyendo sistemas UI para software de casinos y máquinas tragamonedas en Sielcon S.R.L. (2007–2012). Esto marcó el camino hacia el trabajo en design systems que realizo en la actualidad.
+
+EDUCACIÓN
+Universidad de Buenos Aires — Diseño Gráfico, 2003 – 2014
+Coderhouse — UX Design, 2017
+
+CERTIFICADOS
+IxDF (The Interaction Design Foundation): AI for Designers; UI Design Patterns; User Research Methods and Best Practices; Object-Oriented UI Design; Journey Mapping; Personas and User Research
+Pendo.io: Product Analytics
+
+IDIOMAS
+Español — Nativo
+Inglés — Nivel profesional (escrito), Intermedio (oral)

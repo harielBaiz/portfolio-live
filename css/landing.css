@@ -10,7 +10,7 @@
   padding: 80px 48px;
 }
 
-.section h3{
+/* .section h3{
   font-family: var(--f-display);
   font-weight: 700;
   font-size: clamp(1.1rem, 3vw, 32px);
@@ -18,7 +18,7 @@
   letter-spacing: auto;
   color: var(--text);
   margin-bottom: 14px;
-}
+} */
 
 .section-label {
   font-family: var(--f-mono);
@@ -160,12 +160,13 @@
   font-family: var(--f-ui);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.4px;
   color: var(--text);
   background: var(--surface-overlay);
   border: 1px solid var(--border-mid);
   padding: 5px 10px 5px 8px;
   border-radius: var(--r-pill);
+  text-transform: uppercase;
 }
 .case-row--reverse .case-row__lock { right: auto; left: 14px; }
 .case-row__lock svg { width: 12px; height: 12px; flex-shrink: 0; }
@@ -193,7 +194,7 @@
 .case-row__title {
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: clamp(1.4rem, 2vw, 28px);
+  font-size: clamp(1.1rem, 3vw, 32px);
   line-height: 1.2;
   letter-spacing: -0.5px;
   color: var(--text);
@@ -202,8 +203,8 @@
 
 .case-row__desc {
   font-family: var(--f-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 1.4;
   color: var(--text-2);
   margin: 0;
 }
@@ -223,6 +224,16 @@
 
 /* Card tags inside rows */
 .case-row .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Period caption, above the title */
+.case-row__period {
+  font-family: var(--f-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
 
 /* ── SKILLS ─────────────────────────────────────────────── */
 .skills-bg { background: var(--bg-subtle); }

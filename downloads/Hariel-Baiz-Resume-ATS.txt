@@ -3,29 +3,29 @@ Senior Product Designer — Buenos Aires, Argentina
 www.harielbaiz.com | hariel.baiz@gmail.com | linkedin.com/in/hariel-baiz
 
 SUMMARY
-Senior Product Designer with 6+ years in B2B SaaS web products. Specializes in design systems and enterprise UX, working at the intersection of design, engineering, and product to ship scalable systems that teams actually adopt.
+With 6+ years of experience in B2B SaaS web products, I specialize in design systems and high-quality UI — building user-centered systems that let good design hold up as products scale.
 
 SKILLS
-Design Systems, Information Architecture, Interaction Design, WCAG/A11y Accessibility, User Research, Graphic Design, Usability Testing
+Design Systems, Interaction Design, WCAG/A11y, User Research, Graphic Design
 
 TOOLS
-Figma, Claude, Adobe Creative Suite, Jira, Notion, HTML/CSS, Git, Pendo
+Figma, Claude, Adobe Creative Suite, Jira, Notion, HTML/CSS, Github, Pendo
 
 EXPERIENCE
 
 Bitsight — Senior Product Designer
 Sep 2022 – May 2024
-- Architected and drove adoption of a design token system across Bitsight's design system, creating a single source of truth for color, typography, and spacing across multiple product teams.
-- Owned the post-merger integration of ThirdPartyTrust's core features into Bitsight: mapped workflow divergences, designed missing components, and extended the design system to support a unified experience.
+- Designed and drove adoption of a design token system for Bitsight's design system, creating a single source of truth for all product teams.
+- Owned the integration of core ThirdPartyTrust features into Bitsight after the merger: mapped workflow divergences, designed missing components, and extended the design system to support a unified experience.
 - Bridged Bitsight's platform rebrand into the product, translating a new brand system into existing components and closing the gap between the new visual identity and live product surfaces.
-- Planned and structured user research programs (interview guides, usability scripts, journey mapping workshops) to surface friction points and inform roadmap prioritization.
-- Partnered with engineering, product management, and Customer Success to validate designs and align on the roadmap, balancing user needs with technical constraints.
+- Planned and structured user research programs (journey mapping workshops, usability scripts) to surface friction points and inform roadmap prioritization.
+- Partnered with engineering, project management, and Customer Success to validate designs and align on the roadmap, balancing user needs with technical constraints.
 
 ThirdPartyTrust — Product Designer
 Feb 2020 – Sep 2022
-- Built ThirdPartyTrust's design system from 0 to 1: defined component architecture, naming conventions, and usage guidelines, creating the scalable foundation adopted by the entire product team.
-- Owned the end-to-end redesign of core platform features, reducing user-reported confusion and improving task completion.
-- Defined user stories and acceptance criteria that bridged design intent and engineering execution, aligning product, design, and development on shared objectives.
+- Built ThirdPartyTrust's design system from 0 to 1: defined component architecture, naming conventions, and usage guidelines, creating the scalable foundation adopted by the product team.
+- Led the end-to-end redesign of core platform features, reducing user-reported confusion and improving task completion.
+- Defined user stories and acceptance criteria that bridged product, design, and development teams around shared objectives.
 - Instrumented the platform with Pendo, tagging key user flows and building in-app guides that improved onboarding completion and reduced reliance on support.
 
 Entornos — UI Designer
@@ -33,9 +33,9 @@ Aug 2018 – Feb 2020
 - Adapted Moodle for enterprise clients across banking, healthcare, and education, customizing user flows, visual systems, and HTML/CSS templates to match each brand's identity and functional requirements.
 - Designed a Netflix-style learning experience for a major Argentine bank, enabling employees to access and upload role-specific content company-wide and improving knowledge sharing at scale.
 
-Graphic Designer (Earlier Career)
+Earlier career — Graphic Designer
 2007 – Present
-- 15+ years as a graphic designer across brand identity, editorial, motion, and UI, including UI systems for casino and slot machine software at Sielcon S.R.L. (2007–2012). This foundation in visual systems thinking underpins the design systems work done today.
+- 15+ years as a graphic designer across brand identity, editorial, and motion, including UI systems for casino and slot machine software at Sielcon S.R.L. (2007–2012). This foundation in visual systems thinking underpins the design systems work done today.
 
 EDUCATION
 Universidad de Buenos Aires — Professional Degree in Graphic Design, 2003 – 2014

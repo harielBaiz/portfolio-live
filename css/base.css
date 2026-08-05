@@ -139,6 +139,39 @@ nav {
 .theme-toggle .icon-sun svg,
 .theme-toggle .icon-moon svg { width: 16px; height: 16px; display: block; }
 
+/* Language toggle button (EN / ES) */
+.lang-toggle {
+  height: 32px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text-2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 8px;
+  line-height: 1;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.lang-toggle:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-mid);
+  color: var(--text);
+}
+.lang-toggle .lang-active {
+  color: var(--text);
+}
+.lang-toggle .lang-sep {
+  color: var(--text-3);
+}
+.lang-toggle .lang-label {
+  color: var(--text-3);
+}
+
 /* Mobile nav toggle (hamburger) — hidden on desktop, shown below 640px */
 .nav-toggle {
   display: none;
@@ -324,12 +357,13 @@ nav {
   font-family: var(--f-ui);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.1px;
+  letter-spacing: .4px;
   color: var(--text-2);
   background: var(--brand-tag-bg);
-  padding: 3px 10px;
+  padding: 4px 8px;
   border-radius: var(--r-pill);
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 /* Outline chip variant */

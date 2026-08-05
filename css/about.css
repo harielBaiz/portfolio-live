@@ -57,10 +57,10 @@
 }
 .about-bio__text p {
   font-family: var(--f-body);
-  font-size: 18px;
+  font-size: 1.5rem;
   line-height: 1.6;
   color: var(--text-1);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
 
@@ -121,10 +121,12 @@
   background: var(--bg-inverse); padding: 80px 48px; text-align: center;
 }
 .contact-dark h2 {
-  font-family: var(--f-display); font-weight: 500;
+  font-family: var(--f-display); font-weight: 700;
   font-size: clamp(2rem, 4vw, 40px);
-  line-height: 1.1; letter-spacing: 1px;
-  color: var(--text-on-inverse); margin-bottom: 12px;
+  line-height: 1.1; 
+  letter-spacing: .5px;
+  color: var(--text-on-inverse); 
+  margin-bottom: 12px;
 }
 .contact-dark h2 em { font-style: italic; }
 .contact-dark > p {

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-title="meta.title.cs2">
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="css/tokens.css"/>
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/case-study.css"/>
+  <link rel="icon" href="images/favicon.ico"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Questionnaire Redesign — Hariel's Portfolio</title>
 </head>
@@ -25,6 +26,9 @@
       <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
       <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
     </button>
+    <button class="lang-toggle" aria-label="Toggle language">
+      <span class="lang-active">EN</span><span class="lang-sep">/</span><span class="lang-label">ES</span>
+    </button>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -36,15 +40,13 @@
 <!-- ── HERO ── -->
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Case Study · Product Design</div>
-    <h1>Redesigning the tool that holds vendors accountable</h1>
+    <div class="hero-tag" data-i18n="cs2.hero.tag">Case Study · Product Design</div>
+    <h1 data-i18n="cs2.hero.title">Redesigning the questionnaire that decides vendor risk</h1>
     <div class="hero-meta">
       <span class="chip">Product Design</span>
       <span class="chip">User Research</span>
       <span class="chip">Design Systems</span>
-      <span class="chip">Accessibility</span>
-      <span class="chip outline">Bitsight · B2B SaaS</span>
-      <span class="chip outline">Lead Designer</span>
+      <span class="chip" data-i18n="cs2.hero.chip4">Accessibility</span>
     </div>
   </div>
   <!-- Cover image: replace with your screenshot, or remove the <figure> to skip -->
@@ -57,382 +59,397 @@
 
 <nav class="cs-index" aria-label="Case study sections">
   <ol>
-    <li><a href="#context">01 — Context</a></li>
-    <li><a href="#problem">02 — Problem</a></li>
-    <li><a href="#design">03 — Design</a></li>
-    <li><a href="#research">04 — Research</a></li>
-    <li><a href="#outcomes">05 — Outcomes</a></li>
-    <li><a href="#lessons">06 — Lessons</a></li>
+    <li><a href="#context"><span data-i18n="cs2.idx.context">01 — Context</span></a></li>
+    <li><a href="#problem"><span data-i18n="cs2.idx.problem">02 — Problem</span></a></li>
+    <li><a href="#design"><span data-i18n="cs2.idx.design">03 — Design</span></a></li>
+    <li><a href="#research"><span data-i18n="cs2.idx.research">04 — Research</span></a></li>
+    <li><a href="#outcomes"><span data-i18n="cs2.idx.outcomes">05 — Outcomes</span></a></li>
+    <li><a href="#lessons"><span data-i18n="cs2.idx.lessons">06 — Lessons</span></a></li>
   </ol>
 </nav>
 
 <main class="page-wrap">
 
-  <p class="hero-sub">
+  <div class="hero-facts">
+    <div class="hero-facts__col">
+      <div class="hero-fact">
+        <span class="hero-fact-label" data-i18n="cs2.facts.timelineLabel">Timeline</span>
+        <span class="hero-fact-value" data-i18n="cs2.facts.timelineValue">2023-2024</span>
+      </div>
+      <div class="hero-fact">
+        <span class="hero-fact-label" data-i18n="cs2.facts.roleLabel">My Role</span>
+        <span class="hero-fact-value" data-i18n="cs2.facts.roleValue">Senior Product Designer working across product strategy, research and design systems</span>
+      </div>
+    </div>
+    <div class="hero-facts__col">
+      <div class="hero-fact">
+        <span class="hero-fact-label" data-i18n="cs2.facts.deliverablesLabel">Deliverables</span>
+        <span class="hero-fact-value" data-i18n="cs2.facts.deliverablesValue">Questionnaire redesign, vertical action rail, scoring UI, PURE evaluation and usability test reports</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="hero-sub" data-i18n="cs2.hero.sub">
       After Bitsight acquired ThirdPartyTrust, the questionnaire feature needed more than a visual refresh. It needed a new foundation. I led the UI redesign and research plan for a complex, high-stakes workflow used by security teams every day.
   </p>
 
   <!-- OUTCOME BANNER -->
   <div class="outcome-banner" aria-label="Key outcomes">
     <div class="outcome-stat">
-      <div class="number">93%</div>
-      <div class="label">Task success rate in usability testing with existing users</div>
-    </div>
-    <div class="outcome-stat">
-      <div class="number">+40%</div>
-      <div class="label">User satisfaction, measured in post-launch surveys</div>
-    </div>
-    <div class="outcome-stat">
       <div class="number">1</div>
-      <div class="label">Reusable component shipped to Bitsight DS, tokenized for light/dark and ready to share across all Bitsight products</div>
+      <div class="label" data-i18n="cs2.outcome.label2">1 reusable component from the Questionnaire, shipped to Bitsight DS and ready for reuse across all Bitsight products</div>
+    </div>
+    <div class="outcome-stat">
+      <div class="number">5</div>
+      <div class="label" data-i18n="cs2.outcome.label3">5 independent question-level tools — review, bookmark, finding, messaging, internal notes — consolidated into one consistent action rail</div>
+    </div>
+    <div class="outcome-stat">
+      <div class="number">100%</div>
+      <div class="label" data-i18n="cs2.outcome.label1">Task success rate in usability testing with existing users</div>
     </div>
   </div>
 
   <!-- CONTEXT -->
   <section id="context">
-    <div class="section-label">01 — Context</div>
-    <h2>A feature inherited from an acquisition</h2>
-    <p>
+    <div class="section-label" data-i18n="cs2.idx.context">01 — Context</div>
+    <h2 data-i18n="cs2.context.h2">A feature inherited from an acquisition</h2>
+    <p data-i18n="cs2.context.p1">
       In Q3 2022, Bitsight acquired ThirdPartyTrust, a vendor risk management platform with its own established product and user base. As part of the integration, the Questionnaires feature needed to be rebuilt inside Bitsight's product ecosystem: redesigned from scratch using the Bitsight Design System, with better accessibility, clearer usability, and feature parity with the original.
     </p>
-    <p>
+    <p data-i18n="cs2.context.p2">
       Questionnaires are central to how security teams manage vendor risk. They come in three forms: <strong>custom questionnaires</strong> built by the team for specific assessments, <strong>internal questionnaires</strong> used for scoping during vendor intake and reassessment cycles, and <strong>industry-standard templates</strong> like CAIQ v4, ISO 27001:2022, and SIG Core.
     </p>
     <div class="callout">
-      <p>This wasn't a greenfield project. It was a <em>migration with real users watching.</em> The design had to earn trust from people who already had a workflow, muscle memory, and strong opinions about how the tool should behave.</p>
+      <p data-i18n="cs2.context.callout1">This wasn't a greenfield project. It was a <em>migration with real users watching.</em> The design had to earn trust from people who already had a workflow, muscle memory, and strong opinions about how the tool should behave.</p>
     </div>
 
-    <h3>The team</h3>
-    <div class="team-row">
-      <div class="team-chip highlight">
-        <span class="tc-role">Product Designer</span>
-        <span class="tc-count">Ariel · UI + Research</span>
-      </div>
-      <div class="team-chip">
-        <span class="tc-role">Front-end Engineers</span>
-        <span class="tc-count">2</span>
-      </div>
-      <div class="team-chip">
-        <span class="tc-role">Back-end Engineer</span>
-        <span class="tc-count">1</span>
-      </div>
-      <div class="team-chip">
-        <span class="tc-role">Product Manager</span>
-        <span class="tc-count">1</span>
-      </div>
-    </div>
   </section>
 
   <!-- THE PROBLEM -->
   <section id="problem">
-    <div class="section-label">02 — Problem</div>
-    <h2>Feature parity isn't enough: it has to be better</h2>
-    <p>
-      The original platform had been built using its own framework, before Bitsight's design system existed. Visual inconsistencies were everywhere, accessibility was not a priority, and some workflows required too many steps to accomplish basic tasks. At the same time, users had deep familiarity with the old interface. Every change needed a reason strong enough to justify the disruption.
+    <div class="section-label" data-i18n="cs2.idx.problem">02 — Problem</div>
+    <h2 data-i18n="cs2.problem.h2">Feature parity isn't enough: it has to be better</h2>
+    <p data-i18n="cs2.problem.p1">
+      The original platform had been built using its own framework, before any design system existed. Visual inconsistencies were everywhere, accessibility was not a priority, and some workflows required too many steps to accomplish basic tasks. At the same time, users had deep familiarity with the old interface. Every change needed a reason strong enough to justify the disruption.
     </p>
-    <p>
+    <p data-i18n="cs2.problem.p2">
       The challenge had three parts. First, <strong>align the interface</strong> with Bitsight's design system without losing the features users depended on. Second, <strong>improve usability and accessibility</strong> across a complex, multi-part workflow. Third, <strong>do it iteratively</strong>: delivering features in planned cycles while the product was already in use.
     </p>
 
-    <h3>What the redesign had to cover</h3>
+    <!-- <h3 data-i18n="cs2.problem.h3">What the redesign had to cover</h3>
     <div class="feature-grid">
       <div class="cs-card">
-        <div class="card-title">Question design</div>
-        <p>Question + description, multiple answer types (select, multiselect, values), vendor comments, uploaded documents, audit trail of changes.</p>
+        <div class="card-title" data-i18n="cs2.problem.feat1title">Question design</div>
+        <p data-i18n="cs2.problem.feat1p">Question + description, multiple answer types (select, multiselect, values), vendor comments, uploaded documents, audit trail of changes.</p>
         </div>
       <div class="cs-card">
-        <div class="card-title">Scoring &amp; progress</div>
-        <p>Overall score calculated from answer and priority weighting. Progress tracking across the questionnaire lifecycle.</p>
+        <div class="card-title" data-i18n="cs2.problem.feat2title">Scoring &amp; progress</div>
+        <p data-i18n="cs2.problem.feat2p">Overall score calculated from answer and priority weighting. Progress tracking across the questionnaire lifecycle.</p>
       </div>
       <div class="cs-card">
-        <div class="card-title">Bitsight integrations</div>
-        <p>Risk Vectors added to individual questions. Vulnerability Evidence added at the questionnaire level.</p>
+        <div class="card-title" data-i18n="cs2.problem.feat3title">Bitsight integrations</div>
+        <p data-i18n="cs2.problem.feat3p">Risk Vectors added to individual questions. Vulnerability Evidence added at the questionnaire level.</p>
       </div>
       <div class="cs-card">
-        <div class="card-title">Question tools</div>
-        <p>Per-question tools: review (approve/flag), bookmark, finding creation, messaging with vendors, internal notes.</p>
+        <div class="card-title" data-i18n="cs2.problem.feat4title">Question tools</div>
+        <p data-i18n="cs2.problem.feat4p">Per-question tools: review (approve/flag), bookmark, finding creation, messaging with vendors, internal notes.</p>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- DESIGN DECISIONS -->
   <section id="design">
-    <div class="section-label">03 — Design Decisions</div>
-    <h2>Iterating toward the right answer</h2>
-    <p>
+    <div class="section-label" data-i18n="cs2.idx.design">03 — Design Decisions</div>
+    <h2 data-i18n="cs2.design.h2">Iterating toward the right answer</h2>
+    <p data-i18n="cs2.design.p1">
       The design process started with a complete inventory of the existing platform, followed by the first designs and user flows built on the Bitsight DS. Each iteration was scoped to a set of features that could be shipped independently, which meant making early decisions about what to finalize and what to keep flexible as we learned more.
     </p>
 
-    <h3>Feature inventory first</h3>
-    <p>
+    <h3 data-i18n="cs2.design.h3a">Feature inventory first</h3>
+    <p data-i18n="cs2.design.p2">
       Before starting any new designs, I ran a complete inventory of the existing platform: every feature, every interaction state, every edge case. Because there was no formal documentation of the original product, this was essentially reverse engineering: mapping the live system from scratch to understand what the new design had to account for. It gave the team a shared map of what existed and revealed several features that had no clear home in the new layout.
     </p>
 
     <!-- INVENTORY PLACEHOLDER -->
     <div class="media-block">
       <img src="images/questionnaire-3pt-design.png" alt="Feature inventory audit, old platform" />
-      <p class="media-caption">The existing ThirdPartyTrust questionnaire interface, captured during the feature inventory audit before the redesign began.</p>
+      <p class="media-caption" data-i18n="cs2.design.caption1">The existing ThirdPartyTrust questionnaire interface, captured during the feature inventory audit before the redesign began.</p>
     </div>
 
-    <h3>Mapping the domain before the UI</h3>
-    <p>
+    <h3 data-i18n="cs2.design.h3b">Mapping the domain before the UI</h3>
+    <p data-i18n="cs2.design.p3">
       The feature inventory revealed something deeper than a list of things to build: the questionnaire had no clear conceptual model from the reviewer's perspective. Features had accumulated over years without a shared understanding of what objects reviewers were actually working <em>with</em>.
     </p>
-    <p>
+    <p data-i18n="cs2.design.p4">
       Before sketching any screens, I mapped the domain: identifying the core objects, their attributes, and the operations reviewers performed on them. The model came from a deduction of the old platform: what existed, what was missing, and what relationships the new system had to support.
     </p>
 
     <!-- DOMAIN MODEL IMAGE -->
     <div class="media-block">
       <img src="images/OO-domain-level.png" alt="Domain model, deduced from the existing questionnaire" />
-      <p class="media-caption">Domain-level object model deduced from the existing platform, mapping the core entities, attributes, and relationships the new design had to account for.</p>
+      <p class="media-caption" data-i18n="cs2.design.caption2">Domain-level object model deduced from the existing platform, mapping the core entities, attributes, and relationships the new design had to account for.</p>
     </div>
 
-    <p>
+    <p data-i18n="cs2.design.p5">
       The analysis surfaced one key insight: <strong>Question is the unit of work</strong>, not the Questionnaire. Reviewers think and act at the question level: they flag, approve, annotate, and download one question at a time. The Questionnaire is a container; the Question is where decisions happen. This single observation explained why the toolbar needed to be scoped to the question, not the page.
     </p>
 
     <!-- OO CONCEPTUAL MODEL -->
     <div class="media-block">
       <img src="images/OO-specification-level-object-model.png" alt="Questionnaire UI, light and dark mode side by side" />
-      <p class="media-caption">Six core objects from the reviewer's perspective. Solid diamonds (composition): Finding, Message, Internal Note, and Document belong to the Question. Hollow diamond (aggregation): the Questionnaire contains Questions. Score is derived (dashed border) from answer values and priority weights, not entered by the reviewer.</p>
+      <p class="media-caption" data-i18n="cs2.design.caption3">Six core objects from the reviewer's perspective. The Questionnaire is a container; the Question is the unit of work.</p>
     </div>
 
-    <p>
+    <p data-i18n="cs2.design.p6">
       Three distinct objects handle communication per question: <strong>Finding</strong> (formal, visible to the vendor, permanent record), <strong>Message</strong> (async thread with the vendor, scoped to the question), and <strong>Internal Note</strong> (private to the review team, never shared). Keeping them separate was a deliberate design decision. The domain model also shaped how the research tasks were written: tasks like "go to vendor X → open questionnaire Y → flag question N → create a finding" trace the exact path through the object hierarchy, which is part of why participants navigated the test naturally.
     </p>
 
-    <h3>Question tools: the hardest interaction design problem</h3>
-    <p>
+    <h3 data-i18n="cs2.design.h3c">Question tools: the hardest interaction design problem</h3>
+    <p data-i18n="cs2.design.p7">
       Each question in a questionnaire can have up to five independent tools associated with it: review (approve or flag), bookmark, finding creation, messaging, and internal notes. In the old platform, these were scattered and inconsistently placed. Users had to hunt for them.
     </p>
-    <p>
+    <p data-i18n="cs2.design.p8">
       I explored several layout approaches before landing on a solution. The key tension was between <strong>discoverability</strong> (making tools visible enough that users knew they existed) and <strong>density</strong> (keeping the question interface readable when dozens of questions are stacked in sequence).
     </p>
 
     <!-- ITERATION PLACEHOLDERS -->
     <div class="media-block">
       <img src="images/question-iterations.png" alt="Questionnaire UI, light and dark mode side by side" />
-      <p class="media-caption">Three layout proposals for question-level tools. The vertical rail balanced visibility with density and became the foundation for the final design.</p>
+      <p class="media-caption" data-i18n="cs2.design.caption4">Three layout proposals for question-level tools. The vertical rail balanced visibility with density and became the foundation for the final design.</p>
     </div>
 
     <div class="callout">
-      <p>The chosen solution, a vertical action rail anchored to each question, kept tools consistently reachable without competing with question content. <em>Actions are always in the same place, regardless of question length or answer type.</em></p>
+      <p data-i18n="cs2.design.callout1">The chosen solution, a vertical action rail anchored to each question, kept tools consistently reachable without competing with question content. <em>Actions are always in the same place, regardless of question length or answer type.</em></p>
     </div>
 
     <!-- FINAL DESIGN PLACEHOLDER -->
     <div class="media-block">
       <img src="images/question-before-after.png" alt="Questionnaire UI, before and after" />
-      <p class="media-caption">Before and after comparison of the questionnaire UI</p>
+      <p class="media-caption" data-i18n="cs2.design.caption5">Before and after comparison of the questionnaire UI</p>
     </div>
     <div class="media-block">
       <video autoplay loop muted playsinline>
         <source src="images/questionnaire-rail.webm" type="video/webm">
       </video>
-      <p class="media-caption">Tool rail scrolling behavior</p>
+      <p class="media-caption" data-i18n="cs2.design.caption6">Tool rail scrolling behavior</p>
     </div>
 
-    <h3>Surfacing the score without exposing the formula</h3>
-    <p>
+    <h3 data-i18n="cs2.design.h3d">Surfacing the score without exposing the formula</h3>
+    <p data-i18n="cs2.design.p9">
       The scoring system calculated risk from three inputs: answer value, question priority, and category weight, combined into an overall score. The result was always visible, fixed in the questionnaire header. The challenge was legibility: reviewers couldn't link what they saw on screen back to those inputs. The score felt like a black box, not a signal.
     </p>
-    <p>
-      The solution was to make the inputs readable at the question level, not to explain the formula. Each question already carried its answer score and priority as attributes. Surfacing both inline meant reviewers could intuitively understand what was driving the number without needing to think about the calculation. The overall score became predictable because its ingredients were visible.
+    <p data-i18n="cs2.design.p10">
+      The solution was to show everything related to the score in one unified visual, which let reviewers intuitively understand what was driving the number.
     </p>
-    <p>
+    <p data-i18n="cs2.design.p11">
       The score uses a five-state icon + color system (Good, Fair, Warn, Bad, and N/A) adopted from the Bitsight DS, which had moved from a color-only scale to icon + color. This improved accessibility and kept the feature visually consistent with the rest of the product. At the category and questionnaire level the score becomes numerical, paired with the same icon, so reviewers can compare categories at a glance.
     </p>
 
     <!-- SCORING UI -->
     <div class="media-block">
       <img src="images/questionnaire-scoring-system.png" alt="Questionnaire scoring system visualization" />
-      <p class="media-caption">Score at question level (qualitative) vs. questionnaire level (numerical)</p>
+      <p class="media-caption" data-i18n="cs2.design.caption7">Score at question level (qualitative) vs. questionnaire level (numerical)</p>
     </div>
   </section>
 
   <!-- RESEARCH -->
   <section id="research">
-    <div class="section-label">04 — Research</div>
-    <h2>Two studies, two different angles</h2>
-    <p>
+    <div class="section-label" data-i18n="cs2.idx.research">04 — Research</div>
+    <h2 data-i18n="cs2.research.h2">Two studies, two different angles</h2>
+    <p data-i18n="cs2.research.p1">
       With the initial designs and user flows built on the Bitsight DS, I ran two research studies to validate the direction and surface friction before full delivery. The goal was to test with real users while also getting structured expert feedback early, catching issues at both ends of the process.
     </p>
 
     <div class="method-row">
       <div class="cs-card">
-        <div class="card-label">Study 1 · External</div>
-        <div class="card-title">Moderated Usability Test</div>
-        <p>Sessions with existing users of the ThirdPartyTrust platform. Participants completed representative tasks using the new design and verbalized their reactions. Primary metrics: task success rate, time on task, error patterns, and qualitative feedback.</p>
+        <div class="card-label" data-i18n="cs2.research.study1label">Study 1 · Internal</div>
+        <div class="card-title" data-i18n="cs2.research.study1title">PURE Expert Evaluation</div>
+        <p data-i18n="cs2.research.study1p">The ThirdPartyTrust workflows weren't familiar to Bitsight employees, so before testing with real users, we ran a structured heuristic review with internal stakeholders first. PURE (Practical Usability Rating by Experts) uses a defined set of criteria to surface usability issues before external testing, faster and cheaper than waiting for real users to find them.</p>
       </div>
       <div class="cs-card">
-        <div class="card-label">Study 2 · Internal</div>
-        <div class="card-title">PURE Expert Evaluation</div>
-        <p>A structured heuristic review with internal company stakeholders. PURE (Practical Usability Rating by Experts) uses a defined set of criteria to surface usability issues before external testing, faster and cheaper than waiting for real users to find them.</p>
+        <div class="card-label" data-i18n="cs2.research.study2label">Study 2 · External</div>
+        <div class="card-title" data-i18n="cs2.research.study2title">Moderated Usability Test</div>
+        <p data-i18n="cs2.research.study2p">Sessions with existing users of the ThirdPartyTrust platform. Participants completed representative tasks using the new design and verbalized their reactions. Primary metrics: task success rate, time on task, error patterns, and qualitative feedback.</p>
       </div>
     </div>
 
-    <h3>What we found</h3>
-    <p>
+    <h3 data-i18n="cs2.research.h3">What we found</h3>
+    <p data-i18n="cs2.research.p2">
       The usability test results were encouraging: participants completed all tasks successfully and responded positively to the new interface. One of the most common reactions was around the question tools: the actions were clearer and easier to reach than in the original product.
     </p>
 
     <ul class="insight-list">
       <li class="win">
         <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span><strong>All tasks completed successfully.</strong> Existing users navigated the redesigned interface without significant errors. The general reaction was that actions felt "more clear and easy to use."</span>
+        <span data-i18n="cs2.research.insight1"><strong>All tasks completed successfully.</strong> Existing users navigated the redesigned interface without significant errors. The general reaction was that actions felt "more clear and easy to use."</span>
       </li>
       <li class="pain">
         <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></span>
-        <span><strong>Bulk document download.</strong> Users needed to download all documents from a questionnaire at once, but the system required them to do it one by one, per question. A recurring and painful friction point.</span>
+        <span data-i18n="cs2.research.insight2"><strong>Bulk document download.</strong> Users needed to download all documents from a questionnaire at once, but the system required them to do it one by one, per question. A recurring and painful friction point.</span>
       </li>
       <li class="pain">
         <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></span>
-        <span><strong>Cross-category filtering.</strong> Categories were rendered client-side, which limited filtering to within each category. Users expected to filter across the full questionnaire, a structural constraint from engineering, not design.</span>
+        <span data-i18n="cs2.research.insight3"><strong>Cross-category filtering.</strong> Categories were rendered client-side, which limited filtering to within each category. Users expected to filter across the full questionnaire, a structural constraint from engineering, not design.</span>
       </li>
       <li class="pain">
         <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></span>
-        <span><strong>User-built questionnaires.</strong> Users wanted to build questionnaires themselves. In the current state, questionnaires were created on demand by the Customer Success team, a bottleneck users found frustrating.</span>
+        <span data-i18n="cs2.research.insight4"><strong>User-built questionnaires.</strong> Users wanted to build questionnaires themselves. In the current state, questionnaires were created on demand by the Customer Success team, a bottleneck users found frustrating.</span>
       </li>
     </ul>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">Questionnaire info is more clear now</div>
+      <div class="testimonial-quote" data-i18n="cs2.research.quote1">Questionnaire info is more clear now</div>
       <div class="testimonial-meta">
-        <span class="t-role">Usability test participant</span>
-        <span class="t-moment">On the redesigned question layout</span>
+        <span class="t-role" data-i18n="cs2.research.quote1role">Usability test participant</span>
+        <span class="t-moment" data-i18n="cs2.research.quote1moment">On the redesigned question layout</span>
       </div>
     </div>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">We download the files question by question — we need to download all at once</div>
+      <div class="testimonial-quote" data-i18n="cs2.research.quote2">We download the files question by question — we need to download all at once</div>
       <div class="testimonial-meta">
-        <span class="t-role">Usability test participant</span>
-        <span class="t-moment">On document download</span>
+        <span class="t-role" data-i18n="cs2.research.quote2role">Usability test participant</span>
+        <span class="t-moment" data-i18n="cs2.research.quote2moment">On document download</span>
       </div>
     </div>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">Filtering by categories is annoying</div>
+      <div class="testimonial-quote" data-i18n="cs2.research.quote3">Filtering by categories is annoying</div>
       <div class="testimonial-meta">
-        <span class="t-role">Usability test participant</span>
-        <span class="t-moment">On cross-category filtering</span>
+        <span class="t-role" data-i18n="cs2.research.quote3role">Usability test participant</span>
+        <span class="t-moment" data-i18n="cs2.research.quote3moment">On cross-category filtering</span>
       </div>
     </div>
 
     <div class="callout">
-      <p>The last two pain points were highly requested, but low feasibility for engineering at that stage. They went into the backlog with clear rationale.</p>
+      <p data-i18n="cs2.research.callout1">The last two pain points were highly requested, but low feasibility for engineering at that stage. They went into the backlog with clear rationale.</p>
     </div>
 
     <!-- PRIORITIZATION MATRIX PLACEHOLDER -->
     <div class="media-block">
       <img src="images/questionnaire-prioritization-matrix.png" alt="Prioritization matrix, impact vs. feasibility" />
-      <p class="media-caption">Prioritization matrix showing impact versus feasibility</p>
+      <p class="media-caption" data-i18n="cs2.research.caption1">Prioritization matrix showing impact versus feasibility</p>
     </div>
   </section>
 
   <!-- OUTCOMES -->
   <section id="outcomes">
-    <div class="section-label">05 — Outcomes</div>
-    <h2>A complex feature, delivered in pieces that held together</h2>
-    <p>
+    <div class="section-label" data-i18n="cs2.idx.outcomes">05 — Outcomes</div>
+    <h2 data-i18n="cs2.outcomes.h2">A complex feature, delivered in pieces that held together</h2>
+    <p data-i18n="cs2.outcomes.p1">
       The redesign shipped progressively across planned delivery cycles. Each iteration was tested or reviewed before the next began. Problems were caught early, not after everything was built.
     </p>
 
-    <h3>Light and dark themes, ready at launch</h3>
-    <p>
+    <h3 data-i18n="cs2.outcomes.h3a">Light and dark themes, ready at launch</h3>
+    <p data-i18n="cs2.outcomes.p2">
       Because this project ran in parallel with the design token adoption work, the questionnaire became one of the first features to be fully tokenized. Every component in the redesign referenced semantic tokens, which meant both light and dark mode were supported from the start, with no separate design files and no duplication.
     </p>
     <div class="media-block">
       <img src="images/questionnaire-light-dark.png" alt="Questionnaire UI, light and dark mode side by side" />
-      <p class="media-caption">Light and dark mode, ready at launch. Both themes came with the token system decision, not as extra design work.</p>
+      <p class="media-caption" data-i18n="cs2.outcomes.caption1">Light and dark mode, ready at launch. Both themes came with the token system decision, not as extra design work.</p>
     </div>
 
-    <h3>Collaboration with the vendor-side team</h3>
-    <p>
+    <h3 data-i18n="cs2.outcomes.h3b">Collaboration with the vendor-side team</h3>
+    <p data-i18n="cs2.outcomes.p3">
       The questionnaire feature has two sides: the reviewer experience (what security teams see) and the respondent experience (what vendors see). I was on the VRM team, responsible for the reviewer UI, and collaborated closely with the TMH team who owned the vendor-facing design. That collaboration worked as well as it did because I carried product context forward from the original ThirdPartyTrust platform, before the acquisition split reviewer and vendor experiences into two separate teams. Keeping both sides consistent required ongoing alignment: shared components, shared tokens, and regular cross-team reviews.
     </p>
     <div class="media-block">
       <img src="images/categories-panel.png" alt="Questionnaire UI, categories panel for review and edit modes" />
-      <p class="media-caption">Categories panel in review mode and edit mode: the same structure adapts to different workflow states without changing its position or hierarchy.</p>
+      <p class="media-caption" data-i18n="cs2.outcomes.caption2">Categories panel in review mode and edit mode.</p>
     </div>
     <div class="media-block">
       <img src="images/questions.png" alt="Questionnaire UI, question cards for review and edit modes" />
-      <p class="media-caption">Question cards in review mode and edit mode: the vertical tool rail remains consistently positioned regardless of answer type or question length.</p>
+      <p class="media-caption" data-i18n="cs2.outcomes.caption3">Question cards in review mode and edit mode.</p>
+    </div>
+    <div class="media-block">
+      <img src="images/action-sheets.png" alt="Action sheets and dialogs for question management" />
+      <p class="media-caption" data-i18n="cs2.outcomes.caption5">Action sheets and dialogs for question management.</p>
     </div>
 
-    <h3>Results</h3>
-    <p>
-      Two research studies, a complete feature redesign, and a set of reusable components were delivered. The usability test validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout. The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.
-    </p>
+    <h3 data-i18n="cs2.outcomes.h3c">Results</h3>
+    <ul class="insight-list insight-list--plain">
+      <li class="win">
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.p4a">Two research studies, a complete feature redesign, and a set of reusable components were delivered.</span>
+      </li>
+      <li class="win">
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.p4b">The usability test validated the core direction: all tasks were completed successfully, and participants responded positively to the new tool layout.</span>
+      </li>
+      <li class="win">
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.p4c">The pain points surfaced in research were documented, triaged, and communicated to the product team with clear feasibility context.</span>
+      </li>
+    </ul>
     <div class="media-block">
       <video autoplay loop muted playsinline>
         <source src="images/questionnaire.mp4" type="video/mp4">
       </video>
-      <p class="media-caption">The questionnaire redesign in action</p>
+      <p class="media-caption" data-i18n="cs2.outcomes.caption4">The questionnaire redesign in action</p>
     </div>
 
-    <h3>Validation in the wild</h3>
-    <p>
+    <h3 data-i18n="cs2.outcomes.h3d">Validation in the wild</h3>
+    <p data-i18n="cs2.outcomes.p5">
       After all designs were delivered to production, the product team ran a pilot program with both new and existing customers during the platform's unification phase. Legacy customers accessed VRM Beta for a preview and feedback gathering. New customers enrolled directly in the VRM Beta Pilot Program.
     </p>
 
     <ul class="insight-list insight-list--plain">
       <li class="win">
-        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span>Confirm Bitsight VRM's value proposition by asking users whether the product was delivering according to their expectations</span>
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.pilot1">Confirm Bitsight VRM's value proposition by asking users whether the product was delivering according to their expectations</span>
       </li>
       <li class="win">
-        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span>Test and learn for continuous improvement: gathering feedback on usability, functionality, and overall experience</span>
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.pilot2">Test and learn for continuous improvement: gathering feedback on usability, functionality, and overall experience</span>
       </li>
       <li class="win">
-        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <span>Continue promoting Bitsight VRM to new customers while existing customers remained on the legacy platform</span>
+        <span class="insight-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11.5"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span data-i18n="cs2.outcomes.pilot3">Continue promoting Bitsight VRM to new customers while existing customers remained on the legacy platform</span>
       </li>
     </ul>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">We need flexibility to whom we can send the questionnaire…</div>
+      <div class="testimonial-quote" data-i18n="cs2.outcomes.quote1">We need flexibility to whom we can send the questionnaire…</div>
       <div class="testimonial-meta">
-        <span class="t-role">VRM Beta Pilot participant</span>
-        <span class="t-moment">On recipient flexibility</span>
+        <span class="t-role" data-i18n="cs2.outcomes.quote1role">VRM Beta Pilot participant</span>
+        <span class="t-moment" data-i18n="cs2.outcomes.quote1moment">On recipient flexibility</span>
       </div>
     </div>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">You can use SAP Ariba or other TPRM products to send questionnaires easily but not necessarily create this kind of live experience… in real time you can start conversations, send messages to the supplier and cooperate having everything in one place</div>
+      <div class="testimonial-quote" data-i18n="cs2.outcomes.quote2">You can use SAP Ariba or other TPRM products to send questionnaires easily but not necessarily create this kind of live experience… in real time you can start conversations, send messages to the supplier and cooperate having everything in one place</div>
       <div class="testimonial-meta">
-        <span class="t-role">VRM Beta Pilot participant</span>
-        <span class="t-moment">On real-time collaboration</span>
+        <span class="t-role" data-i18n="cs2.outcomes.quote2role">VRM Beta Pilot participant</span>
+        <span class="t-moment" data-i18n="cs2.outcomes.quote2moment">On real-time collaboration</span>
       </div>
     </div>
 
     <div class="testimonial-card testimonial-card--inline">
       <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
-      <div class="testimonial-quote">What's amazing is this ability to easily define requirements and create these conversations to follow up about the questions</div>
+      <div class="testimonial-quote" data-i18n="cs2.outcomes.quote3">What's amazing is this ability to easily define requirements and create these conversations to follow up about the questions</div>
       <div class="testimonial-meta">
-        <span class="t-role">VRM Beta Pilot participant</span>
-        <span class="t-moment">On question-level messaging</span>
+        <span class="t-role" data-i18n="cs2.outcomes.quote3role">VRM Beta Pilot participant</span>
+        <span class="t-moment" data-i18n="cs2.outcomes.quote3moment">On question-level messaging</span>
       </div>
     </div>
 
     <div class="callout">
-      <p>I didn't run the pilot program, but having that kind of feedback from a live platform, from real customers using the feature in production, was a meaningful signal that the design direction held up beyond the controlled conditions of usability testing.</p>
+      <p data-i18n="cs2.outcomes.callout1">I didn't run the pilot program, but having that kind of feedback from a live platform, from real customers using the feature in production, was a meaningful signal that the design direction held up beyond the controlled conditions of usability testing.</p>
     </div>
   </section>
 
   <!-- LESSONS -->
   <section id="lessons">
-    <div class="section-label">06 — Lessons Learned</div>
-    <h3>What this project taught me</h3>
-    <p>Understand the system before you touch the UI. With no formal documentation, the feature inventory meant reverse engineering the live product from scratch. That ground-level understanding is what let design decisions come from how the system actually worked, not assumption.</p>
-    <p>Two research methods give you two different things. The PURE evaluation caught structural issues before users ever saw the design; the usability test validated what survived and surfaced friction heuristics alone wouldn't have. Running both made prioritization conversations with the product team much clearer.</p>
-    <p>Scope cuts change what you can honestly claim. The bigger review-time win was always tied to custom questionnaires and questionnaire-level filtering, letting reviewers build the exact set of questions a vendor needed and jump straight to what mattered instead of paging through everything in order. Both got scoped out of this phase, so the redesign improved review time without fully solving it. If I went back, I'd push harder to keep filtering in scope, since it's the piece closest to reviewers' actual bottleneck.</p>
+    <div class="section-label" data-i18n="cs2.idx.lessons">06 — Lessons Learned</div>
+    <h3 data-i18n="cs2.lessons.h3">What this project taught me</h3>
+    <p data-i18n="cs2.lessons.p1">I learned how expensive it is to work without documentation. Building the feature inventory meant reverse engineering the whole product from scratch, and that took real time I wouldn't have needed if documentation had existed from the start. Now I try to document as I go, even when nobody asks for it, so whoever picks up the work next doesn't have to start from zero.</p>
+    <p data-i18n="cs2.lessons.p2">Running the PURE evaluation first caught structural issues before any user even saw the design. Then the usability test showed me what actually held up, plus friction I never would have caught on my own. Doing both made conversations about priorities with the product team so much easier, because I wasn't guessing which issues mattered most.</p>
+    <p data-i18n="cs2.lessons.p3">Scope cuts change what you can honestly claim. The bigger review-time win was always tied to custom questionnaires and questionnaire-level filtering, letting reviewers build the exact set of questions a vendor needed and jump straight to what mattered instead of paging through everything in order. Both got scoped out of this phase, so the redesign improved review time without fully solving it. If I went back, I'd push harder to keep filtering in scope, since it's the piece closest to reviewers' actual bottleneck.</p>
   </section>
 
 </main>
@@ -441,7 +458,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to all work</a></p>
+  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> <span data-i18n="footer.back">Back to all work</span></a></p>
 </footer>
   <script src="js/site.js" defer></script>
 </body>
