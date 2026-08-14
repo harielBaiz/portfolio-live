@@ -40,8 +40,7 @@ nav {
 }
 
 /* Logo — Space Grotesk Bold 18px */
-.nav-name,
-.nav-logo {
+.nav-name {
   font-family: var(--f-display);
   font-weight: 800;
   font-size: 20px;
@@ -376,7 +375,6 @@ nav {
 /* ── TESTIMONIALS ───────────────────────────────────────────
    Shared across case studies and about.html — single source
    so the two stop drifting out of sync with each other. */
-.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; }
 .testimonial-card { margin: 3rem 0 5rem; }
 .testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: 1.3rem; }
 .quote-icon {
@@ -477,23 +475,6 @@ footer a:hover { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .fade-in { animation: none; opacity: 1; }
   .reveal  { transition: none; opacity: 1; transform: none; }
-}
-
-/* ── PROGRESS BAR (case studies) ────────────────────────── */
-.progress-bar {
-  position: sticky;
-  top: 64px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--border);
-  z-index: 99;
-}
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--brand-fill);
-  transition: width 0.1s linear;
 }
 
 /* ── RESPONSIVE SHARED ─────────────────────────────────── */

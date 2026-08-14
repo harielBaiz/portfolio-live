@@ -16,9 +16,9 @@
   <ul class="nav-links">
     <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
     <li><a href="about.html" aria-current="page" data-i18n="nav.about">About</a></li>
-    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank"><span data-i18n="nav.resume">Resume</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
-    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></a></li>
-    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></li>
+    <li><a href="downloads/Hariel-Baiz-Resume-EN.pdf" data-i18n-href="resume.href" target="_blank"><span data-i18n="nav.resume">Resume</span></a></li>
+    <li><a href="#" data-email-href><span data-i18n="nav.contact">Contact</span></a></li>
+    <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span></a></li>
   </ul>
   <div class="nav-controls">
     <button class="theme-toggle" aria-label="Toggle theme">
@@ -47,7 +47,6 @@
       <p class="about-gd-para" data-i18n="about.p3">
         I spent more than 10 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.
       </p>
-      <p data-i18n="about.p4">I currently live in Buenos Aires but lived for several years in San Martín de los Andes, in Argentine Patagonia, a place I consider my second home. I like hiking, photography, and music, and I'm always looking to learn something new.</p>
       <div class="testimonial-card testimonial-card--inline">
         <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
         <div class="testimonial-quote" data-i18n="about.quote.text">Have nothing in your houses that you do not know to be useful or believe to be beautiful.</div>
@@ -60,29 +59,29 @@
     </div>
   </section>
 
-  <!-- WORK CAROUSEL 
-  <section class="work-carousel reveal">
-    <h2>A peek at the pixels</h2>
-    <div class="carousel-viewport">
-      <div class="carousel-track">
-        <img src="images/about/mba-posters.gif" alt="MBA posters" />
-        <img src="images/about/mba-10years.png" alt="MBA 10 years" />
-        <img src="images/about/mba-illustration.png" alt="MBA illustration" />
-        <img src="images/questionnaire-3pt-design.png" alt="Questionnaire toolbar proposals" />
-        <img src="images/questionnaire-light-dark.png" alt="Questionnaire light and dark mode" />
-        <img src="images/categories-panel.png" alt="Categories panel" />
-        <img src="images/color-blind-mode.png" alt="Color-blind mode support" />
-        
-        <img src="images/about/mba-posters.gif" alt="MBA posters" />
-        <img src="images/about/mba-10years.png" alt="MBA 10 years" />
-        <img src="images/about/mba-illustration.png" alt="MBA illustration" />
-        <img src="images/questionnaire-3pt-design.png" alt="" aria-hidden="true" />
-        <img src="images/questionnaire-light-dark.png" alt="" aria-hidden="true" />
-        <img src="images/categories-panel.png" alt="" aria-hidden="true" />
-        <img src="images/color-blind-mode.png" alt="" aria-hidden="true" />
-      </div>
+  <!-- GRAPHIC DESIGN GRID -->
+  <section class="graphic-grid reveal">
+    <div class="graphic-grid__items">
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><img src="images/about/mba-posters.gif" alt="MBA poster series" loading="lazy"/></div>
+      </figure>
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><video src="images/about/bitacoras.webm" autoplay muted loop playsinline></video></div>
+      </figure>
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><img src="images/about/mba-illustration.png" alt="MBA illustration work" loading="lazy"/></div>
+      </figure>
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><video src="images/about/logos.webm" autoplay muted loop playsinline></video></div>
+      </figure>
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><video src="images/about/tuco.webm" autoplay muted loop playsinline></video></div>
+      </figure>
+      <figure class="graphic-grid__item">
+        <div class="graphic-grid__media"><video src="images/about/casino.webm" autoplay muted loop playsinline></video></div>
+      </figure>
     </div>
-  </section>-->
+  </section>
 
   <div class="divider"></div>
 
@@ -134,7 +133,7 @@
       </button>
     </span>
     <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-text-dark"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-    <a href="downloads/Hariel-Baiz-Resume-EN.pdf" target="_blank" class="btn-text-dark"><span data-i18n="nav.resume">Resume</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+    <a href="downloads/Hariel-Baiz-Resume-EN.pdf" data-i18n-href="resume.href" target="_blank" class="btn-text-dark"><span data-i18n="nav.resume">Resume</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
   </div>
 </section>
 

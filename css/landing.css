@@ -31,42 +31,12 @@
   margin-bottom: 12px;
 }
 
-.section-title {
-  font-family: var(--f-ui);
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  letter-spacing: -0.5px;
-  color: var(--text);
-  margin-bottom: 20px;
-}
-
-.section-sub {
-  font-family: var(--f-body);
-  font-size: 18px;
-  line-height: 30px;
-  color: var(--text-2);
-  max-width: 560px;
-  margin-bottom: 32px;
-}
-
 /* ── HERO — single column ───────────────────────────────── */
 .hero {
   max-width: 1280px;
   width:100%;
   margin: 0 auto;
   padding: 96px 48px 80px;
-}
-
-.hero-eyebrow {
-  font-family: var(--f-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  display: block;
-  margin-bottom: 24px;
 }
 
 .hero h1 {
@@ -76,7 +46,7 @@
   line-height: 1.14;
   letter-spacing: -1px;
   color: var(--text);
-  margin-bottom: 72px;
+  margin-bottom: 32px;
 }
 .hero h1 em { font-style: italic; }
 
@@ -89,19 +59,14 @@
   max-width: 560px;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 /* ── CASE LIST — one card per project ───────────────────── */
 .case-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  margin-top: 48px;
+  margin-top: 24px;
 }
+
 
 .case-row {
   display: grid;
@@ -171,6 +136,33 @@
 .case-row--reverse .case-row__lock { right: auto; left: 14px; }
 .case-row__lock svg { width: 12px; height: 12px; flex-shrink: 0; }
 
+/* Coming-soon badge on case study thumbnail (mirrors .case-row__lock) */
+.case-row__soon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--f-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--text);
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-mid);
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  text-transform: uppercase;
+}
+.case-row--reverse .case-row__soon { right: auto; left: 14px; }
+
+/* Not-yet-published card: no link affordance, slightly muted */
+.case-row--soon { cursor: default; opacity: 0.85; }
+.case-row--soon:hover { background: var(--surface-card); border-color: var(--border); }
+.case-row--soon .case-row__cta { display: none; }
+
 /* Placeholder shown via onerror */
 .case-row__image--placeholder::after {
   content: 'Cover image coming soon';
@@ -198,7 +190,7 @@
   line-height: 1.2;
   letter-spacing: -0.5px;
   color: var(--text);
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .case-row__desc {
@@ -227,51 +219,13 @@
 
 /* Period caption, above the title */
 .case-row__period {
-  font-family: var(--f-mono);
-  font-size: 0.9rem;
+  font-family: var(--f-display);
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
 }
-
-/* ── SKILLS ─────────────────────────────────────────────── */
-.skills-bg { background: var(--bg-subtle); }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.skill-item {
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.skill-icon {
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
-}
-
-.skill-name {
-  font-family: var(--f-ui); font-weight: 500;
-  font-size: 14px; line-height: 20px; color: var(--text); margin-bottom: 1px;
-}
-
-.skill-cat {
-  font-family: var(--f-ui);
-  font-size: 12px; line-height: 16px; color: var(--text-3);
-}
-
-/* ── ABOUT TEASER ───────────────────────────────────────── */
-.about-teaser { max-width: 600px; }
 
 /* ── CONTACT ────────────────────────────────────────────── */
 .contact-dark {
@@ -317,7 +271,6 @@
     border-bottom: 1px solid var(--border);
   }
   .case-row__body { padding: 32px 24px; }
-  .skills-grid { grid-template-columns: 1fr 1fr; }
   .contact-dark { padding: 72px 24px; }
 }
 

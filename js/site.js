@@ -65,6 +65,7 @@ const i18n = {
     'nav.work':     'Work',
     'nav.about':    'About',
     'nav.resume':   'Resume',
+    'resume.href':  'downloads/Hariel-Baiz-Resume-EN.pdf',
     'nav.contact':  'Contact',
     'nav.linkedin': 'LinkedIn',
 
@@ -118,6 +119,16 @@ const i18n = {
     'work.cs3.title': 'The Research That Split a Product in Two',
     'work.cs3.period': '2022-2023',
     'work.cs3.desc': 'I led the redesign of a platform split into two products following user research that showed two completely different user types were being forced into one shared UI.',
+
+    /* Landing — work cards: CS4 Building With AI (coming soon) */
+    'work.cs4.soon': 'Coming Soon',
+    'work.cs4.tag1': 'AI Collaboration',
+    'work.cs4.tag2': 'Claude',
+    'work.cs4.tag3': 'GitHub',
+    'work.cs4.tag4': 'Figma',
+    'work.cs4.title': 'Building With AI',
+    'work.cs4.period': '2026',
+    'work.cs4.desc': "An overview of how I designed and built my portfolio, using Claude, GitHub, Visual Studio Code, and Figma as part of my new workflow.",
 
     /* About page */
     'meta.title.about': 'About — H. Ariel Baiz · Senior Product Designer',
@@ -276,7 +287,7 @@ const i18n = {
     'cs2.facts.deliverablesValue': 'Questionnaire redesign, vertical action rail, scoring UI, PURE evaluation and usability test reports',
     'cs2.outcome.label1': '100% of task success rate in usability testing with existing users',
     'cs2.outcome.label2': '1 reusable component from the Questionnaire, shipped to Bitsight DS and ready for reuse across all Bitsight products',
-    'cs2.outcome.label3': '5 independent question-level tools — review, bookmark, finding, messaging, internal notes — consolidated into one consistent action rail',
+    'cs2.outcome.label3': '5 question-level tools — review, bookmark, finding, messaging, notes — unified into one action rail as reusable DS components',
     'cs2.context.h2': 'A feature inherited from an acquisition',
     'cs2.context.p1': "In Q3 2022, Bitsight acquired ThirdPartyTrust, a vendor risk management platform with its own established product and user base. As part of the integration, the Questionnaires feature needed to be rebuilt inside Bitsight's product ecosystem: redesigned from scratch using the Bitsight Design System, with better accessibility, clearer usability, and feature parity with the original.",
     'cs2.context.p2': 'Questionnaires are central to how security teams manage vendor risk. They come in three forms: <strong>custom questionnaires</strong> built by the team for specific assessments, <strong>internal questionnaires</strong> used for scoping during vendor intake and reassessment cycles, and <strong>industry-standard templates</strong> like CAIQ v4, ISO 27001:2022, and SIG Core.',
@@ -499,6 +510,7 @@ const i18n = {
     'nav.work':     'Proyectos',
     'nav.about':    'Sobre mí',
     'nav.resume':   'CV',
+    'resume.href':  'downloads/Hariel-Baiz-Resume-ES.pdf',
     'nav.contact':  'Contacto',
     'nav.linkedin': 'LinkedIn',
 
@@ -552,6 +564,16 @@ const i18n = {
     'work.cs3.title': 'La investigación que dividió un producto en dos',
     'work.cs3.period': '2022-2023',
     'work.cs3.desc': 'Lideré el rediseño de una plataforma dividida en dos productos a partir de una investigación de usuarios que mostró que dos tipos de usuario completamente distintos estaban forzados a compartir una misma interfaz.',
+
+    /* Landing — work cards: CS4 Building With AI (próximamente) */
+    'work.cs4.soon': 'Próximamente',
+    'work.cs4.tag1': 'Colaboración con IA',
+    'work.cs4.tag2': 'Claude',
+    'work.cs4.tag3': 'GitHub',
+    'work.cs4.tag4': 'Figma',
+    'work.cs4.title': 'Construyendo con IA',
+    'work.cs4.period': '2026',
+    'work.cs4.desc': 'Un repaso de cómo diseñé y construí este mismo portfolio, trabajando con Claude, GitHub, Visual Studio Code y Figma como nuevo flujo de trabajo.',
 
     /* About page */
     'meta.title.about': 'Sobre mí — H. Ariel Baiz · Diseñador de Producto Senior',
@@ -710,7 +732,7 @@ const i18n = {
     'cs2.facts.deliverablesValue': 'Rediseño del cuestionario, riel de acciones vertical, sistema de scoring, informes de evaluación PURE y test de usabilidad',
     'cs2.outcome.label1': '100% de tasa de éxito en tareas durante testing de usabilidad con usuarios existentes',
     'cs2.outcome.label2': '1 componente reutilizable del Questionnaire, habilitado para el DS de Bitsight y listo para reutilizar en todos los productos de Bitsight',
-    'cs2.outcome.label3': '5 herramientas independientes a nivel de pregunta — revisión, marcador, finding, mensajería, notas internas — consolidadas en un único riel de acciones',
+    'cs2.outcome.label3': '5 herramientas a nivel de pregunta — revisión, marcador, finding, mensajería, notas — unificadas en un riel de acciones como componentes reutilizables del DS',
     'cs2.context.h2': 'Una funcionalidad heredada de una adquisición',
     'cs2.context.p1': 'En el tercer trimestre de 2022, Bitsight adquirió ThirdPartyTrust, una plataforma de gestión de riesgo de proveedores con producto y base de usuarios propios y establecidos. Como parte de la integración, la funcionalidad de Cuestionarios necesitaba reconstruirse dentro del ecosistema de producto de Bitsight: rediseñada desde cero usando el Bitsight Design System, con mejor accesibilidad, usabilidad más clara y paridad de funcionalidades con la original.',
     'cs2.context.p2': 'Los cuestionarios son centrales en cómo los equipos de seguridad gestionan el riesgo de proveedores. Vienen en tres formas: <strong>cuestionarios personalizados</strong> creados por el equipo para evaluaciones específicas, <strong>cuestionarios internos</strong> usados para el scoping durante el alta y los ciclos de reevaluación de proveedores y <strong>plantillas estándar de la industria</strong> como CAIQ v4, ISO 27001:2022 y SIG Core.',
@@ -959,6 +981,13 @@ function setLang(lang) {
     if (str !== undefined) el.setAttribute('aria-label', str);
   });
 
+  // Update all elements with data-i18n-href (e.g. language-specific downloads)
+  document.querySelectorAll('[data-i18n-href]').forEach(el => {
+    const key = el.dataset.i18nHref;
+    const str = i18n[lang][key];
+    if (str !== undefined) el.setAttribute('href', str);
+  });
+
   // Update <title> if the page declares a translatable one
   const titleKey = document.documentElement.dataset.i18nTitle;
   if (titleKey && i18n[lang][titleKey] !== undefined) {
@@ -995,23 +1024,6 @@ function initReveal() {
     { threshold: 0.08 }
   );
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-/* ─────────────────────────────────────────────────────────
-   4. READING PROGRESS BAR
-   ─────────────────────────────────────────────────────────
-   Updates .progress-fill width based on scroll position.
-   Only runs when the element exists (case study pages).
-───────────────────────────────────────────────────────── */
-function initProgressBar() {
-  const fill = document.getElementById('progressFill');
-  if (!fill) return;
-
-  window.addEventListener('scroll', () => {
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
-    fill.style.width = pct + '%';
-  }, { passive: true });
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -1211,23 +1223,6 @@ function initCopyEmail() {
   });
 }
 
-function initCarouselHoverSlow() {
-  const viewport = document.querySelector('.carousel-viewport');
-  const track = document.querySelector('.carousel-track');
-  if (!viewport || !track) return;
-
-  // Web Animations API: changing playbackRate scales speed from the
-  // animation's current position forward, unlike editing animation-duration
-  // in CSS, which recalculates progress from elapsed-time / duration and
-  // makes the track visibly jump back toward its start position.
-  viewport.addEventListener('mouseenter', () => {
-    track.getAnimations().forEach(anim => { anim.playbackRate = 0.25; });
-  });
-  viewport.addEventListener('mouseleave', () => {
-    track.getAnimations().forEach(anim => { anim.playbackRate = 1; });
-  });
-}
-
 /* ─────────────────────────────────────────────────────────
    INIT — runs after DOM is ready
 ───────────────────────────────────────────────────────── */
@@ -1251,9 +1246,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll reveal
   initReveal();
 
-  // Progress bar (case studies)
-  initProgressBar();
-
   // Media lightbox (images + videos)
   initMediaLightbox();
 
@@ -1262,9 +1254,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Copy email to clipboard button
   initCopyEmail();
-
-  // Carousel slows on hover instead of pausing
-  initCarouselHoverSlow();
 
   // Sync OS theme preference change (no stored value)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
