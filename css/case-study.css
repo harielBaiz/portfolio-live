@@ -148,6 +148,7 @@
   padding: 2rem;
   text-align: left;
 }
+.outcome-stat--wide { grid-column: span 2; }
 .outcome-stat .number {
   font-family: var(--f-display);
   font-weight: 400;
@@ -409,6 +410,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 }
 @media (max-width: 600px) {
   .outcome-banner  { grid-template-columns: 1fr; gap: 1rem; }
+  .outcome-stat--wide { grid-column: span 1; }
   .method-row      { grid-template-columns: 1fr; }
   .feature-grid    { grid-template-columns: 1fr; }
   .matrix-note     { flex-direction: column; }

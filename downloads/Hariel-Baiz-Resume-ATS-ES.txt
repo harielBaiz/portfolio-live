@@ -6,10 +6,10 @@ RESUMEN
 Con más de 6 años de experiencia en productos web B2B SaaS, me especializo en design systems y UI de alta calidad, creando sistemas centrados en el usuario que permiten que el buen diseño se sostenga a medida que los productos escalan.
 
 HABILIDADES
-Design Systems, Interaction Design, WCAG/A11y, User Research, Graphic Design
+Design Systems, Interaction Design, UX/UI, Human-Centered Design (HCD) WCAG/A11y, Graphic Design
 
 HERRAMIENTAS
-Figma, Claude, Adobe Creative Suite, Jira, Notion, HTML/CSS, Github, Pendo
+Figma, Claude, Adobe Creative Suite, Jira, HTML/CSS, Github, Pendo
 
 EXPERIENCIA
 
