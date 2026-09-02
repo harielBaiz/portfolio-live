@@ -566,7 +566,9 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   line-height: 1.5;
   margin-bottom: .75rem;
 }
-.cs-card > p code {
+.cs-card > p code,
+.page-wrap p code,
+.page-wrap li code {
   font-family: var(--f-mono);
   background: var(--brand-tag-bg);
   padding: 0.2em 0.4em;
@@ -576,7 +578,9 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 }
 @media (max-width: 768px) {
   
-  .cs-card > p code {
+  .cs-card > p code,
+  .page-wrap p code,
+  .page-wrap li code {
     overflow-wrap: break-word;
     word-break: break-all;
   }

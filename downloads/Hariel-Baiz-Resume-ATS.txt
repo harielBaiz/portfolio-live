@@ -1,15 +1,15 @@
-Hariel Baiz (Héctor Ariel Baiz)
-Senior Product Designer — Buenos Aires, Argentina
+H. Ariel Baiz
+Senior Product Designer based in Buenos Aires
 www.harielbaiz.com | hariel.baiz@gmail.com | linkedin.com/in/hariel-baiz
 
 SUMMARY
-With 6+ years of experience in B2B SaaS web products, I specialize in design systems and high-quality UI — building user-centered systems that let good design hold up as products scale.
+With 6+ years across B2B SaaS web products, I specialize in design systems and high-quality UI. I work in close partnership with engineering and product to build user-centered systems that stay coherent as products grow.
 
 SKILLS
-Design Systems, Interaction Design, UX/UI, Human-Centered Design (HCD) WCAG/A11y, Graphic Design
+Design Systems, Interaction Design, UX/UI, Human-Centered Design (HCD), WCAG/A11y, Graphic Design
 
 TOOLS
-Figma, Claude, Adobe Creative Suite, Jira, HTML/CSS, Github, Pendo
+Figma, Claude, Adobe creative suite, Jira, HTML/CSS, Github, Pendo
 
 EXPERIENCE
 
@@ -17,25 +17,26 @@ Bitsight — Senior Product Designer
 Sep 2022 – May 2024
 - Designed and drove adoption of a design token system for Bitsight's design system, creating a single source of truth for all product teams.
 - Owned the integration of core ThirdPartyTrust features into Bitsight after the merger: mapped workflow divergences, designed missing components, and extended the design system to support a unified experience.
-- Bridged Bitsight's platform rebrand into the product, translating a new brand system into existing components and closing the gap between the new visual identity and live product surfaces.
-- Planned and structured user research programs (journey mapping workshops, usability scripts) to surface friction points and inform roadmap prioritization.
-- Partnered with engineering, project management, and Customer Success to validate designs and align on the roadmap, balancing user needs with technical constraints.
+- Bridged Bitsight's platform rebrand into the product, translating a new brand system into existing components, closing the gap between the new visual identity and live product surfaces.
+- Planned and structured user research programs (interview guides, usability scripts, and journey mapping workshops) to surface friction points and inform roadmap prioritization.
+- Prototyped an AI-agent workflow at an internal hackathon that automated SOC2 report analysis for the questionnaire review flow; the concept was carried forward into a production feature.
+- Partnered with engineering, PM, and Customer Success to validate designs and align on the roadmap, balancing user needs with technical constraints.
 
 ThirdPartyTrust — Product Designer
 Feb 2020 – Sep 2022
 - Built ThirdPartyTrust's design system from 0 to 1: defined component architecture, naming conventions, and usage guidelines, creating the scalable foundation adopted by the product team.
-- Led the end-to-end redesign of core platform features, reducing user-reported confusion and improving task completion.
-- Defined user stories and acceptance criteria that bridged product, design, and development teams around shared objectives.
+- Owned the end-to-end redesign of core platform features, reducing user-reported confusion and improving task completion.
+- Defined user stories and acceptance criteria that bridged design intent and engineering execution, aligning product, design, and development on shared objectives.
 - Instrumented the platform with Pendo, tagging key user flows and building in-app guides that improved onboarding completion and reduced reliance on support.
 
 Entornos — UI Designer
 Aug 2018 – Feb 2020
-- Adapted Moodle for enterprise clients across banking, healthcare, and education, customizing user flows, visual systems, and HTML/CSS templates to match each brand's identity and functional requirements.
+- Shipped and maintained HTML/CSS templates and front-end customizations for Moodle-based enterprise platforms across banking, healthcare, and education clients, adapting user flows and visual systems to each brand's identity and functional requirements.
 - Designed a Netflix-style learning experience for a major Argentine bank, enabling employees to access and upload role-specific content company-wide and improving knowledge sharing at scale.
 
 Earlier career — Graphic Designer
 2007 – Present
-- 15+ years as a graphic designer across brand identity, editorial, and motion, including UI systems for casino and slot machine software at Sielcon S.R.L. (2007–2012). This foundation in visual systems thinking underpins the design systems work done today.
+- 15+ years as a Graphic Designer across brand identity, editorial, motion, and UI, including UI systems for casino and slot machine software at Sielcon S.R.L. (2007–2012). This foundation in visual systems thinking underpins the design systems work I do today.
 
 EDUCATION
 Universidad de Buenos Aires — Professional Degree in Graphic Design, 2003 – 2014
@@ -47,4 +48,4 @@ Pendo.io: Product Analytics
 
 LANGUAGES
 Spanish — Native
-English — Professional working proficiency (written), Intermediate (spoken)
+English — Professional working proficiency (written) / Intermediate (spoken)
