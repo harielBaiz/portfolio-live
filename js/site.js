@@ -87,10 +87,11 @@ const i18n = {
     'footer.copy': '© 2026 H. Ariel Baiz · Senior Product Designer',
 
     /* Page titles */
-    'meta.title.index': 'Hariel Baiz — Product Designer',
+    'meta.title.index': 'Hariel Baiz — Senior Product Designer',
+    'meta.desc.index': "Ariel Baiz is a Senior Product Designer in Buenos Aires specializing in design systems and B2B SaaS UI. Case studies on design tokens, UX research, and AI-assisted design.",
 
     /* Landing — hero intro */
-    'hero.intro': "Hi! I'm Ariel, a Senior Product Designer based in Buenos Aires, specializing in design systems and high-quality UI for B2B SaaS products. With 6+ years of experience, I work in close partnership with engineering and product to build user-centered systems that stay coherent as products grow.",
+    'hero.intro': "Hi! I'm Ariel, a Senior Product Designer based in Buenos Aires. With 6+ years of experience, I specialize in design systems and high-quality UI for B2B SaaS products. I work closely with engineering and product, keeping systems consistent as products scale.",
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
@@ -132,8 +133,10 @@ const i18n = {
 
     /* About page */
     'meta.title.about': 'About — H. Ariel Baiz · Senior Product Designer',
+    'meta.desc.about': "Senior Product Designer with 6+ years building B2B SaaS products, most recently at Bitsight. Background in graphic design, branding, and editorial design.",
     'about.quote.text': 'Have nothing in your houses that you do not know to be useful or believe to be beautiful.',
     'about.quote.moment': 'Arts and Crafts movement, 1880',
+    'about.h1': "About Ariel Baiz, Senior Product Designer",
     'about.p1': "Hi! I'm Ariel, a product designer based in Buenos Aires with 6+ years building B2B SaaS tools, most recently at Bitsight, a cybersecurity company.",
     'about.p2': 'Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both: the structured, systems-thinking of electronics, and the direct, human side of building software people actually use.',
     'about.p3': 'I spent more than 10 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.',
@@ -150,7 +153,8 @@ const i18n = {
     'footer.back': 'Back to all work',
 
     /* ═══ Case Study 1 — Design Tokens ═══ */
-    'meta.title.cs1': "Design Tokens — Hariel's Portfolio",
+    'meta.title.cs1': "Design Tokens Case Study — Hariel Baiz",
+    'meta.desc.cs1': "Case study: how I led Bitsight's design and engineering teams onto one shared semantic design token system, replacing duplicated manual work.",
     'cs1.hero.tag': 'Case Study · Design Systems',
     'cs1.hero.title': 'Scaling Consistency with Design Tokens',
     'cs1.hero.chip3': 'Design/Eng Alignment',
@@ -267,7 +271,8 @@ const i18n = {
     'cs1.lessons.p4': "Our early conversations with the engineering team were open: they wanted the same consistency and alignment I did, and that willingness mattered more than any naming convention we agreed on. I left Bitsight after a company-wide layoff, before the design system could close the gap with engineering's, so I can't include those results in this case study. But I can say the relationship we built was what let the token system get adopted and keep evolving, even after I left.",
 
     /* ═══ Case Study 2 — InfoSec Questionnaire ═══ */
-    'meta.title.cs2': "Questionnaire Redesign — Hariel's Portfolio",
+    'meta.title.cs2': "InfoSec Questionnaire Redesign — Hariel Baiz",
+    'meta.desc.cs2': "Case study: redesigning Bitsight's security review workflow after the ThirdPartyTrust acquisition. 100% task success in usability testing.",
     'cs2.hero.tag': 'Case Study · Product Design',
     'cs2.hero.title': 'Redesigning the questionnaire that decides vendor risk',
     'cs2.hero.chip4': 'Accessibility',
@@ -389,7 +394,8 @@ const i18n = {
     'cs2.lessons.p3': "Scope cuts change what you can honestly claim. The bigger review-time win was always tied to custom questionnaires and questionnaire-level filtering, letting reviewers build the exact set of questions a vendor needed and jump straight to what mattered instead of paging through everything in order. Both got scoped out of this phase, so the redesign improved review time without fully solving it. If I went back, I'd push harder to keep filtering in scope, since it's the piece closest to reviewers' actual bottleneck.",
 
     /* ═══ Case Study 3 — Personas & IA ═══ */
-    'meta.title.cs3': "Personas & IA — Hariel's Portfolio",
+    'meta.title.cs3': "Personas & IA Redesign — Hariel Baiz",
+    'meta.desc.cs3': "Case study: the UX research that led Bitsight to split ThirdPartyTrust into two products, and the navigation redesign that followed for VRM.",
     'cs3.gate.h2': 'This case study is password protected',
     'cs3.gate.p': 'Enter the password to view Personas &amp; Information Architecture.',
     'cs3.gate.placeholder': 'Password',
@@ -504,7 +510,8 @@ const i18n = {
     'cs3.lessons.p3': "On ThirdPartyTrust, we'd already identified these pain points with the product team and started pushing for IA changes, but a backlog full of other priorities kept them from becoming real. Despite a few quick fixes we managed to ship, I felt some frustration watching a solution we knew was necessary go unlaunched. But the acquisition was already moving in the background. Once the integration with Bitsight opened the door for a full redesign, most of the research was already done, we just had to redesign and test the new flows.",
 
     /* ═══ Case Study 4 — Building With AI ═══ */
-    'meta.title.cs4': "Building With AI — Hariel's Portfolio",
+    'meta.title.cs4': "Building a Portfolio With AI — Hariel Baiz",
+    'meta.desc.cs4': "How I used Claude as a collaborator to design, build, and publish this bilingual portfolio, from layout drafts to the GitHub release workflow.",
     'cs4.hero.tag': 'Case Study · AI-Assisted Design &amp; Development',
     'cs4.hero.title': 'I designed this portfolio. Claude helped me build it',
     'cs4.hero.chip1': 'AI Collaboration',
@@ -595,10 +602,11 @@ const i18n = {
     'footer.copy': '© 2026 H. Ariel Baiz · Diseñador de Producto Senior',
 
     /* Page titles */
-    'meta.title.index': 'Hariel Baiz — Diseñador de Producto',
+    'meta.title.index': 'Hariel Baiz — Diseñador de Producto Senior',
+    'meta.desc.index': "Ariel Baiz, Senior Product Designer en Buenos Aires. Diseño de sistemas y UI para SaaS B2B, con casos de estudio sobre design tokens y UX.",
 
     /* Landing — hero intro */
-    'hero.intro': '¡Hola! Soy Ariel, Senior Product Designer viviendo en Buenos Aires. Me especializo en design systems y UI de alta calidad para productos B2B SaaS. Con más de 6 años de experiencia, trabajo en estrecha colaboración con ingeniería y producto para construir sistemas centrados en el usuario que se mantienen coherentes a medida que los productos crecen.',
+    'hero.intro': '¡Hola! Soy Ariel, Senior Product Designer de Buenos Aires. Con más de 6 años de experiencia, me especializo en design systems y UI de alta calidad para productos B2B SaaS. Trabajo de cerca con ingeniería y producto, manteniendo los sistemas consistentes a medida que estos crecen.',
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
@@ -640,8 +648,10 @@ const i18n = {
 
     /* About page */
     'meta.title.about': 'Sobre mí — H. Ariel Baiz · Diseñador de Producto Senior',
+    'meta.desc.about': "Senior Product Designer con más de 6 años construyendo productos B2B SaaS, más recientemente en Bitsight. Formación en diseño gráfico, branding y diseño editorial.",
     'about.quote.text': 'No tengas nada en tu casa que no sepas que es útil o que no creas que es bello.',
     'about.quote.moment': 'Movimiento Arts and Crafts, 1880',
+    'about.h1': 'Sobre Ariel Baiz, Senior Product Designer',
     'about.p1': 'Hola, soy Ariel, product designer en Buenos Aires con más de 6 años construyendo herramientas B2B SaaS, más recientemente en Bitsight, una empresa de ciberseguridad.',
     'about.p2': 'Antes del diseño, me formé como técnico en electrónica en la secundaria, donde di mis primeros pasos en programación. Después estudié Diseño Gráfico en la Universidad de Buenos Aires. Los productos digitales resultaron ser una mezcla de ambos mundos: el pensamiento estructurado y sistémico de la electrónica, y el lado directo y humano de construir software fácil de usar.',
     'about.p3': 'Pasé más de 10 años trabajando en diseño gráfico, especializándome en branding y diseño editorial. Ese background sigue siendo la razón por la que me importa tanto la tipografía, el ritmo y la jerarquía en el trabajo de producto.',
@@ -658,7 +668,8 @@ const i18n = {
     'footer.back': 'Volver a todos los proyectos',
 
     /* ═══ Case Study 1 — Design Tokens ═══ */
-    'meta.title.cs1': 'Design Tokens — Portfolio de Hariel',
+    'meta.title.cs1': 'Caso de Estudio: Design Tokens — Hariel Baiz',
+    'meta.desc.cs1': "Caso de estudio: cómo unifiqué a los equipos de diseño e ingeniería de Bitsight en un solo sistema semántico de design tokens, eliminando trabajo manual duplicado.",
     'cs1.hero.tag': 'Case Study · Design Systems',
     'cs1.hero.title': 'Consistencia que escala con Design Tokens',
     'cs1.hero.chip3': 'Alineación Diseño/Ing.',
@@ -775,7 +786,8 @@ const i18n = {
     'cs1.lessons.p4': 'Nuestras primeras conversaciones con el equipo de ingeniería fueron abiertas: ellos buscaban la misma consistencia y alineamiento, y esa predisposición importó más que cualquier convención de nombres que acordáramos. Dejé Bitsight después de un despido masivo en toda la empresa, antes de que el sistema de diseño pudiera cerrar la brecha con el de ingeniería, por lo que no puedo incluir esos resultados en este caso de estudio. Pero sí puedo decir que la relación que construimos fue lo que permitió que el sistema de tokens se adoptara y evolucione, incluso hasta después de mi partida.',
 
     /* ═══ Case Study 2 — InfoSec Questionnaire ═══ */
-    'meta.title.cs2': 'Rediseño de Cuestionario — Portfolio de Hariel',
+    'meta.title.cs2': 'Rediseño de Cuestionario InfoSec — Hariel Baiz',
+    'meta.desc.cs2': "Caso de estudio: rediseño del flujo de revisión de seguridad de Bitsight tras la adquisición de ThirdPartyTrust. 100% de éxito en tests de usabilidad.",
     'cs2.hero.tag': 'Case Study · Product Design',
     'cs2.hero.title': 'Rediseñando el cuestionario que decide el riesgo de un proveedor',
     'cs2.hero.chip4': 'Accesibilidad',
@@ -897,7 +909,8 @@ const i18n = {
     'cs2.lessons.p3': 'Las limitaciones del scope cambian. Las mejoras más grandes pedidas por los usuarios estuvieron ligadas a los cuestionarios personalizados y al filtrado a nivel de cuestionario. Ambos quedaron fuera del scope en esta etapa, por lo que el rediseño mejoró el tiempo de revisión sin resolverlo del todo. Si volviera atrás, insistiría más en mantener el filtrado, ya que aceleraría significativamente el trabajo de los usuarios.',
 
     /* ═══ Case Study 3 — Personas & IA ═══ */
-    'meta.title.cs3': 'Personas e IA — Portfolio de Hariel',
+    'meta.title.cs3': 'Rediseño de Personas e IA — Hariel Baiz',
+    'meta.desc.cs3': "Caso de estudio: la investigación UX que llevó a Bitsight a dividir ThirdPartyTrust en dos productos, y el rediseño de navegación que siguió para VRM.",
     'cs3.gate.h2': 'Este case study está protegido con contraseña',
     'cs3.gate.p': 'Ingresá la contraseña para ver Personas y Arquitectura de la Información.',
     'cs3.gate.placeholder': 'Contraseña',
@@ -1012,7 +1025,8 @@ const i18n = {
     'cs3.lessons.p3': 'En ThirdPartyTrust ya habíamos identificado estos pain points junto al equipo de producto y empezamos a impulsar cambios en la IA, pero un backlog lleno de otras prioridades no dejaba que se hicieran realidad. A pesar de algunos quick fix que introdujimos, sentí algo de frustración viendo como una solución que sabíamos necesaria quedaba sin lanzar. Pero la adquisición ya venía avanzando de fondo. Cuando la integración con Bitsight abrió la puerta para un rediseño completo, gran parte de la investigación ya estaba hecha, solo tuvimos que rediseñar y testear los nuevos flujos.',
 
     /* ═══ Case Study 4 — Building With AI ═══ */
-    'meta.title.cs4': 'Building With AI — Portfolio de Hariel',
+    'meta.title.cs4': 'Construyendo un Portfolio con IA — Hariel Baiz',
+    'meta.desc.cs4': "Cómo usé a Claude como colaborador para diseñar, construir y publicar este portfolio bilingüe, desde los primeros layouts hasta el flujo de publicación en GitHub.",
     'cs4.hero.tag': 'Case Study · Diseño y Desarrollo Asistido por IA',
     'cs4.hero.title': 'Diseñé este portafolio y Claude me ayudó a desarrollarlo.',
     'cs4.hero.chip1': 'Colaboración con IA',
@@ -1119,6 +1133,13 @@ function setLang(lang) {
   const titleKey = document.documentElement.dataset.i18nTitle;
   if (titleKey && i18n[lang][titleKey] !== undefined) {
     document.title = i18n[lang][titleKey];
+  }
+
+  // Update <meta name="description"> if the page declares a translatable one
+  const descKey = document.documentElement.dataset.i18nDesc;
+  if (descKey && i18n[lang][descKey] !== undefined) {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', i18n[lang][descKey]);
   }
 
   // Update lang button active state

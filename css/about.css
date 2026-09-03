@@ -61,7 +61,7 @@
   font-family: var(--f-body);
   font-size: 1.5rem;
   line-height: 1.6;
-  color: var(--text-1);
+  color: var(--text-2);
   margin-bottom: 1.5rem;
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
@@ -103,20 +103,20 @@
 
 /* ── CONTACT ────────────────────────────────────────────── */
 .contact-dark {
-  background: var(--bg-inverse); padding: 80px 48px; text-align: center;
+  background: var(--bg-muted); padding: 80px 48px; text-align: center;
 }
 .contact-dark h2 {
   font-family: var(--f-display); font-weight: 700;
   font-size: clamp(2rem, 4vw, 40px);
   line-height: 1.1; 
   letter-spacing: .5px;
-  color: var(--text-on-inverse); 
+  color: var(--text); 
   margin-bottom: 12px;
 }
 .contact-dark h2 em { font-style: italic; }
 .contact-dark > p {
   font-family: var(--f-body); font-size: 16px;
-  line-height: 26px; color: var(--text-on-inverse-2); margin-bottom: 32px;
+  line-height: 26px; color: var(--text-3); margin-bottom: 32px;
 }
 .contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
