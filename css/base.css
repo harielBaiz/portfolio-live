@@ -170,6 +170,11 @@ nav {
 .lang-toggle .lang-label {
   color: var(--text-3);
 }
+.lang-toggle .lang-icon {
+  display: block;
+  flex-shrink: 0;
+  color: var(--text-2);
+}
 
 /* Mobile nav toggle (hamburger) — hidden on desktop, shown below 640px */
 .nav-toggle {

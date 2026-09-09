@@ -21,12 +21,15 @@
   max-width: 1680px;
   margin: 0 auto;
   background: var(--bg-subtle);
-  padding: 5rem 48px 0;
+  padding: 2rem 48px 0;
 }
 
 .hero-inner {
-  margin: 0 auto;
-  padding-bottom: 3rem;
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 .hero-tag {
@@ -42,12 +45,12 @@
 
 .hero h1 {
   font-family: var(--f-display);
-  font-weight: 500;
-  font-size: clamp(2rem, 5vw, 88px);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 72px);
   line-height: 1.1;
   letter-spacing: -1px;
   color: var(--text);
-  margin-bottom: 1.25rem;
+  margin-bottom: 3rem;
 }
 .hero h1 em { font-style: italic; }
 
@@ -270,8 +273,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 
 /* ── Media Lightbox (images + videos) ── */
 .media-block video,
-.media-block img,
-.ai-banner img { cursor: zoom-in; }
+.media-block img { cursor: zoom-in; }
 .video-lightbox {
   position: fixed; inset: 0; z-index: 1000;
   background: rgba(0, 0, 0, 0.88);
@@ -355,11 +357,16 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .mx-label { font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); margin-bottom: 0.4rem; }
 .matrix-card p { margin: 0; font-size: 0.82rem; color: var(--text-2); }
 
-/* ── AI BONUS BANNER ────────────────────────────────────── */
-.ai-banner { background: var(--bg-inverse); border-radius: var(--r-lg); padding: 3rem; margin: 2rem 0; position: relative; overflow: hidden; transition: background 0.25s ease; }
-.ai-banner-tag { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-on-inverse-2); margin-bottom: 0.6rem; }
-.ai-banner h3 { font-family: var(--f-ui); font-weight: 600; font-size: 1.25rem; line-height: 1.5; color: var(--text-on-inverse); margin: 0 0 0.7rem 0 ; }
-.ai-banner p  { font-size: 1.125rem; color: var(--text-on-inverse); margin-bottom: 2rem; max-width: 100%; line-height: 1.5; }
+/* ── AI BONUS SECTION ───────────────────────────────────────
+   Full-bleed, edge-to-edge band (same break-out technique as
+   .graphic-grid in about.css) with a flat bg-muted ground instead
+   of a boxed/card treatment. Tag keeps its own small mono label
+   style; h3 and p are intentionally left unstyled here so they
+   inherit the page's default h3/p rules. */
+.ai-banner { background: var(--bg-muted); width: 100vw; margin-left: calc(-50vw + 50%); padding: 3.5rem 0; }
+.ai-banner-inner { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+.ai-banner-tag { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.6rem; }
+.ai-banner h3 { margin: 1rem 0 2rem; }
 
 /* ── TOKEN LAYER DIAGRAM ─────────────────────────────────── */
 .layer-examples { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -584,6 +591,19 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
     overflow-wrap: break-word;
     word-break: break-all;
   }
+}
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.card-title-row .card-title { margin-bottom: 0; }
+.card-logo {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--text-2);
 }
 .card-title {
   font-family: var(--f-ui);

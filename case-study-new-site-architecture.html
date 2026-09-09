@@ -142,6 +142,7 @@
       <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
     </button>
     <button class="lang-toggle" aria-label="Toggle language">
+      <svg class="lang-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       <span class="lang-active">EN</span><span class="lang-sep">/</span><span class="lang-label">ES</span>
     </button>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -153,6 +154,9 @@
 
 <!-- ── HERO ── -->
 <header class="hero">
+  <figure class="hero-cover hero-cover--placeholder">
+    <img src="images/header-product-split.png" alt="product split — Bitsight VRM and TMH" />
+  </figure>
   <div class="hero-inner">
     <div class="hero-tag" data-i18n="cs3.hero.tag">Case Study · UX Research &amp; Strategy</div>
     <h1 data-i18n="cs3.hero.title">The research that split a product in two</h1>
@@ -163,9 +167,6 @@
       <span class="chip" data-i18n="cs3.hero.chip4">Affinity Diagramming</span>
     </div>
   </div>
-  <figure class="hero-cover hero-cover--placeholder">
-    <img src="images/header-product-split.png" alt="product split — Bitsight VRM and TMH" />
-  </figure>
 </header>
 
 <div class="cs-layout">
@@ -456,15 +457,17 @@
         </div>
       </div>
       <!-- AI BONUS -->
-      <div class="ai-banner" style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;">
-        <div style="flex:1;min-width:260px;">
+      <div class="ai-banner">
+        <div class="ai-banner-inner">
           <div class="ai-banner-tag" data-i18n="cs3.arch.aitag">Bonus · Hackathon Project</div>
           <h3 data-i18n="cs3.arch.aititle">From questionnaire review to AI-powered SOC2 analysis</h3>
 
           <p data-i18n="cs3.arch.aip">
-            During this project, I participated in an internal hackathon exploring generative AI within the Bitsight product. The idea: instead of manually reviewing SOC2 Type II reports, a process that could take hours, hand that work to an agent that reads, extracts, and analyzes the report on its own, then summarizes it into actionable insights. Designing it meant deciding how the agent shows its work: what it found, where in the report, and how confident it was, so reviewers could trust the output without redoing the analysis themselves. The prototype was compelling enough to become a real product, Instant Insights, in the Vendor Risk Management application. Manual review time went from hours to minutes.
+            During this project, I joined an internal hackathon exploring generative AI within the Bitsight product. Manually reviewing a SOC2 Type II report could take hours, so we prototyped an agent that reads the report, extracts what matters, and summarizes it into actionable insights on its own. The real design problem wasn't the extraction, it was trust. Reviewers needed to see what the agent found, where in the report it came from, and how confident the system was, without redoing the analysis themselves to check its work. The prototype was compelling enough to become a real product, Instant Insights, inside the Vendor Risk Management application. Manual review dropped from hours to minutes.
           </p>
-          <img src="images/hackathon.gif" alt="Instant Insights hackathon demo" style="width:100%;max-width:100%;flex-shrink:0;border-radius:var(--r-md); margin-top:1.25rem;" />
+          <div class="media-block">
+            <img src="images/hackathon.gif" alt="Instant Insights hackathon demo" />
+          </div>
         </div>
       </div>
 
