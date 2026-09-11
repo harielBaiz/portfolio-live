@@ -145,8 +145,8 @@
   gap: 1.25rem;
 }
 .outcome-stat {
-  background: var(--surface-card-inverse);
-  border: 1px solid var(--surface-card-inverse);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: var(--r-md);
   padding: 2rem;
   text-align: left;
@@ -157,7 +157,7 @@
   font-weight: 400;
   font-size: 4rem;
   letter-spacing: -1px;
-  color: var(--text-on-inverse);
+  color: var(--text-2);
   line-height: 1;
   margin-bottom: 4rem;
   display: block;
@@ -166,7 +166,7 @@
   font-family: var(--f-ui);
   font-size: 0.8rem;
   line-height: 1.4;
-  color: var(--text-on-inverse-2);
+  color: var(--text-3);
   font-weight: 400;
 }
 
@@ -623,6 +623,21 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.card-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.card-participants {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--text-3);
+  margin-left: auto;
+  text-align: right;
 }
 
 /* ── Remove from case-study.css ──────────────
