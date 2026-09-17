@@ -13,7 +13,7 @@
 .page-wrap {
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 1.5rem 6rem;
+  padding: 0 0 6rem;
 }
 
 .hero {
@@ -28,7 +28,7 @@
   width: 100%;
   max-width: 720px;
   margin: 2rem auto 0;
-  padding: 0 1.5rem;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -398,14 +398,17 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 /* Tablet (≤1024px) — iPad portrait/landscape and similar */
 @media (max-width: 1024px) {
    .hero { padding: 2rem 24px 0; }
+   .page-wrap {padding: 0 1.5rem 4rem;}
    .callout p {line-height: 1.6;}
+   .hero-inner {padding: 0 1.5rem;}
   /* Ariel: add tablet-specific values here */
 }
 
 /* Smartphone (≤480px) — covers iPhone SE (375px) and similar phones */
 @media (max-width: 480px) {
-  .page-wrap { padding: 0 16px 4rem;}
-  .hero { padding: 2rem 16px 0; }
+  .page-wrap { padding: 0 24px 4rem;}
+  .hero { padding: 2rem 24px 0; }
+  .hero-inner {padding: 0;}
   .hero-sub { font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; }
   .callout p {line-height: 1.6;}
   /* Ariel: add more smartphone-specific values here */

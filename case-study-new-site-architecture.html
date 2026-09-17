@@ -336,21 +336,8 @@
       <h2 data-i18n="cs3.feedback.h2">A product that finally talks back</h2>
       <p data-i18n="cs3.feedback.p1">The "No system feedback" problem identified early on (section 02) had a simple root cause. There was no shared vocabulary for how the product talked back to users. Before any of the structural redesign work began, the very first patch shipped on ThirdPartyTrust was smaller, setting up Pendo guides for user onboarding. Those guides carried over when the platform moved to Bitsight and are still in use today.</p>
 
-      <div class="seg-defs">
-        <div class="cs-card">
-          <div class="card-title" data-i18n="cs3.feedback.card1title">Before — ThirdPartyTrust</div>
-          <p data-i18n="cs3.feedback.card1p">The platform didn't confirm whether a questionnaire had been submitted, empty states had no guidance on what to do next, and errors were reported without clarity. Users landed on the platform and didn't know what to do without reaching out for technical support.</p>
-        </div>
-        <div class="cs-card">
-          <div class="card-title" data-i18n="cs3.feedback.card2title">After — Bitsight DS feedback patterns</div>
-          <p data-i18n="cs3.feedback.card2p">Every screen accounts for the same four states: empty, loading, success, and error. Actions confirm whether they succeeded or not. Empty states point to the next step instead of leaving a blank screen.</p>
-        </div>
-      </div>
-
       <h3 data-i18n="cs3.feedback.h3">Feedback patterns, standardized</h3>
       <p data-i18n="cs3.feedback.p2">Bitsight DS already had a complete feedback pattern library. That wasn't the problem, the problem was inconsistent use. The solution was to build a checklist to confirm every new feature met those standards.</p>
-
-      <p data-i18n="cs3.feedback.p3">Empty states guide users on what to do before there's any data, instead of showing a blank screen. Loading and progress states confirm an action is in motion. Success confirmations give a clear signal when something completes, like sending a questionnaire. Inline errors surface next to the field or action that caused them.</p>
 
       <div class="media-block">
           <img src="images/feedback-patterns-checklist.png" alt="Feedback patterns checklist" />
@@ -402,10 +389,6 @@
       <div class="media-block">
           <img src="images/navigationAndVendorProfile-beforeAfter.png" alt="Navigation and vendor profile — Before and After" />
           <p class="media-caption" data-i18n="cs3.arch.caption3">Vendor Profile moves from a full-screen dialog to a nested section inside a unified sidebar.</p>
-      </div>
-
-      <div class="callout">
-        <p data-i18n="cs3.arch.callout2">Two things brought support ticket volume down: splitting the UI into two products meant customers and vendors were each looking at a navigation built around their own objects instead of someone else's, and the feedback patterns from the previous section meant that once they were there, the system actually told them what was happening instead of leaving them to guess.</p>
       </div>
 
       <h3 data-i18n="cs3.arch.h3b">The same object pattern, reused twice</h3>
