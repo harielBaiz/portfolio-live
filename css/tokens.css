@@ -23,15 +23,15 @@
  * TYPOGRAPHY RULES (from Figma Typography page)
  *   Display  → Space Grotesk Bold    72/56/40px  tracking -2/-1.5/-1px
  *   Heading  → DM Sans ExtraBold     32/24px     tracking -0.5/-0.25px
- *              DM Sans Medium        20/18px
+ *              DM Sans SemiBold       20/18px
  *   Body     → Lora Regular          18/16px     lh 30/26px
- *   UI       → DM Sans Medium        16/14/12px
+ *   UI       → DM Sans SemiBold       16/14/12px
  *   Nav      → DM Sans Regular       14px
  * ─────────────────────────────────────────────────────────
  */
 
 /* ── 1. FONTS ──────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,800;1,9..40,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@400;500&display=swap');
 
 /* ── 2. PRIMITIVES ─────────────────────────────────────── */
 :root {
@@ -201,24 +201,24 @@
   --f-mono:    'DM Mono', monospace;
 
   /* Display — Space Grotesk Bold */
-  --t-display-2xl: 700 72px/80px var(--f-display);
-  --t-display-xl:  700 56px/64px var(--f-display);
-  --t-display-lg:  700 40px/48px var(--f-display);
+  --t-display-2xl: 800 72px/80px var(--f-display);
+  --t-display-xl:  800 56px/64px var(--f-display);
+  --t-display-lg:  800 40px/48px var(--f-display);
 
   /* Heading — DM Sans */
-  --t-heading-xl: 700 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
-  --t-heading-lg: 700 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
-  --t-heading-md: 500 20px/28px var(--f-ui);
-  --t-heading-sm: 500 18px/26px var(--f-ui);
+  --t-heading-xl: 800 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
+  --t-heading-lg: 800 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
+  --t-heading-md: 600 20px/28px var(--f-ui);
+  --t-heading-sm: 600 18px/26px var(--f-ui);
 
   /* Body — Lora */
   --t-body-lg: 400 18px/30px var(--f-body);
   --t-body-md: 400 16px/26px var(--f-body);
 
   /* UI — DM Sans */
-  --t-label-lg: 500 16px/24px var(--f-ui);
-  --t-label-md: 500 14px/20px var(--f-ui);
-  --t-label-sm: 500 12px/16px var(--f-ui);
+  --t-label-lg: 600 16px/24px var(--f-ui);
+  --t-label-md: 600 14px/20px var(--f-ui);
+  --t-label-sm: 600 12px/16px var(--f-ui);
   --t-caption:  400 12px/16px var(--f-ui);
   --t-nav:      400 14px/20px var(--f-ui);
 }

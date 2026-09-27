@@ -42,8 +42,8 @@ nav {
 /* Logo — Space Grotesk Bold 18px */
 .nav-name {
   font-family: var(--f-display);
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
   line-height: 1;
   letter-spacing: .5px;
   color: var(--text);
@@ -78,7 +78,7 @@ nav {
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   /* Nav/Active — DM Sans Medium */
-  font-weight: 500;
+  font-weight: 600;
   color: var(--nav-link);
 }
 
@@ -96,7 +96,7 @@ nav {
   transition: opacity 0.15s;
 }
 .nav-cta:hover { 
-  font-weight: 500; 
+  font-weight: 600; 
   color: var(--nav-link);
 }
 
@@ -110,8 +110,8 @@ nav {
 
 /* Theme toggle button */
 .theme-toggle {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--r-md);
   border: 1px solid var(--border);
   background: var(--bg-muted);
@@ -140,7 +140,8 @@ nav {
 
 /* Language toggle button (EN / ES) */
 .lang-toggle {
-  height: 32px;
+  height: 44px;
+  min-width: 44px;
   border-radius: var(--r-md);
   border: 1px solid var(--border);
   background: var(--bg-muted);
@@ -151,8 +152,8 @@ nav {
   gap: 4px;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  font-weight: 500;
-  padding: 0 8px;
+  font-weight: 600;
+  padding: 0 12px;
   line-height: 1;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
@@ -179,8 +180,8 @@ nav {
 /* Mobile nav toggle (hamburger) — hidden on desktop, shown below 640px */
 .nav-toggle {
   display: none;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--r-md);
   border: 1px solid var(--border);
   background: var(--bg-muted);
@@ -216,7 +217,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-family: var(--f-ui);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
@@ -240,7 +241,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-family: var(--f-ui);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
@@ -265,7 +266,7 @@ nav {
   align-items: center;
   gap: 8px;
   font-family: var(--f-ui);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
@@ -284,7 +285,7 @@ nav {
   align-items: center;
   gap: 8px;
   font-family: var(--f-ui);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
@@ -310,25 +311,24 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: none;
   border:none;
   background: transparent;
   color: var(--text-2);
   cursor: pointer;
-  padding: 0;
+  padding: 4px;
   transition: border-color 0.15s, color 0.15s;
 }
 .copy-btn:hover {
-  border-color: var(--text-on-inverse);
-  color: var(--text-on-inverse);
+  border-color: var(--text);
+  color: var(--text);
 }
 .copy-btn svg { width: 14px; height: 14px; display: block; }
 .copy-btn .icon-check { display: none; }
 .copy-btn.is-copied .icon-copy  { display: none; }
 .copy-btn.is-copied .icon-check { display: block; }
 .copy-btn.is-copied {
-  border-color: var(--text-on-inverse);
-  color: var(--text-on-inverse);
+  border-color: var(--text-success);
+  color: var(--text-success);
 }
 
 /* Plain text button — no border/fill, for secondary links on dark backgrounds */
@@ -337,7 +337,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-family: var(--f-ui);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-2);
@@ -360,7 +360,7 @@ nav {
   align-items: center;
   font-family: var(--f-ui);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: .4px;
   color: var(--text-2);
   background: var(--brand-tag-bg);
@@ -428,9 +428,8 @@ footer {
   padding: 20px 48px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
-  border-top: 1px solid var(--border);
 }
 footer p,
 footer a {

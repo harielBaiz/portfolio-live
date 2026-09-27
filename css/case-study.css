@@ -27,7 +27,7 @@
 .hero-inner {
   width: 100%;
   max-width: 720px;
-  margin: 2rem auto 0;
+  margin: 2rem auto 4rem;
   padding: 0;
   box-sizing: border-box;
 }
@@ -45,12 +45,12 @@
 
 .hero h1 {
   font-family: var(--f-display);
-  font-weight: 600;
-  font-size: clamp(2rem, 4.5vw, 72px);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 64px);
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   color: var(--text);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .hero h1 em { font-style: italic; }
 
@@ -58,7 +58,7 @@
   font-family: var(--f-display);
   font-size: 1.8rem;
   line-height: 1.4;
-  color: var(--text-1);
+  color: var(--text);
   margin: 2rem 0 4rem;
   padding-bottom: 2rem;
 }
@@ -111,7 +111,6 @@
   margin: 0;
   border-radius: 0;
   overflow: hidden;
-  border-top: 1px solid var(--border);
   display: block;
 }
 .hero-cover img {
@@ -127,7 +126,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--border);
+  
 }
 .hero-cover--placeholder span {
   font-family: var(--f-mono);
@@ -187,8 +186,8 @@ section:last-child { border-bottom: none; }
 
 h2 {
   font-family: var(--f-ui);
-  font-weight: 700;
-  font-size: clamp(2rem, 3vw, 48px);
+  font-weight: 600;
+  font-size: clamp(2rem, 2.4vw, 40px);
   line-height: 1.25;
   letter-spacing: -0.5px;
   color: var(--text);
@@ -197,8 +196,8 @@ h2 {
 
 h3 {
   font-family: var(--f-ui);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 2vw, 32px);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 1.3vw, 24px);
   line-height: 1.25;
   color: var(--text);
   margin: 3rem 0 1.5rem;
@@ -206,8 +205,8 @@ h3 {
 
 h4 {
   font-family: var(--f-ui);
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 1.25rem;
   line-height: 28px;
   color: var(--text);
   margin: 1.5rem 0 2rem;
@@ -215,9 +214,9 @@ h4 {
 
 p {
   font-family: var(--f-body);
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--text-1);
+  color: var(--text);
   margin-bottom: 1.1rem;
 }
 p:last-child { margin-bottom: 0; }
@@ -305,7 +304,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .method-card h3 { font-size: 0.9rem; color: var(--brand); margin-bottom: 0.5rem; margin-top: 0; }
 .method-card p  { font-size: 0.85rem; margin: 0; }
 .mc-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); margin-bottom: 0.5rem; }
-.mc-title { font-family: var(--f-ui); font-weight: 700; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
+.mc-title { font-family: var(--f-ui); font-weight: 800; font-size: 1.05rem; color: var(--text); margin-bottom: 0.4rem; }
 
 /* ── INSIGHT LIST ────────────────────────────────────────── */
 .insight-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
@@ -346,8 +345,8 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 }
 .insight-list--plain .insight-icon { display: none; }
 .insight-list--plain li strong { display: block; margin-bottom: 0.4rem; }
-.insight-list--plain li.win  { color: var(--text-1); background: none; border-color: transparent; font-size: 1.25rem; line-height: 1.4; }
-.insight-list--plain li.pain { color: var(--text-1); background: none; border-color: transparent; font-size: 1.25rem; line-height: 1.4; }
+.insight-list--plain li.win  { color: var(--text); background: none; border-color: transparent; font-size: 1.25rem; line-height: 1.4; }
+.insight-list--plain li.pain { color: var(--text); background: none; border-color: transparent; font-size: 1.25rem; line-height: 1.4; }
 
 /* ── PRIORITY MATRIX ────────────────────────────────────── */
 .matrix-note { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
@@ -450,7 +449,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .sd-optional-badge {
   font-family: var(--f-ui);
   font-size: 0.62rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: none;
   letter-spacing: 0;
   background: var(--bg-muted);
@@ -528,7 +527,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 }
 
 .cs-index a:hover {
-  color: var(--text-1);
+  color: var(--text);
   border-left-color: var(--border-str);
 }
 

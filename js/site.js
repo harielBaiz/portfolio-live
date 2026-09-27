@@ -64,6 +64,7 @@ const i18n = {
     'nav.brand':    'H. Ariel Baiz',
     'nav.work':     'Work',
     'nav.about':    'About',
+    'nav.howiwork': 'How I Work',
     'nav.resume':   'Resume',
     'resume.href':  'downloads/Hariel-Baiz-Resume-EN.pdf',
     'nav.contact':  'Contact',
@@ -100,7 +101,7 @@ const i18n = {
     'work.cs1.tag4': 'Design/Eng Alignment',
     'work.cs1.title': 'Design Token Adoption at Bitsight DS',
     'work.cs1.period': '2023-2024',
-    'work.cs1.desc': "I led the adoption of design tokens at Bitsight, building a system spanning 160+ primitive variables and 100+ semantic tokens, shipping light and dark modes from a single source of truth and proving a color-blind mode was feasible as a proof of concept.",
+    'work.cs1.desc': "I led the adoption of design tokens at Bitsight, building a system of 160+ primitive variables and 100+ semantic tokens that ships light and dark modes from a single source of truth.",
 
     /* Landing — work cards: CS2 InfoSec Questionnaire */
     'work.cs2.tag1': 'Product Design',
@@ -141,6 +142,7 @@ const i18n = {
     'about.p2': 'Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both: the structured, systems-thinking of electronics, and the direct, human side of building software people actually use.',
     'about.p3': 'I spent more than 15 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.',
     'about.p4': "I currently live in Buenos Aires but lived for several years in San Martín de los Andes, in Argentine Patagonia, a place I consider my second home.",
+    'about.graphic.heading': 'Graphic Design Work',
     'about.skills.heading': 'Skills & Tools',
     'about.skills.subhead': 'Skills',
     'about.skills.item1': 'Design Systems',
@@ -148,6 +150,44 @@ const i18n = {
     'about.skills.item4': 'User Research',
     'about.skills.item5': 'Graphic Design',
     'about.tools.subhead': 'Tools',
+
+    /* How I Work page */
+    'meta.title.howiwork': 'How I Work — H. Ariel Baiz · Senior Product Designer',
+    'meta.desc.howiwork': "How I approach product design: staying close to research, design, and code, and the principles I use to make decisions while building B2B SaaS products.",
+    'howiwork.hero.tag': 'Process & Principles',
+    'howiwork.h1': 'How I Work',
+    'howiwork.intro': "A few things I come back to when I'm making products. How I think, what I take responsibility for, and what I value in the work.",
+    'howiwork.idx.s1': '01 — Process',
+    'howiwork.s1.h': 'Stay close to the whole thing',
+    'howiwork.s1.p1': "I don't believe good design comes from a designer working alone and presenting answers. It comes from staying embedded with product and engineering, close enough to customer success to hear what's actually going wrong for people, from the first conversation through release. That closeness is what makes the right solution obvious to the whole team at roughly the same time, not just to me.",
+    'howiwork.s1.p2': "There's a name for part of this in human-computer interaction. It's the gulf between what a design intends and what people actually experience when they touch it. Closing that gulf is easier with something in your hands, even a rough one, than with another round of comments on a static screen. So I don't stay in one lane, untangling a brief with a founder one week, nudging pixels or digging through an existing codebase to get an interaction to feel right the next.",
+    'howiwork.idx.s2': '02 — Craft',
+    'howiwork.s2.h': 'A designer who likes to see it through',
+    'howiwork.s2.p1': "Design is where I started, more than 15 years ago, in graphic design and branding. The last 6 of those have been in B2B SaaS product design, and every year I've gotten a little closer to both the decisions behind a product and the code that makes it real. I like being able to follow an idea far enough to find out if it's actually good.",
+    'howiwork.s2.p2': "That's part of what a Senior Product Designer role means to me. I work closely with whoever's on the team, founders included, figuring things out together and building something we can actually try. Then I keep improving it, preferably with fewer meetings and one working prototype.",
+    'howiwork.idx.s3': '03 — Principles',
+    'howiwork.principles.h': 'Principles',
+    'howiwork.p1.title': "Frame the problem before it's scoped",
+    'howiwork.p1.body': "The brief is rarely the whole problem. Some of my best work has been catching that the underlying model was wrong, that two kinds of users were being treated as one, before a single screen got designed.",
+    'howiwork.p2.title': 'Synthesize before you design',
+    'howiwork.p2.body': "I get product and design in the same room as whoever's actually talking to customers that week, and turn what we're each seeing differently into one picture to design against. An affinity map or a persona ends up worth as much as any single insight in it, because it's what stops a team from relitigating the problem halfway through the build.",
+    'howiwork.p3.title': 'Stay past the handoff',
+    'howiwork.p3.body': "I don't stop at a Figma frame or a pull request. I stay close through build and adoption, because a polished design that ships broken, or goes unused, didn't work.",
+    'howiwork.p4.title': 'Match the fidelity to the certainty',
+    'howiwork.p4.body': "Words for concepts, sketches for direction, Figma for pixels, and then code, because that's the only medium that tells you whether the behavior actually holds up. I move fast from a flow to something high-fidelity, and I'd rather test it against real data and edge cases than placeholder text that hides the hard problems.",
+    'howiwork.p5.title': 'AI moves fast. The call is still mine',
+    'howiwork.p5.body': "I use AI to explore options and prototype faster, but I still check the assumptions and choose the trade-offs. Most of what I build early is disposable on purpose, so a wrong direction stays cheap to drop. What ships is still my call.",
+    'howiwork.p6.title': 'Data shows what moved, people show why',
+    'howiwork.p6.body': "Metrics tell me what moved. The people closest to users, customer success and support, tell me why, and they usually know about friction that never made it into a ticket.",
+    'howiwork.idx.s4': '04 — Boundaries',
+    'howiwork.not.h': 'What this is not',
+    'howiwork.not1.title': 'Not a replacement for a team',
+    'howiwork.not1.body': "Moving across product, design, and code reduces handoffs. It doesn't replace close collaboration with specialists who go deeper than I do in any one of those.",
+    'howiwork.not2.title': 'Not working without process',
+    'howiwork.not2.body': "I use the smallest method that's useful at the right moment. That's not the same as skipping rigor, it's choosing where to spend it.",
+    'howiwork.not3.title': 'Not more AI output',
+    'howiwork.not3.body': "More output was never the goal. A better decision and a stronger product are.",
+    'howiwork.manifesto': "I want the distance between an idea and its implementation to stay short, and the thinking inside it to stay deep. Evidence informs judgment. AI can make the work faster and wider in scope, but the decisions and the responsibility stay with me. The goal was never more design, or more code. It's whether people trust the product enough to keep using it.",
 
     /* Shared case-study footer link */
     'footer.back': 'Back to all work',
@@ -563,6 +603,7 @@ const i18n = {
     'nav.brand':    'H. Ariel Baiz',
     'nav.work':     'Proyectos',
     'nav.about':    'Sobre mí',
+    'nav.howiwork': 'Cómo trabajo',
     'nav.resume':   'CV',
     'resume.href':  'downloads/Hariel-Baiz-Resume-ES.pdf',
     'nav.contact':  'Contacto',
@@ -599,7 +640,7 @@ const i18n = {
     'work.cs1.tag4': 'Alineación Diseño/Ing.',
     'work.cs1.title': 'Adopción de Design Tokens en Bitsight DS',
     'work.cs1.period': '2023-2024',
-    'work.cs1.desc': 'Lideré la adopción de design tokens en Bitsight, construyendo un sistema con más de 160 variables primitivas y más de 100 tokens semánticos, con modo claro y oscuro en producción desde una única fuente de verdad, y probando la viabilidad de un modo para daltonismo como prueba de concepto.',
+    'work.cs1.desc': 'Lideré la adopción de design tokens en Bitsight, construyendo un sistema de más de 160 variables primitivas y más de 100 tokens semánticos que entrega modo claro y oscuro desde una única fuente de verdad.',
 
     /* Landing — work cards: CS2 InfoSec Questionnaire */
     'work.cs2.tag1': 'Product Design',
@@ -640,6 +681,7 @@ const i18n = {
     'about.p2': 'Antes del diseño, me formé como técnico en electrónica en la secundaria, donde di mis primeros pasos en programación. Después estudié Diseño Gráfico en la Universidad de Buenos Aires. Los productos digitales resultaron ser una mezcla de ambos mundos: el pensamiento estructurado y sistémico de la electrónica, y el lado directo y humano de construir software fácil de usar.',
     'about.p3': 'Pasé más de 15 años trabajando en diseño gráfico, especializándome en branding y diseño editorial. Ese background sigue siendo la razón por la que me importa tanto la tipografía, el ritmo y la jerarquía en el trabajo de producto.',
     'about.p4': 'Actualmente vivo en Buenos Aires pero viví varios años en San Martín de los Andes, en la Patagonia Argentina, lugar que considero mi segundo hogar.',
+    'about.graphic.heading': 'Trabajo de diseño gráfico',
     'about.skills.heading': 'Habilidades y herramientas',
     'about.skills.subhead': 'Habilidades',
     'about.skills.item1': 'Design Systems',
@@ -647,6 +689,44 @@ const i18n = {
     'about.skills.item4': 'User Research',
     'about.skills.item5': 'Diseño Gráfico',
     'about.tools.subhead': 'Herramientas',
+
+    /* How I Work page */
+    'meta.title.howiwork': 'Cómo trabajo — H. Ariel Baiz · Diseñador de Producto Senior',
+    'meta.desc.howiwork': "Cómo encaro el diseño de producto: cerca de la investigación, el diseño y el código, y los principios que uso para decidir mientras construyo productos B2B SaaS.",
+    'howiwork.hero.tag': 'Proceso y principios',
+    'howiwork.h1': 'Cómo trabajo',
+    'howiwork.intro': 'Algunas cosas a las que vuelvo cuando estoy haciendo un producto. Cómo pienso, de qué me hago responsable y qué valoro en el trabajo.',
+    'howiwork.idx.s1': '01 — Proceso',
+    'howiwork.s1.h': 'Quedarme cerca de todo el proceso',
+    'howiwork.s1.p1': 'No creo que el buen diseño salga de un diseñador trabajando solo y presentando respuestas. Sale de estar metido de lleno en producto e ingeniería, lo bastante cerca de customer success como para escuchar qué le está saliendo mal a la gente, desde la primera conversación hasta el lanzamiento. Esa cercanía es lo que hace obvia la solución correcta para todo el equipo casi al mismo tiempo, no solo para mí.',
+    'howiwork.s1.p2': 'Hay un nombre para parte de esto en interacción humano-computadora. Es la brecha entre lo que un diseño pretende y lo que la gente realmente experimenta cuando lo usa. Cerrar esa brecha es más fácil con algo en las manos, aunque sea tosco, que con otra ronda de comentarios sobre una pantalla estática. Por eso no me quedo en un solo carril, desenredando un brief junto a un founder una semana, moviendo píxeles o metido en un codebase existente para que una interacción se sienta bien la siguiente.',
+    'howiwork.idx.s2': '02 — Oficio',
+    'howiwork.s2.h': 'Un diseñador que prefiere llevar las cosas hasta el final',
+    'howiwork.s2.p1': 'El diseño es donde empecé, hace más de 15 años, en diseño gráfico y branding. Los últimos 6 fueron en product design para B2B SaaS, y cada año me acerqué un poco más tanto a las decisiones detrás de un producto como al código que lo hace real. Me gusta poder seguir una idea lo suficiente como para saber si realmente es buena.',
+    'howiwork.s2.p2': 'Eso es parte de lo que significa para mí un rol de Senior Product Designer. Trabajo de cerca con quien esté en el equipo, founders incluidos, resolviendo cosas juntos y construyendo algo que se pueda probar de verdad. Después sigo mejorándolo, preferentemente con menos reuniones y un solo prototipo funcionando.',
+    'howiwork.idx.s3': '03 — Principios',
+    'howiwork.principles.h': 'Principios',
+    'howiwork.p1.title': 'Encuadrar el problema antes de que se defina el alcance',
+    'howiwork.p1.body': 'El brief casi nunca es todo el problema. Parte de mi mejor trabajo fue darme cuenta de que el modelo de base estaba mal, que dos tipos de usuarios distintos estaban siendo tratados como uno solo, antes de que se diseñara una sola pantalla.',
+    'howiwork.p2.title': 'Sintetizar antes de diseñar',
+    'howiwork.p2.body': 'Junto a producto y diseño con quien esté hablando con clientes esa semana, y convierto lo que cada uno está viendo distinto en una sola imagen sobre la cual diseñar. Un affinity map o una persona terminan valiendo tanto como cualquier insight individual que contengan, porque es lo que evita que el equipo vuelva a discutir el problema a mitad de la construcción.',
+    'howiwork.p3.title': 'Seguir más allá del handoff',
+    'howiwork.p3.body': 'No me quedo en un frame de Figma o en un pull request. Sigo de cerca durante la construcción y la adopción, porque un diseño pulido que sale roto, o que nadie usa, no funcionó.',
+    'howiwork.p4.title': 'Ajustar la fidelidad a la certeza',
+    'howiwork.p4.body': 'Palabras para los conceptos, bocetos para la dirección, Figma para los píxeles, y recién después código, porque es el único medio que dice si el comportamiento realmente funciona. Paso rápido de un flujo a algo de alta fidelidad, y prefiero probarlo con datos reales y casos límite antes que con texto de relleno que esconde los problemas difíciles.',
+    'howiwork.p5.title': 'La IA va rápido. La decisión sigue siendo mía',
+    'howiwork.p5.body': 'Uso IA para explorar opciones y prototipar más rápido, pero sigo revisando los supuestos y eligiendo los trade-offs. Gran parte de lo que construyo al principio es descartable a propósito, para que una dirección equivocada siga siendo barata de abandonar. Lo que sale a producción, lo decido yo.',
+    'howiwork.p6.title': 'Los datos muestran qué cambió, la gente muestra por qué',
+    'howiwork.p6.body': 'Las métricas me dicen qué cambió. La gente más cerca de los usuarios, customer success y soporte, me dice por qué, y suelen conocer fricciones que nunca llegaron a convertirse en un ticket.',
+    'howiwork.idx.s4': '04 — Límites',
+    'howiwork.not.h': 'Lo que esto no es',
+    'howiwork.not1.title': 'No reemplaza a un equipo',
+    'howiwork.not1.body': 'Moverme entre producto, diseño y código reduce handoffs. No reemplaza la colaboración cercana con especialistas que llegan más lejos que yo en cualquiera de esas áreas.',
+    'howiwork.not2.title': 'No es trabajar sin proceso',
+    'howiwork.not2.body': 'Uso el método más chico que sea útil en cada momento. Eso no es lo mismo que saltear rigor, es elegir dónde ponerlo.',
+    'howiwork.not3.title': 'No es más output de IA',
+    'howiwork.not3.body': 'Más output nunca fue el objetivo. Una mejor decisión y un producto más sólido, sí.',
+    'howiwork.manifesto': 'Quiero que la distancia entre una idea y su implementación sea corta, y que el pensamiento adentro de esa idea siga siendo profundo. La evidencia informa el criterio. La IA puede hacer el trabajo más rápido y de mayor alcance, pero las decisiones y la responsabilidad siguen siendo mías. El objetivo nunca fue más diseño, ni más código. Es si la gente termina confiando lo suficiente en el producto como para seguir usándolo.',
 
     /* Shared case-study footer link */
     'footer.back': 'Volver a todos los proyectos',
@@ -1225,6 +1305,125 @@ function initMediaLightbox() {
 }
 
 /* ─────────────────────────────────────────────────────────
+   5b. GRAPHIC GRID CAROUSEL
+   ─────────────────────────────────────────────────────────
+   Turns .graphic-grid__items into a horizontally scrollable,
+   scroll-snapped carousel. Arrow buttons step one card at a
+   time on pointer devices; on touch (arrows hidden via CSS)
+   people swipe/scroll the track natively.
+───────────────────────────────────────────────────────── */
+function initGraphicCarousel() {
+  document.querySelectorAll('.graphic-grid__carousel').forEach(carousel => {
+    const track = carousel.querySelector('.graphic-grid__items');
+    const prevBtn = carousel.querySelector('.graphic-grid__arrow--prev');
+    const nextBtn = carousel.querySelector('.graphic-grid__arrow--next');
+    const dotsWrap = carousel.parentElement ? carousel.parentElement.querySelector('.graphic-grid__dots') : null;
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const items = Array.from(track.querySelectorAll('.graphic-grid__item'));
+    const count = items.length;
+    if (!count) return;
+
+    let dots = [];
+    if (dotsWrap && count) {
+      dotsWrap.innerHTML = '';
+      dots = items.map((item, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'graphic-grid__dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Go to slide ${i + 1} of ${count}`);
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => {
+          track.scrollTo({ left: itemScrollLeft(item), behavior: 'smooth' });
+        });
+        dotsWrap.appendChild(dot);
+        return dot;
+      });
+    }
+
+    function itemScrollLeft(item) {
+      // Targets the item sitting flush against the track's own left
+      // padding (where scrollLeft = 0 places the very first child),
+      // not the track's bare border edge.
+      const padLeft = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+      return track.scrollLeft + (item.getBoundingClientRect().left - track.getBoundingClientRect().left - padLeft);
+    }
+
+    function cardStep() {
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      return items[0].getBoundingClientRect().width + gap;
+    }
+
+    function step(dir) {
+      track.scrollBy({ left: cardStep() * dir, behavior: 'smooth' });
+    }
+
+    function closestIndex() {
+      let closest = 0;
+      let closestDist = Infinity;
+      items.forEach((item, i) => {
+        const dist = Math.abs(itemScrollLeft(item) - track.scrollLeft);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      return closest;
+    }
+
+    function updateDots() {
+      if (!dots.length) return;
+      const active = closestIndex();
+      dots.forEach((dot, i) => dot.setAttribute('aria-selected', i === active ? 'true' : 'false'));
+    }
+
+    // The fixed CSS right padding (a small decorative bleed) isn't
+    // enough scrollable room for the LAST item to ever reach the same
+    // flush-left position the first item starts at — the native max
+    // scroll runs out first, so the gallery stalls a card or two
+    // short of the end and the last dot never lights up. A trailing
+    // spacer (not padding-right on the track itself, which would
+    // shrink the content box every other item's percentage width is
+    // computed against) fills exactly the missing room, so that
+    // position becomes reachable; mandatory scroll-snap (align: start
+    // on every item) settles exactly on it regardless of small
+    // measurement drift, so this only needs to be generous, not
+    // pixel-perfect.
+    let spacer = track.querySelector('.graphic-grid__spacer');
+    if (!spacer) {
+      spacer = document.createElement('div');
+      spacer.className = 'graphic-grid__spacer';
+      spacer.setAttribute('aria-hidden', 'true');
+      track.appendChild(spacer);
+    }
+
+    function updateEndSpacer() {
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+      const padRight = parseFloat(getComputedStyle(track).paddingRight) || 0;
+      const lastItemWidth = items[count - 1].getBoundingClientRect().width;
+      const needed = track.clientWidth - lastItemWidth - gap - padRight;
+      spacer.style.flex = `0 0 ${Math.max(0, needed)}px`;
+    }
+
+    function updateArrows() {
+      const max = itemScrollLeft(items[count - 1]);
+      const atStart = track.scrollLeft <= 0;
+      const atEnd = track.scrollLeft >= max - 1;
+      prevBtn.disabled = atStart;
+      prevBtn.classList.toggle('graphic-grid__arrow--hidden', atStart);
+      nextBtn.disabled = atEnd;
+      nextBtn.classList.toggle('graphic-grid__arrow--hidden', atEnd);
+    }
+
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+    track.addEventListener('scroll', () => window.requestAnimationFrame(() => { updateArrows(); updateDots(); }), { passive: true });
+    window.addEventListener('resize', () => { updateEndSpacer(); updateArrows(); updateDots(); });
+    updateEndSpacer();
+    updateArrows();
+    updateDots();
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
    8. TESTIMONIAL WORD REVEAL
    ─────────────────────────────────────────────────────────
    Splits each .testimonial-quote into per-word spans, then
@@ -1322,19 +1521,20 @@ function initMobileNav() {
 ───────────────────────────────────────────────────────── */
 function initCopyEmail() {
   document.querySelectorAll('[data-copy-email]').forEach(btn => {
+    let timer;
     btn.addEventListener('click', () => {
-      const emailEl = btn.closest('.email-copy-group')?.querySelector('[data-email]');
-      const email = emailEl ? emailEl.textContent.trim() : '';
+      const group = btn.closest('.email-copy-group');
+      const emailEl = group?.querySelector('[data-email]') || group?.querySelector('[data-email-href]');
+      if (!emailEl) return;
+      const text = emailEl.textContent.trim();
+      const email = text.includes('@') ? text : (emailEl.getAttribute('href') || '').replace(/^mailto:/, '');
       if (!email) return;
 
       navigator.clipboard.writeText(email).then(() => {
         btn.classList.add('is-copied');
-        btn.setAttribute('aria-label', 'Email copied');
-        setTimeout(() => {
-          btn.classList.remove('is-copied');
-          btn.setAttribute('aria-label', 'Copy email address');
-        }, 1800);
-      });
+        clearTimeout(timer);
+        timer = setTimeout(() => btn.classList.remove('is-copied'), 1800);
+      }).catch(() => {});
     });
   });
 }
@@ -1364,6 +1564,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Media lightbox (images + videos)
   initMediaLightbox();
+
+  // Graphic design carousel (about page)
+  initGraphicCarousel();
 
   // Testimonial word-by-word reveal
   initTestimonialReveal();

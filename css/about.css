@@ -10,32 +10,68 @@
   padding: 4rem 0 6rem;
 }
 
-/* ── GRAPHIC DESIGN GRID ────────────────────────────────── */
-/* Curated gallery of previous graphic design work — replaced the
-   auto-scrolling carousel (2026-08-12). Same media assets, laid out
-   as a static grid. Breaks out of .about-wrap's 720px column the
-   same way .carousel-viewport used to, but caps at 1280px instead
-   of going full-bleed. Plain tiles, no captions/hover overlay
-   (2026-08-14) — captions were tried as a hover-reveal overlay,
-   then dropped entirely per Ariel's request. */
+/* ── GRAPHIC DESIGN CAROUSEL ───────────────────────────── */
+/* Curated gallery of previous graphic design work. Was a static
+   2-up grid (2026-08-14); turned into a user-controlled, infinitely
+   looping carousel (2026-09-22) — arrow buttons on pointer devices,
+   native swipe/scroll-snap on touch, wraps seamlessly in both
+   directions via cloned end items. No autoplay: this is not the
+   earlier auto-scrolling carousel the grid itself had replaced.
+   Breaks out of .about-wrap's 720px column to run edge-to-edge with
+   the viewport; the first (real) item's left edge is padded to line
+   up with .about-bio__text's left edge instead of floating at a
+   fixed inset. Plain tiles, no captions/hover overlay (2026-08-14,
+   per Ariel's request). */
 .graphic-grid {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 1rem 0 3rem;
 }
-.graphic-grid__items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 1280px;
+/* Same centering mechanism as .about-wrap (max-width + auto margins,
+   with the identical mobile padding override below) so the title
+   lines up with the bio text above it, even though .graphic-grid
+   itself has broken out to full viewport width. */
+.graphic-grid__title {
+  max-width: 720px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding-bottom: 24px;
+  font-family: var(--f-ui);
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.25px;
+  color: var(--text);
 }
+.graphic-grid__carousel {
+  position: relative;
+}
+.graphic-grid__items {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-anchor: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Left inset matches .about-wrap's centered 720px column so the
+     first real item lines up with the bio paragraphs above; right
+     side gets a small fixed bleed since the loop has no "last" item
+     to align. max(0, ...) collapses to 0 in the 640–720px zone where
+     .about-wrap itself carries no side padding yet. */
+  padding-left: max(0px, calc((100vw - 720px) / 2));
+  padding-right: 1.5rem;
+  scroll-padding-left: max(0px, calc((100vw - 720px) / 2));
+  scroll-padding-right: 1.5rem;
+}
+.graphic-grid__items::-webkit-scrollbar { display: none; }
 .graphic-grid__item {
+  flex: 0 0 calc(46% - 8px);
   margin: 0;
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
   overflow: hidden;
+  scroll-snap-align: start;
 }
 .graphic-grid__media {
   aspect-ratio: 1440 / 1024;
@@ -48,9 +84,83 @@
   object-fit: cover;
   display: block;
 }
+.graphic-grid__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--surface-overlay);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  z-index: 2;
+  padding: 0;
+}
+.graphic-grid__arrow:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-mid);
+}
+.graphic-grid__arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+.graphic-grid__arrow--prev { left: 4px; }
+.graphic-grid__arrow--next { right: 4px; }
+.graphic-grid__arrow--hidden { display: none; }
+
+.graphic-grid__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+.graphic-grid__dot {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.graphic-grid__dot::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-mid);
+  transition: background 0.15s, transform 0.15s;
+}
+.graphic-grid__dot:hover::after {
+  background: var(--text-3);
+}
+.graphic-grid__dot[aria-selected="true"]::after {
+  background: var(--text);
+  transform: scale(1.25);
+}
 
 @media (max-width: 640px) {
-  .graphic-grid__items { grid-template-columns: 1fr; }
+  .graphic-grid__title { padding: 0 1.5rem 20px; }
+  .graphic-grid__item { flex: 0 0 85%; }
+  .graphic-grid__arrow { display: none; }
+  .graphic-grid__dots { gap: 0; }
+  .graphic-grid__items { padding-left: 1.5rem; scroll-padding-left: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .graphic-grid__items { scroll-behavior: auto; }
 }
 
 /* ── BIO ────────────────────────────────────────────────── */
@@ -59,9 +169,9 @@
 }
 .about-bio__text p {
   font-family: var(--f-body);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--text-2);
+  color: var(--text);
   margin-bottom: 1.5rem;
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
@@ -71,7 +181,7 @@
 /* ── SKILLS ─────────────────────────────────────────────── */
 .about-skills { padding: 3rem 0; }
 .about-skills h2 {
-  font-family: var(--f-ui); font-weight: 700;
+  font-family: var(--f-ui); font-weight: 800;
   font-size: 24px; line-height: 32px;
   letter-spacing: -0.25px; color: var(--text); margin-bottom: 24px;
 }
@@ -97,7 +207,7 @@
 }
 .about-skills--plain .plain-list li:first-child { border-top: 1px solid var(--border); }
 .plain-list__name {
-  font-family: var(--f-ui); font-weight: 500;
+  font-family: var(--f-ui); font-weight: 600;
   font-size: 15px; color: var(--text);
 }
 
@@ -106,7 +216,7 @@
   background: var(--bg-muted); padding: 80px 48px; text-align: center;
 }
 .contact-dark h2 {
-  font-family: var(--f-display); font-weight: 700;
+  font-family: var(--f-display); font-weight: 800;
   font-size: clamp(2rem, 4vw, 40px);
   line-height: 1.1; 
   letter-spacing: .5px;
