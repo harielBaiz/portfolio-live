@@ -42,7 +42,7 @@ nav {
 /* Logo — Space Grotesk Bold 18px */
 .nav-name {
   font-family: var(--f-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.2rem;
   line-height: 1;
   letter-spacing: .5px;
@@ -78,7 +78,8 @@ nav {
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   /* Nav/Active — DM Sans Medium */
-  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   color: var(--nav-link);
 }
 
@@ -337,7 +338,7 @@ nav {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-2);
@@ -360,7 +361,7 @@ nav {
   align-items: center;
   font-family: var(--f-ui);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .4px;
   color: var(--text-2);
   background: var(--brand-tag-bg);

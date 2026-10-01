@@ -94,7 +94,7 @@ const i18n = {
     'meta.desc.index': "Ariel Baiz is a Senior Product Designer in Buenos Aires specializing in design systems and B2B SaaS UI. Case studies on design tokens, UX research, and AI-assisted design.",
 
     /* Landing — hero intro */
-    'hero.intro': "Hi! I'm Ariel, a <strong>senior product designer</strong> for design systems and complex B2B products. Based in Buenos Aires, with more than six years turning dense workflows into consistent, accessible interfaces, side by side with engineering and product.",
+    'hero.intro': "<span class=\"hero-lead\">Hi! I'm Ariel, a senior product designer for design systems and complex B2B products.</span> Based in Buenos Aires, with more than six years turning dense workflows into consistent, accessible interfaces, side by side with engineering and product.",
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
@@ -636,7 +636,7 @@ const i18n = {
     'meta.desc.index': "Ariel Baiz, Senior Product Designer en Buenos Aires. Diseño de sistemas y UI para SaaS B2B, con casos de estudio sobre design tokens y UX.",
 
     /* Landing — hero intro */
-    'hero.intro': "¡Hola! Soy Ariel, <strong>senior product designer</strong> especializado en design systems y productos B2B complejos. Vivo en Buenos Aires y hace más de seis años que convierto flujos de trabajo densos en interfaces consistentes y accesibles, codo a codo con ingeniería y producto.",
+    'hero.intro': "<span class=\"hero-lead\">¡Hola! Soy Ariel, senior product designer especializado en design systems y productos B2B complejos.</span> Vivo en Buenos Aires y hace más de seis años que convierto flujos de trabajo densos en interfaces consistentes y accesibles, codo a codo con ingeniería y producto.",
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
