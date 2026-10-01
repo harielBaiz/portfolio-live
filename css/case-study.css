@@ -408,7 +408,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
   .page-wrap { padding: 0 24px 4rem;}
   .hero { padding: 2rem 24px 0; }
   .hero-inner {padding: 0;}
-  .hero-sub { font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; }
+  .hero-sub { font-size: 1.25rem; line-height: 1.5; margin-bottom: 1rem; }
   .callout p {line-height: 1.6;}
   /* Ariel: add more smartphone-specific values here */
 }

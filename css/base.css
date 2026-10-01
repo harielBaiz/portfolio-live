@@ -502,11 +502,13 @@ footer a:hover { font-weight: 600; }
     border-bottom: 1px solid var(--nav-border);
     padding: 8px 16px 16px;
     margin: 0;
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
   }
-  .nav-links.is-open { display: flex; }
+  .nav-links.is-open { display: flex; height: calc(100vh - 64px); justify-content: flex-start; padding: 24px; }
   .nav-links li { width: 100%; }
   .nav-links a,
-  .nav-links .nav-cta { width: 100%; padding: 12px 0; }
+  .nav-links .nav-cta { width: 100%; padding: 24px 0; font-size: 2rem; }
   footer { padding: 24px; flex-direction: column; text-align: center; }
 }
 

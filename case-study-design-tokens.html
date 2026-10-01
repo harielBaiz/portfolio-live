@@ -123,7 +123,7 @@
       <div class="hero-facts__col">
         <div class="hero-fact">
           <span class="hero-fact-label" data-i18n="cs1.facts.timelineLabel">Timeline</span>
-          <span class="hero-fact-value" data-i18n="cs1.facts.timelineValue">2023-2024</span>
+          <span class="hero-fact-value" data-i18n="cs1.facts.timelineValue">2023–2024</span>
         </div>
         <div class="hero-fact">
           <span class="hero-fact-label" data-i18n="cs1.facts.roleLabel">My Role</span>
@@ -139,7 +139,7 @@
     </div>
 
     <p class="hero-sub" data-i18n="cs1.hero.sub">
-      At Bitsight, the design team worked from Figma styles, not tokens. The platform already had a light/dark toggle built, so designing a component meant designing it twice, once per theme. I led the adoption of a semantic token system that replaced that manual process, cutting design time per component by 40% and improving product consistency.
+      At Bitsight, the design team worked from Figma styles, not tokens. The platform already had a light/dark toggle built, so designing a component meant designing it twice, once per theme. I led the adoption of a semantic token system that replaced that manual process. Components were designed once for both themes, and designers picked colors and type by meaning instead of checking raw values.
     </p>
 
     <!-- OUTCOME BANNER -->
@@ -157,8 +157,8 @@
         <div class="label" data-i18n="cs1.outcome.label3">2 modes shipped: light and dark. Color blind mode proven as a POC</div>
       </div>
       <div class="outcome-stat">
-        <div class="number">40%</div>
-        <div class="label" data-i18n="cs1.outcome.label4">40% less time designing components per mode</div>
+        <div class="number">1</div>
+        <div class="label" data-i18n="cs1.outcome.label4">1 component for both themes, instead of one per theme</div>
       </div>
     </div>
 
@@ -167,13 +167,13 @@
       <div class="section-label" data-i18n="cs1.idx.context">01 — Context</div>
       <h2 data-i18n="cs1.context.h2">A Figma announcement, a rebrand, and a window of opportunity</h2>
       <p data-i18n="cs1.context.p1">
-        In mid-2023, Figma announced Variables at their annual Config event. I watched the presentation and felt something click. This wasn't just a new feature. It was an answer to a problem I'd been sitting with for a long time. How do you make visual decisions consistent across a growing product without relying on manual discipline?
+        In mid-2023, Figma announced Variables at their annual Config event. I watched the presentation and something clicked. The feature looked like an answer to a problem I'd been sitting with for a long time. How do you keep visual decisions consistent across a growing product without relying on manual discipline?
       </p>
       <div class="callout">
-        <p data-i18n="cs1.context.callout1"><em>The timing couldn't have been better.</em> Bitsight was undergoing a company-wide rebrand. Every product interface would need to reflect new visual standards across multiple platforms. Without a scalable solution, that rebrand risked becoming a slow, error-prone process that would stretch for months.</p>
+        <p data-i18n="cs1.context.callout1"><em>The timing couldn't have been better.</em> Bitsight was undergoing a company-wide rebrand, and every product interface would need to reflect the new visual standards across multiple platforms. Without a scalable solution, that update risked becoming a slow, error-prone process that would stretch for months.</p>
       </div>
       <p data-i18n="cs1.context.p2">
-        I saw the rebrand as an opportunity to build the system underneath it properly, so the next rebrand, or the next acquisition, wouldn't cost us the same effort all over again.
+        I saw it as an opportunity to build the system underneath properly, so the next visual change, or the next acquisition, wouldn't cost us the same effort all over again.
       </p>
       <p data-i18n="cs1.context.p3">
         I proposed starting with a proof of concept. <a href="case-study-infosec-questionnaire.html">The Questionnaire feature</a>, which I was already leading as a designer, became the first real test ground. It spanned both the VRM reviewer experience I owned and TMH, which I knew well from my earlier work on ThirdPartyTrust, making it a good test for a token system that needed to hold up across different teams. The POC worked, and I got the green light to bring it to the design system properly.
@@ -186,9 +186,6 @@
       <h2 data-i18n="cs1.problem.h2">The challenge of keeping consistency while everything changes</h2>
       <p data-i18n="cs1.problem.p1">
         The product suite was growing through acquisitions and new features, but our visual foundation wasn't growing with it. Design worked from Figma styles, and that meant a system that didn't scale. Consistency was the product of a manual process that depended on designers' memory and attention.
-      </p>
-      <p data-i18n="cs1.problem.p2">
-        The challenge was <strong>maintaining consistency while everything around it kept changing.</strong>
       </p>
       <div class="callout">
         <p data-i18n="cs1.problem.callout1">Products were added and acquired regularly. Legacy interfaces couldn't be replaced overnight. Visual updates were often driven by perception: "make it feel more modern." Changes needed to scale across many surfaces at once. <em>We needed a system that could absorb change, not resist it.</em></p>
@@ -228,7 +225,7 @@
             <svg class="card-logo" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="2" fill="currentColor"/><rect x="2" y="8" width="20" height="2" fill="currentColor"/><rect x="2" y="14" width="20" height="2" fill="currentColor"/><rect x="2" y="18" width="20" height="2" fill="currentColor"/></svg>
             <div class="card-title">Carbon DS (IBM)</div>
           </div>
-          <p data-i18n="cs1.research.card3">Too large in nomenclature for our scale, but useful as a reference for how far a token system can go when the product demands it.</p>
+          <p data-i18n="cs1.research.card3">Its naming went much further than our scale needed, but it was a useful reference for how far a token system can go when the product demands it.</p>
         </div>
       </div>
       <p data-i18n="cs1.research.p3">
@@ -264,7 +261,7 @@
         </div>
         <div class="cs-card">
           <div class="card-title" data-i18n="cs1.system.card2title">Semantic</div>
-          <p data-i18n="cs1.system.card2p">Tokens with purpose and context. Every semantic token carries meaning, context, and purpose. These are the tokens components consume, and the ones designers use to build the interface.</p>
+          <p data-i18n="cs1.system.card2p">Tokens with purpose and context. These are the tokens components consume, and the ones designers use to build the interface.</p>
           <div class="layer-examples">
             <span class="token-tag">bs.color.text.primary</span>
             <span class="token-tag">riskVector.color.fill.low</span>
@@ -274,8 +271,8 @@
         </div>
       </div>
 
-      <h3 data-i18n="cs1.system.h3a">The naming convention:</h3>
-      <p data-i18n="cs1.system.p2">A design token's name describes how it should be used, and follows the same four-part structure. Any designer or engineer should be able to infer what a token does just by reading its name.</p>
+      <h3 data-i18n="cs1.system.h3a">The naming convention</h3>
+      <p data-i18n="cs1.system.p2">Every token name follows the same four-part structure and describes how the token should be used. Any designer or engineer should be able to infer what a token does just by reading its name.</p>
 
       <!-- TOKEN STRUCTURE IMAGE -->
       <div class="media-block">
@@ -332,8 +329,8 @@
         </div>
       </div>
 
-      <h3 data-i18n="cs1.system.h3b">Token class:</h3>
-      <p data-i18n="cs1.system.p3">The <strong>class</strong> segment is the first part of every semantic token name. It signals which UI context the token belongs to. Not every context needs one, but when a context has its own styling rules, that's when it's worth isolating it in its own class. That prevents accidental overrides and keeps intent clear.</p>
+      <h3 data-i18n="cs1.system.h3b">Token class</h3>
+      <p data-i18n="cs1.system.p3">The <strong>class</strong> segment is the first part of every semantic token name. It signals which UI context the token belongs to. Not every context needs its own class. It's worth creating one when a context has its own styling rules, because isolating it prevents accidental overrides and keeps intent clear.</p>
 
       <div class="seg-defs">
           <div class="cs-card">
@@ -393,7 +390,7 @@
         Defining elevation tokens made us stop and actually decide what the system should be.
       </p>
 
-      <h3 data-i18n="cs1.system.h3e">Elevation tokens</h3>
+      <h3 data-i18n="cs1.system.h3e">Five tokens, four levels</h3>
       <p data-i18n="cs1.system.p7">
         The final system uses five tokens. Four surface levels cover the full range of depth in our UI. One blanket token handles the overlay state used by dialogs, drawers, and modals.
       </p>
@@ -421,10 +418,7 @@
       <div class="section-label" data-i18n="cs1.idx.outcomes">05 — Outcomes</div>
       <h2 data-i18n="cs1.outcomes.h2">Consistency that scales</h2>
       <p data-i18n="cs1.outcomes.p1">
-        The token system shipped progressively, starting with color tokens, then spacing and typography. At launch it covered <strong>160+ primitive variables</strong> and <strong>100+ semantic tokens</strong>. The effect was visible immediately: updating a primitive value cascaded automatically to every semantic token that referenced it.
-      </p>
-      <p data-i18n="cs1.outcomes.p2">
-        What used to take days (designing two versions of every component for light and dark mode, hunting for the right hex value, manually keeping everything in sync) was reduced to minutes.
+        The token system shipped progressively, starting with color tokens, then spacing and typography. At launch it covered <strong>160+ primitive variables</strong> and <strong>100+ semantic tokens</strong>. The effect was visible immediately. Updating a primitive value cascaded automatically to every semantic token that referenced it.
       </p>
       <div class="testimonial-card testimonial-card--inline">
         <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
@@ -448,7 +442,7 @@
 
       <h3 data-i18n="cs1.outcomes.h3b">Tokens and accessibility</h3>
       <p data-i18n="cs1.outcomes.p5">
-        One of the pain points in our product was the scale color system. Bitsight used red for the undesirable end of a risk or grade scale, and blue for the desirable end. After a rebrand, blue was replaced with green, closer to the red-to-green convention most people expect from a risk scale. That fixed one problem and created another. Red and green are one of the hardest combinations for color blind users to tell apart, which made it an accessibility problem.
+        One of the pain points in our product was the scale color system. Bitsight used red for the undesirable end of a risk or grade scale, and blue for the desirable end. After the rebrand, blue was replaced with green, closer to the red-to-green convention most people expect from a risk scale. That fixed one problem and created another. Red and green are one of the hardest combinations for color blind users to tell apart, which made it an accessibility problem.
       </p>
       <p data-i18n="cs1.outcomes.p6">
         As a fix, I proposed an alternative set of tokens for color blind mode. It was never implemented, but it proved switching modes needed no changes to components, only new tokens.
@@ -489,7 +483,7 @@
       <h2 data-i18n="cs1.lessons.h2">Lessons learned</h2>
       <p data-i18n="cs1.lessons.p2">Studying mature systems helps, but don't force their structure onto your own. Carbon, Material, and Atlassian were a good place to start, but I should have stayed open to changing the naming earlier. It took several iterations to land on a naming convention that worked for our context, and that delayed the project.
       </p>
-      <p data-i18n="cs1.lessons.p4">Our early conversations with the engineering team were open. They wanted the same consistency and alignment I did, and that willingness told me we were on the right track. I left Bitsight after a company-wide layoff, before the design system could close the gap with engineering's, so I can't include those results in this case study.
+      <p data-i18n="cs1.lessons.p4">Our early conversations with the engineering team were open. They wanted the same consistency and alignment I did, and that willingness told me we were on the right track. I left Bitsight after a company-wide layoff, before the design system and engineering's implementation could be aligned, so I can't share those results.
       </p>
     </section>
 
