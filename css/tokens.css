@@ -35,8 +35,7 @@
 
 /* Display — General Sans (self-hosted, Fontshare / ITF Free Font License) */
 @font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Medium.woff2') format('woff2');  font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Bold.woff2') format('woff2');    font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
 
 
 /* ── 2. PRIMITIVES ─────────────────────────────────────── */
@@ -207,14 +206,18 @@
   --f-body:    'Lora', Georgia, serif;
   --f-mono:    'DM Mono', monospace;
 
-  /* Display — General Sans Bold */
-  --t-display-2xl: 700 72px/80px var(--f-display);
-  --t-display-xl:  700 56px/64px var(--f-display);
-  --t-display-lg:  700 40px/48px var(--f-display);
+  /* Font weights — the site uses two: Regular and Semibold */
+  --fw-regular:  400;
+  --fw-semibold: 600;
+
+  /* Display — General Sans Semibold */
+  --t-display-2xl: 600 72px/80px var(--f-display);
+  --t-display-xl:  600 56px/64px var(--f-display);
+  --t-display-lg:  600 40px/48px var(--f-display);
 
   /* Heading — DM Sans */
-  --t-heading-xl: 800 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
-  --t-heading-lg: 800 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
+  --t-heading-xl: 600 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
+  --t-heading-lg: 600 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
   --t-heading-md: 600 20px/28px var(--f-ui);
   --t-heading-sm: 600 18px/26px var(--f-ui);
 

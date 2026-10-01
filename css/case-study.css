@@ -36,7 +36,7 @@
   display: inline-block;
   font-family: var(--f-mono);
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -45,7 +45,7 @@
 
 .hero h1 {
   font-family: var(--f-display);
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(2rem, 3.4vw, 64px);
   line-height: 1.1;
   letter-spacing: 1px;
@@ -94,7 +94,7 @@
 .hero-fact-label {
   font-family: var(--f-mono);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -176,7 +176,7 @@ section:last-child { border-bottom: none; }
 .section-label {
   font-family: var(--f-mono);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-3);
@@ -196,7 +196,7 @@ h2 {
 
 h3 {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 600;
   font-size: clamp(1.5rem, 1.3vw, 24px);
   line-height: 1.25;
   color: var(--text);
@@ -205,7 +205,7 @@ h3 {
 
 h4 {
   font-family: var(--f-ui);
-  font-weight: 800;
+  font-weight: 600;
   font-size: 1.25rem;
   line-height: 28px;
   color: var(--text);
@@ -303,8 +303,8 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .method-card { border-radius: var(--r-md); padding: var(--space-6); border: 1px solid var(--border); background: var(--surface-feature); }
 .method-card h3 { font-size: 0.9rem; color: var(--brand); margin-bottom: var(--space-2); margin-top: 0; }
 .method-card p  { font-size: 0.85rem; margin: 0; }
-.mc-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); margin-bottom: var(--space-2); }
-.mc-title { font-family: var(--f-ui); font-weight: 800; font-size: 1.05rem; color: var(--text); margin-bottom: var(--space-2); }
+.mc-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; color: var(--text-3); margin-bottom: var(--space-2); }
+.mc-title { font-family: var(--f-ui); font-weight: 600; font-size: 1.05rem; color: var(--text); margin-bottom: var(--space-2); }
 
 /* ── INSIGHT LIST ────────────────────────────────────────── */
 .insight-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-6) 0; }
@@ -353,7 +353,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 .matrix-card { flex: 1; min-width: 140px; border-radius: var(--r-md); padding: var(--space-4); font-size: 0.85rem; }
 .matrix-card.shipped  { background: var(--surface-shipped);  border: 1px solid var(--border-shipped); }
 .matrix-card.deferred { background: var(--surface-deferred); border: 1px solid var(--border-deferred); }
-.mx-label { font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); margin-bottom: var(--space-2); }
+.mx-label { font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; color: var(--text-3); margin-bottom: var(--space-2); }
 .matrix-card p { margin: 0; font-size: 0.82rem; color: var(--text-2); }
 
 /* ── AI BONUS SECTION ───────────────────────────────────────
@@ -374,7 +374,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 
 /* ── TENSION CARD (kept — see removal TODO near end of file) ── */
 .tension-card { border-radius: var(--r-md); padding: var(--space-6); border: 1px solid var(--border); background: var(--surface-feature); }
-.tc-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: var(--text-3); margin-bottom: var(--space-2); }
+.tc-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; color: var(--text-3); margin-bottom: var(--space-2); }
 .tension-card p { margin: 0; font-size: 0.875rem; }
 
 /* Testimonial styles moved to base.css (shared with about.html) */
@@ -389,7 +389,7 @@ blockquote cite { display: block; font-size: 0.82rem; color: var(--text-3); marg
 
 .ref-row  { display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-6) 0; }
 .ref-card { background: var(--surface-feature); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--space-4) var(--space-6); }
-.seg-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: var(--space-1); font-weight: 500; }
+.seg-label { font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: var(--space-1); font-weight: 400; }
 .seg-value { font-family: var(--f-ui); font-size: 0.9rem; color: var(--text); }
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
