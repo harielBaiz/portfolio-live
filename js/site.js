@@ -63,6 +63,7 @@ const i18n = {
     /* Nav — identical across all 6 pages */
     'nav.brand':    'H. Ariel Baiz',
     'nav.work':     'Work',
+    'a11y.skip': 'Skip to main content',
     'nav.about':    'About',
     'nav.howiwork': 'How I Work',
     'nav.resume':   'Resume',
@@ -93,7 +94,7 @@ const i18n = {
     'meta.desc.index': "Ariel Baiz is a Senior Product Designer in Buenos Aires specializing in design systems and B2B SaaS UI. Case studies on design tokens, UX research, and AI-assisted design.",
 
     /* Landing — hero intro */
-    'hero.intro': "Hi! I'm Ariel, a Senior Product Designer based in Buenos Aires. With 6+ years of experience, I specialize in design systems and high-quality UI for B2B SaaS products. I work closely with engineering and product, keeping systems consistent as products scale.",
+    'hero.intro': "Hi! I'm Ariel, a <strong>senior product designer</strong> for design systems and complex B2B products. Based in Buenos Aires, with more than six years turning dense workflows into consistent, accessible interfaces, side by side with engineering and product.",
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
@@ -139,17 +140,18 @@ const i18n = {
     'about.quote.text': 'Have nothing in your houses that you do not know to be useful or believe to be beautiful.',
     'about.quote.moment': 'Arts and Crafts movement, 1880',
     'about.h1': "About Ariel Baiz, Senior Product Designer",
-    'about.p1': "Hi! I'm Ariel, a product designer based in Buenos Aires with 6+ years building B2B SaaS tools, most recently at Bitsight, a cybersecurity company.",
-    'about.p2': 'Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both: the structured, systems-thinking of electronics, and the direct, human side of building software people actually use.',
+    'about.p1': "Hi! I'm Ariel, a senior product designer based in Buenos Aires. I've spent more than six years building B2B SaaS tools, most recently at Bitsight, a cybersecurity company.",
+    'about.p2': "Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both. They need the structured, systems thinking I learned in electronics and the human side of building software people actually use.",
     'about.p3': 'I spent more than 15 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.',
-    'about.p4': "I currently live in Buenos Aires but lived for several years in San Martín de los Andes, in Argentine Patagonia, a place I consider my second home.",
     'about.graphic.heading': 'Graphic Design Work',
     'about.skills.heading': 'Skills & Tools',
     'about.skills.subhead': 'Skills',
-    'about.skills.item1': 'Design Systems',
-    'about.skills.item2': 'Interaction Design',
-    'about.skills.item4': 'User Research',
-    'about.skills.item5': 'Graphic Design',
+    'about.skills.item1': "Design Systems",
+    'about.skills.item2': "Interaction Design",
+    'about.skills.item3': "UX/UI",
+    'about.skills.item4': "Human-Centered Design (HCD)",
+    'about.skills.item5': "WCAG/A11y",
+    'about.skills.item6': "Graphic Design",
     'about.tools.subhead': 'Tools',
 
     /* How I Work page */
@@ -603,6 +605,7 @@ const i18n = {
     /* Nav — identical across all 6 pages */
     'nav.brand':    'H. Ariel Baiz',
     'nav.work':     'Proyectos',
+    'a11y.skip': 'Saltar al contenido principal',
     'nav.about':    'Sobre mí',
     'nav.howiwork': 'Cómo trabajo',
     'nav.resume':   'CV',
@@ -633,7 +636,7 @@ const i18n = {
     'meta.desc.index': "Ariel Baiz, Senior Product Designer en Buenos Aires. Diseño de sistemas y UI para SaaS B2B, con casos de estudio sobre design tokens y UX.",
 
     /* Landing — hero intro */
-    'hero.intro': '¡Hola! Soy Ariel, Senior Product Designer de Buenos Aires. Con más de 6 años de experiencia, me especializo en design systems y UI de alta calidad para productos B2B SaaS. Trabajo de cerca con ingeniería y producto, manteniendo los sistemas consistentes a medida que estos crecen.',
+    'hero.intro': "¡Hola! Soy Ariel, <strong>senior product designer</strong> especializado en design systems y productos B2B complejos. Vivo en Buenos Aires y hace más de seis años que convierto flujos de trabajo densos en interfaces consistentes y accesibles, codo a codo con ingeniería y producto.",
 
     /* Landing — work cards: CS1 Design Tokens */
     'work.cs1.tag1': 'Design Systems',
@@ -679,17 +682,18 @@ const i18n = {
     'about.quote.text': 'No tengas nada en tu casa que no sepas que es útil o que no creas que es bello.',
     'about.quote.moment': 'Movimiento Arts and Crafts, 1880',
     'about.h1': 'Sobre Ariel Baiz, Senior Product Designer',
-    'about.p1': 'Hola, soy Ariel, product designer en Buenos Aires con más de 6 años construyendo herramientas B2B SaaS, más recientemente en Bitsight, una empresa de ciberseguridad.',
-    'about.p2': 'Antes del diseño, me formé como técnico en electrónica en la secundaria, donde di mis primeros pasos en programación. Después estudié Diseño Gráfico en la Universidad de Buenos Aires. Los productos digitales resultaron ser una mezcla de ambos mundos: el pensamiento estructurado y sistémico de la electrónica, y el lado directo y humano de construir software fácil de usar.',
-    'about.p3': 'Pasé más de 15 años trabajando en diseño gráfico, especializándome en branding y diseño editorial. Ese background sigue siendo la razón por la que me importa tanto la tipografía, el ritmo y la jerarquía en el trabajo de producto.',
-    'about.p4': 'Actualmente vivo en Buenos Aires pero viví varios años en San Martín de los Andes, en la Patagonia Argentina, lugar que considero mi segundo hogar.',
+    'about.p1': "¡Hola! Soy Ariel, senior product designer en Buenos Aires. Llevo más de seis años construyendo herramientas B2B SaaS, más recientemente en Bitsight, una empresa de ciberseguridad.",
+    'about.p2': "Antes del diseño, me formé como técnico en electrónica en la secundaria, donde di mis primeros pasos en programación. Después estudié Diseño Gráfico en la Universidad de Buenos Aires. Los productos digitales resultaron ser una mezcla de ambos mundos. Necesitan el pensamiento estructurado y sistémico que aprendí en electrónica y el lado humano de construir software que la gente realmente usa.",
+    'about.p3': "Pasé más de 15 años trabajando en diseño gráfico, especializándome en branding y diseño editorial. Ese background sigue siendo la razón por la que me importan tanto la tipografía, el ritmo y la jerarquía en el trabajo de producto.",
     'about.graphic.heading': 'Trabajo de diseño gráfico',
     'about.skills.heading': 'Habilidades y herramientas',
     'about.skills.subhead': 'Habilidades',
-    'about.skills.item1': 'Design Systems',
-    'about.skills.item2': 'Diseño de interacción',
-    'about.skills.item4': 'User Research',
-    'about.skills.item5': 'Diseño Gráfico',
+    'about.skills.item1': "Design Systems",
+    'about.skills.item2': "Diseño de interacción",
+    'about.skills.item3': "UX/UI",
+    'about.skills.item4': "Diseño centrado en las personas (HCD)",
+    'about.skills.item5': "WCAG/A11y",
+    'about.skills.item6': "Diseño gráfico",
     'about.tools.subhead': 'Herramientas',
 
     /* How I Work page */
@@ -1230,6 +1234,17 @@ function initReveal() {
    Click any .media-block video or image to open it fullscreen
    in an overlay. Close via ×, backdrop, or Esc.
 ───────────────────────────────────────────────────────── */
+/* Wraps a video in a positioned frame so overlay buttons sit on the
+   video itself, not on a caption below it. */
+function getVideoFrame(v) {
+  if (v.parentElement && v.parentElement.classList.contains('video-frame')) return v.parentElement;
+  const frame = document.createElement('div');
+  frame.className = 'video-frame has-video-toggle';
+  v.parentElement.insertBefore(frame, v);
+  frame.appendChild(v);
+  return frame;
+}
+
 function initMediaLightbox() {
   const media = document.querySelectorAll('.media-block video, .media-block img');
   if (!media.length) return;
@@ -1282,28 +1297,113 @@ function initMediaLightbox() {
     closeBtn.focus();
   }
 
+  let lastTrigger = null;
+
   function close() {
+    if (!overlay.classList.contains('is-open')) return;
     overlay.classList.remove('is-open');
     lbVideo.pause();
     lbVideo.src = '';
     lbImg.src = '';
     document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
   }
 
+  const isEs = () => (document.documentElement.lang || '').startsWith('es');
+
+  function open(trigger) {
+    lastTrigger = trigger;
+    const el = trigger._media || trigger;
+    if (el.tagName === 'VIDEO') {
+      const src = el.querySelector('source')?.src || el.src;
+      openVideo(src);
+    } else {
+      openImage(el.src, el.alt);
+    }
+  }
+
+  const ICON_EXPAND = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4v1.5H4.56L7 5.94 5.94 7 3.5 4.56V6H2zm12 4v4h-4v-1.5h1.44L9 10.06 10.06 9l2.44 2.44V10H14z"/></svg>';
+
   media.forEach(el => {
-    el.addEventListener('click', () => {
-      if (el.tagName === 'VIDEO') {
-        const src = el.querySelector('source')?.src || el.src;
-        openVideo(src);
-      } else {
-        openImage(el.src, el.alt);
-      }
-    });
+    const caption = el.closest('.media-block')?.querySelector('.media-caption')?.textContent.trim();
+    const desc = el.alt || caption || '';
+    const label = (isEs() ? 'Ampliar: ' : 'View larger: ') + desc;
+    el.addEventListener('click', () => open(el));
+    if (el.tagName === 'VIDEO') {
+      // <video> can't take role="button", so keyboard users get a real button.
+      const host = getVideoFrame(el);
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video-toggle video-expand';
+      btn.innerHTML = ICON_EXPAND;
+      btn.setAttribute('aria-label', label);
+      btn.addEventListener('click', e => { e.stopPropagation(); open(btn); });
+      btn._media = el;
+      host.appendChild(btn);
+    } else {
+      // Keyboard access: images open with Enter/Space, like a button.
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', label);
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+      });
+    }
   });
 
   closeBtn.addEventListener('click', close);
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  document.addEventListener('keydown', e => {
+    if (!overlay.classList.contains('is-open')) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'Tab') {
+      // Keep focus inside the dialog
+      const items = [closeBtn, lbVideo].filter(n => n.style.display !== 'none');
+      const i = items.indexOf(document.activeElement);
+      e.preventDefault();
+      items[(i + (e.shiftKey ? -1 : 1) + items.length) % items.length].focus();
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
+   5a. VIDEO PAUSE CONTROLS (WCAG 2.2.2)
+   ─────────────────────────────────────────────────────────
+   Every autoplaying video gets a pause/play button. With
+   prefers-reduced-motion, videos start paused.
+───────────────────────────────────────────────────────── */
+function initVideoToggles() {
+  const videos = document.querySelectorAll('video[autoplay]');
+  if (!videos.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ICON_PAUSE = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>';
+  const ICON_PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11a1 1 0 0 0 1.5.86l9-5.5a1 1 0 0 0 0-1.72l-9-5.5A1 1 0 0 0 4 2.5z"/></svg>';
+  const label = playing => {
+    const es = (document.documentElement.lang || '').startsWith('es');
+    return playing ? (es ? 'Pausar video' : 'Pause video') : (es ? 'Reproducir video' : 'Play video');
+  };
+
+  videos.forEach(v => {
+    if (!v.parentElement) return;
+    const host = getVideoFrame(v);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'video-toggle';
+    const render = () => {
+      const playing = !v.paused;
+      btn.innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
+      btn.setAttribute('aria-label', label(playing));
+    };
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (v.paused) v.play().catch(() => {}); else v.pause();
+    });
+    v.addEventListener('play', render);
+    v.addEventListener('pause', render);
+    host.appendChild(btn);
+    render();
+  });
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -1566,6 +1666,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Media lightbox (images + videos)
   initMediaLightbox();
+
+  // Pause/play controls for autoplaying videos
+  initVideoToggles();
 
   // Graphic design carousel (about page)
   initGraphicCarousel();

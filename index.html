@@ -61,6 +61,7 @@
     <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
 
 <nav>
   <a class="nav-name" href="#" data-i18n="nav.brand">HAB</a>
@@ -87,10 +88,12 @@
   </div>
 </nav>
 
+<main id="main">
+
 <!-- ── HERO — single column, no stack ── -->
 <section class="hero">
   <div>
-    <h1 class="fade-in" data-i18n="hero.intro">Hi! I'm Ariel, a Senior Product Designer based in Buenos Aires. With 6+ years of experience, I specialize in design systems and high-quality UI for B2B SaaS products. I work closely with engineering and product, keeping systems consistent as products scale.</h1>
+    <h1 class="fade-in" data-i18n="hero.intro">Hi! I'm Ariel, a <strong>senior product designer</strong> for design systems and complex B2B products. Based in Buenos Aires, with more than six years turning dense workflows into consistent, accessible interfaces, side by side with engineering and product.</h1>
   </div>
 </section>
 
@@ -103,7 +106,7 @@
 
 
     <!-- Case Study 01 — Design Tokens -->
-    <a href="case-study-design-tokens.html" class="case-row reveal">
+    <a href="case-study-design-tokens.html" class="case-row case-row--wide reveal">
       <figure class="case-row__image">
         <img src="images/cs-tokens-cover.jpg"
              alt="Design token system"
@@ -177,7 +180,7 @@
   <div class="case-list">
 
     <!-- Case Study 04 — Building With AI -->
-    <a href="case-study-building-with-ai.html" class="case-row reveal">
+    <a href="case-study-building-with-ai.html" class="case-row case-row--wide reveal">
       <figure class="case-row__image">
         <img src="images/cs-portfolio-cover.jpg"
              alt="Building this portfolio with Claude, Visual Studio Code, GitHub, and Figma"
@@ -198,10 +201,11 @@
 </section>
 
 
+</main>
 
 <!-- ── CONTACT ── -->
-<section class="contact-dark">
-  <h2 class="reveal" data-i18n="contact.title">Let's work <em>together</em></h2>
+<section class="contact-dark" aria-labelledby="contact-title">
+  <h2 id="contact-title" class="reveal" data-i18n="contact.title">Let's work <em>together</em></h2>
   <p class="reveal" data-i18n="contact.sub">Open to product design and design systems roles. Remote-friendly.</p>
   <div class="contact-links reveal">
     <span class="email-copy-group">

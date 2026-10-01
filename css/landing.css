@@ -7,7 +7,8 @@
 .section {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px 48px 80px;
+  /* No top padding: the section above already provides --section-gap */
+  padding: var(--space-12) var(--gutter) var(--space-12);
 }
 
 /* .section h3{
@@ -28,7 +29,7 @@
   text-transform: uppercase;
   color: var(--text-3);
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 
 /* ── HERO — single column ───────────────────────────────── */
@@ -36,41 +37,42 @@
   max-width: 1280px;
   width:100%;
   margin: 0 auto;
-  padding: 96px 48px 64px;
+  padding: var(--space-24) var(--gutter) var(--section-gap);
 }
 
 .hero h1 {
   font-family: var(--f-display);
   font-weight: 400;
   font-size: clamp(2.5rem, 3.3vw, 56px);
-  line-height: 1.14;
+  line-height: 1.2;
   letter-spacing: 0px;
   color: var(--text);
-  margin-bottom: 2rem;
+  margin-bottom: 0; /* gap below comes from --section-gap */
 }
 .hero h1 em { font-style: italic; }
+.hero h1 strong { font-weight: 600; }
 
 .hero-sub {
   font-family: var(--f-body);
   font-size: 18px;
   line-height: 30px;
   color: var(--text-2);
-  margin-bottom: 36px;
-  max-width: 560px;
+  margin-bottom: 0;
+  max-width: 640px;
 }
 
 /* ── CASE LIST — 2-column grid, image-led cards ─────────── */
 .case-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg) 32px;
-  margin-top: 24px;
+  gap: var(--space-12) var(--space-8);
+  margin-top: var(--space-6);
 }
 
 .case-row {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-6);
   text-decoration: none;
   color: inherit;
   border-radius: var(--r-lg);
@@ -79,6 +81,13 @@
   outline: 2px solid var(--text);
   outline-offset: 6px;
 }
+
+/* Wide card — spans both columns so the grid has no empty cells
+   (first Featured Work card and the single Side Projects card).
+   A wider 21:9 crop keeps the image from getting too tall. */
+.case-row--wide { grid-column: 1 / -1; }
+.case-row--wide .case-row__image { aspect-ratio: 21 / 9; }
+.case-row--wide .case-row__desc { max-width: 720px; }
 
 /* Image — always 16:9, clipped so the zoom stays inside the frame */
 .case-row__image {
@@ -123,7 +132,7 @@
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-1);
   font-family: var(--f-ui);
   font-size: 11px;
   font-weight: 600;
@@ -131,7 +140,7 @@
   color: var(--text);
   background: var(--surface-overlay);
   border: 1px solid var(--border-mid);
-  padding: 5px 10px 5px 8px;
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-2);
   border-radius: var(--r-pill);
   text-transform: uppercase;
 }
@@ -145,7 +154,7 @@
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-1);
   font-family: var(--f-ui);
   font-size: 11px;
   font-weight: 600;
@@ -153,7 +162,7 @@
   color: var(--text);
   background: var(--surface-overlay);
   border: 1px solid var(--border-mid);
-  padding: 5px 10px;
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--r-pill);
   text-transform: uppercase;
 }
@@ -177,13 +186,13 @@
 .case-row__body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-2);
 }
 
 .case-row__title {
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: clamp(1.25rem, 1.7vw, 28px);
+  font-size: clamp(1.25rem, 1.4vw, 24px);
   line-height: 1.2;
   letter-spacing: -0.3px;
   color: var(--text);
@@ -212,8 +221,8 @@
   order: 4;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 4px;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
 }
 @media (hover: hover) {
   .case-row .card-tags {
@@ -236,7 +245,7 @@
 /* ── CONTACT ────────────────────────────────────────────── */
 .contact-dark {
   background: var(--bg-muted);
-  padding: 96px 48px;
+  padding: var(--space-24) var(--gutter);
   text-align: center;
   transition: background 0.25s ease;
 }
@@ -248,7 +257,7 @@
   line-height: 1.1;
   letter-spacing: 0px;
   color: var(--text);
-  margin-bottom: 14px;
+  margin-bottom: var(--space-4);
 }
 .contact-dark h2 em { font-style: italic; }
 
@@ -257,30 +266,31 @@
   font-size: 16px;
   line-height: 26px;
   color: var(--text-3);
-  margin-bottom: 36px;
+  margin-bottom: var(--space-8);
 }
 
 .contact-links {
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;
 }
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .hero { padding: 72px 24px 64px; }
-  .section { padding: 64px 24px; }
-  .contact-dark { padding: 72px 24px; }
+  .hero { padding: var(--space-20) var(--gutter-mobile) var(--section-gap); }
+  .section { padding: 0 var(--gutter-mobile) var(--section-gap); }
+  .contact-dark { padding: var(--space-20) var(--gutter-mobile); }
 }
 
 @media (max-width: 768px) {
-  .case-list { grid-template-columns: 1fr; gap: 48px; }
+  .case-list { grid-template-columns: 1fr; gap: var(--space-12); }
+  .case-row--wide .case-row__image { aspect-ratio: 16 / 9; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding: 32px 24px 16px; }
+  .hero { padding: var(--space-8) var(--gutter-mobile) var(--section-gap); }
   .hero h1 { font-size: clamp(2rem, 8vw, 40px); letter-spacing: -.5px; }
-  .section { padding: 56px 24px; }
+  .section { padding: 0 var(--gutter-mobile) var(--section-gap); }
   .section h2 { font-size: clamp(1.5rem, 6vw, 24px); letter-spacing: -.5px; }
-  .contact-dark { padding: 64px 24px; }
+  .contact-dark { padding: var(--space-16) var(--gutter-mobile); }
   .contact-links { flex-direction: column; align-items: center;}
   
 }

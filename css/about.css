@@ -7,7 +7,7 @@
 .about-wrap {
   max-width: 720px;
   margin: 0 auto;
-  padding: 4rem 0 6rem;
+  padding: var(--space-16) 0 var(--space-24);
 }
 
 /* ── GRAPHIC DESIGN CAROUSEL ───────────────────────────── */
@@ -25,7 +25,7 @@
 .graphic-grid {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding: 1rem 0 3rem;
+  padding: var(--space-4) 0 var(--space-12);
 }
 /* Same centering mechanism as .about-wrap (max-width + auto margins,
    with the identical mobile padding override below) so the title
@@ -34,7 +34,7 @@
 .graphic-grid__title {
   max-width: 720px;
   margin: 0 auto;
-  padding-bottom: 24px;
+  padding-bottom: var(--space-6);
   font-family: var(--f-ui);
   font-weight: 800;
   font-size: 24px;
@@ -47,7 +47,7 @@
 }
 .graphic-grid__items {
   display: flex;
-  gap: 16px;
+  gap: var(--space-4);
   overflow-x: auto;
   overflow-anchor: none;
   scroll-snap-type: x mandatory;
@@ -60,9 +60,9 @@
      to align. max(0, ...) collapses to 0 in the 640–720px zone where
      .about-wrap itself carries no side padding yet. */
   padding-left: max(0px, calc((100vw - 720px) / 2));
-  padding-right: 1.5rem;
+  padding-right: var(--space-6);
   scroll-padding-left: max(0px, calc((100vw - 720px) / 2));
-  scroll-padding-right: 1.5rem;
+  scroll-padding-right: var(--space-6);
 }
 .graphic-grid__items::-webkit-scrollbar { display: none; }
 .graphic-grid__item {
@@ -121,9 +121,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  margin-top: 1rem;
-  padding: 0 1rem;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+  padding: 0 var(--space-4);
 }
 .graphic-grid__dot {
   width: 32px;
@@ -153,11 +153,11 @@
 }
 
 @media (max-width: 640px) {
-  .graphic-grid__title { padding: 0 1.5rem 20px; }
+  .graphic-grid__title { padding: 0 var(--space-6) var(--space-6); }
   .graphic-grid__item { flex: 0 0 85%; }
   .graphic-grid__arrow { display: none; }
   .graphic-grid__dots { gap: 0; }
-  .graphic-grid__items { padding-left: 1.5rem; scroll-padding-left: 1.5rem; }
+  .graphic-grid__items { padding-left: var(--space-6); scroll-padding-left: var(--space-6); }
 }
 @media (prefers-reduced-motion: reduce) {
   .graphic-grid__items { scroll-behavior: auto; }
@@ -165,44 +165,44 @@
 
 /* ── BIO ────────────────────────────────────────────────── */
 .about-bio {
-  padding: 0 0 3rem;
+  padding: 0 0 var(--space-12);
 }
 .about-bio__text p {
   font-family: var(--f-body);
   font-size: 1.25rem;
   line-height: 1.6;
   color: var(--text);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 .about-bio__text p:last-child { margin-bottom: 0; }
 
 /* Testimonial styles moved to base.css (shared with case studies) */
 
 /* ── SKILLS ─────────────────────────────────────────────── */
-.about-skills { padding: 3rem 0; }
+.about-skills { padding: var(--space-12) 0; }
 .about-skills h2 {
   font-family: var(--f-ui); font-weight: 800;
   font-size: 24px; line-height: 32px;
-  letter-spacing: -0.25px; color: var(--text); margin-bottom: 24px;
+  letter-spacing: -0.25px; color: var(--text); margin-bottom: var(--space-6);
 }
 /* Plain-text variant, no cards */
 .about-skills__columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0 48px;
+  gap: 0 var(--space-12);
 }
 .about-skills__subhead {
   font-family: var(--f-ui); font-weight: 600;
   font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--text-3); margin: 0 0 8px;
+  color: var(--text-3); margin: 0 0 var(--space-2);
 }
 .about-skills--plain .plain-list {
   list-style: none; margin: 0; padding: 0;
   display: flex; flex-direction: column;
 }
 .about-skills--plain .plain-list li {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
-  padding: 12px 0;
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-6);
+  padding: var(--space-3) 0;
   border-bottom: 1px solid var(--border);
 }
 .about-skills--plain .plain-list li:first-child { border-top: 1px solid var(--border); }
@@ -213,7 +213,7 @@
 
 /* ── CONTACT ────────────────────────────────────────────── */
 .contact-dark {
-  background: var(--bg-muted); padding: 80px 48px; text-align: center;
+  background: var(--bg-muted); padding: var(--space-24) var(--gutter); text-align: center;
 }
 .contact-dark h2 {
   font-family: var(--f-display); font-weight: 800;
@@ -221,24 +221,27 @@
   line-height: 1.1; 
   letter-spacing: .5px;
   color: var(--text); 
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
 }
 .contact-dark h2 em { font-style: italic; }
 .contact-dark > p {
   font-family: var(--f-body); font-size: 16px;
-  line-height: 26px; color: var(--text-3); margin-bottom: 32px;
+  line-height: 26px; color: var(--text-3); margin-bottom: var(--space-8);
 }
-.contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.contact-links { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
 
 /* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .contact-dark { padding: var(--space-20) var(--gutter-mobile); }
+}
 @media (max-width: 768px) {
   .about-skills--plain .plain-list li { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
 @media (max-width: 600px) {
-  .about-skills__columns { grid-template-columns: 1fr; gap: 24px 0; }
+  .about-skills__columns { grid-template-columns: 1fr; gap: var(--space-6) 0; }
 }
 @media (max-width: 640px) {
-  .about-wrap { padding: 3rem 1.5rem 4rem; }
-  .contact-dark { padding: 64px 16px; }
+  .about-wrap { padding: var(--space-12) var(--space-6) var(--space-16); }
+  .contact-dark { padding: var(--space-16) var(--gutter-mobile); }
   .contact-links { flex-direction: column; align-items: center;}
 }

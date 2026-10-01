@@ -44,6 +44,7 @@
   --n-300: #d4d4d4;
   --n-400: #a3a3a3;
   --n-500: #737373;
+  --n-550: #666666;  /* AA text on --bg-muted (#f5f5f5): 5.10:1 */
   --n-600: #525252;
   --n-700: #3d3d3d;
   --n-800: #262626;
@@ -89,7 +90,7 @@
   /* Text */
   --text:    var(--n-950);   /* primary   #0a0a0a */
   --text-2:  var(--n-700);   /* secondary #525252 */
-  --text-3:  var(--n-500);   /* tertiary  #737373 */
+  --text-3:  var(--n-550);   /* tertiary  #666666 (was #737373: 4.34:1 on #f5f5f5, failed AA) */
   --text-on-inverse: var(--n-0);
   --text-on-inverse-2: var(--n-300);
   /* Paired with --surface-card-inverse (brand-blue fill) — verified AA against
@@ -230,12 +231,32 @@
   --r-lg:   20px;
   --r-pill: 999px;
 
-  --space-xs:  8px;
-  --space-sm:  16px;
-  --space-md:  24px;
-  --space-lg:  48px;
-  --space-xl:  80px;
-  --space-2xl: 96px;
+  /* Spacing scale (4px base). Every margin/padding/gap in the CSS
+     should reference one of these. Values under 4px (hairlines,
+     optical nudges) and em-based values stay literal. */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* T-shirt aliases (kept for existing references) */
+  --space-xs:  var(--space-2);
+  --space-sm:  var(--space-4);
+  --space-md:  var(--space-6);
+  --space-lg:  var(--space-12);
+  --space-xl:  var(--space-20);
+  --space-2xl: var(--space-24);
+
+  /* Layout */
+  --gutter:      var(--space-12);  /* desktop side padding */
+  --gutter-mobile: var(--space-6); /* 24px side padding on tablet and phone */
+  --section-gap: var(--space-24);  /* same gap between all top-level sections */
 
   /* Legacy aliases — referenced by case study components */
   --radius-sm:  var(--r-sm);
@@ -248,4 +269,8 @@
   --bg-card:    var(--surface-card);
   --text-mid:   var(--text-2);
   --text-mute:  var(--text-3);
+}
+
+@media (max-width: 640px) {
+  :root { --section-gap: var(--space-16); }
 }

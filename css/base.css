@@ -32,17 +32,17 @@ nav {
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--nav-border);
   height: 64px;
-  padding: 0 48px;
+  padding: 0 var(--space-12);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: var(--space-8);
 }
 
 /* Logo — Space Grotesk Bold 18px */
 .nav-name {
   font-family: var(--f-display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.2rem;
   line-height: 1;
   letter-spacing: .5px;
@@ -54,11 +54,11 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: var(--space-8);
   list-style: none;
   flex: 1;
   justify-content: flex-end;
-  margin-right: 16px;
+  margin-right: var(--space-4);
 }
 
 /* Nav/Default — DM Sans Regular 14px */
@@ -73,7 +73,7 @@ nav {
   transition: color 0.15s;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
@@ -104,7 +104,7 @@ nav {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   flex-shrink: 0;
 }
 
@@ -149,11 +149,11 @@ nav {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
   font-weight: 600;
-  padding: 0 12px;
+  padding: 0 var(--space-3);
   line-height: 1;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
@@ -215,7 +215,7 @@ nav {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-2);
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: 14px;
@@ -223,7 +223,7 @@ nav {
   letter-spacing: 0.1px;
   color: #fff;
   background: var(--brand-fill);
-  padding: 10px 20px;
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--r-md);
   border: none;
   text-decoration: none;
@@ -239,7 +239,7 @@ nav {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-2);
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: 14px;
@@ -248,7 +248,7 @@ nav {
   color: var(--text);
   background: transparent;
   border: 1px solid var(--border-mid);
-  padding: 10px 20px;
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--r-md);
   text-decoration: none;
   cursor: pointer;
@@ -264,14 +264,14 @@ nav {
 .btn-white {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
   background: var(--bg-inverse);
-  padding: 10px 22px;
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--r-md);
   border: none;
   text-decoration: none;
@@ -283,14 +283,14 @@ nav {
 .btn-ghost-dark {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
   border: 1px solid var(--border-on-inverse);
-  padding: 10px 22px;
+  padding: var(--space-3) var(--space-6);
   border-radius: var(--r-md);
   text-decoration: none;
   cursor: pointer;
@@ -315,7 +315,7 @@ nav {
   background: transparent;
   color: var(--text-2);
   cursor: pointer;
-  padding: 4px;
+  padding: var(--space-1);
   transition: border-color 0.15s, color 0.15s;
 }
 .copy-btn:hover {
@@ -335,14 +335,14 @@ nav {
 .btn-text-dark {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-2);
   font-family: var(--f-ui);
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-2);
   text-decoration: none;
-  padding: 10px 4px;
+  padding: var(--space-3) var(--space-1);
   cursor: pointer;
   transition: color 0.15s;
 }
@@ -364,7 +364,7 @@ nav {
   letter-spacing: .4px;
   color: var(--text-2);
   background: var(--brand-tag-bg);
-  padding: 4px 8px;
+  padding: var(--space-1) var(--space-2);
   border-radius: var(--r-pill);
   white-space: nowrap;
   text-transform: uppercase;
@@ -380,16 +380,16 @@ nav {
 /* ── TESTIMONIALS ───────────────────────────────────────────
    Shared across case studies and about.html — single source
    so the two stop drifting out of sync with each other. */
-.testimonial-card { margin: 3rem 0 5rem; }
-.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: 1.3rem; }
+.testimonial-card { margin: var(--space-12) 0 var(--space-20); }
+.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: var(--space-6); }
 .quote-icon {
-  margin-bottom: .5rem;
+  margin-bottom: var(--space-2);
   width: 3rem;
   color: var(--text-on-inverse-2);
 }
 .quote-icon svg { width: 100%; height: auto; }
 .testimonial-quote code { font-family: var(--f-mono); font-size: 0.85em; background: var(--bg-muted); padding: 0.1em 0.4em; border-radius: var(--r-sm); color: var(--text-2); font-style: normal; }
-.testimonial-meta { display: flex; flex-direction: row; gap: 8px; }
+.testimonial-meta { display: flex; flex-direction: row; gap: var(--space-2); }
 .t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; }
 .t-moment { font-family: var(--f-ui); font-size: 1rem; color: var(--text-3); }
 
@@ -409,8 +409,8 @@ nav {
 }
 
 /* Simple quote variant — plain italic quote + cite, no icon/word-reveal */
-.testimonial { background: var(--surface-feature); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; margin: 2rem 0; }
-.testimonial p { font-family: var(--f-body); font-style: italic; font-size: 1rem; color: var(--text); margin-bottom: 0.75rem; }
+.testimonial { background: var(--surface-feature); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--space-6); margin: var(--space-8) 0; }
+.testimonial p { font-family: var(--f-body); font-style: italic; font-size: 1rem; color: var(--text); margin-bottom: var(--space-3); }
 .testimonial cite { font-family: var(--f-ui); font-size: 0.82rem; color: var(--text-3); font-style: normal; }
 
 @media (max-width: 1024px) {
@@ -425,11 +425,11 @@ nav {
 /* ── FOOTER ─────────────────────────────────────────────── */
 footer {
   background: var(--bg-subtle);
-  padding: 20px 48px;
+  padding: var(--space-6) var(--space-12);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: var(--space-4);
 }
 footer p,
 footer a {
@@ -442,7 +442,7 @@ footer a {
 footer a {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
 }
 footer a:hover { font-weight: 600; }
 
@@ -483,11 +483,11 @@ footer a:hover { font-weight: 600; }
 
 /* ── RESPONSIVE SHARED ─────────────────────────────────── */
 @media (max-width: 1024px) {
-  nav { padding: 0 32px; }
-  footer { padding: 20px 32px; }
+  nav { padding: 0 var(--gutter-mobile); }
+  footer { padding: var(--space-6) var(--gutter-mobile); }
 }
 @media (max-width: 640px) {
-  nav { padding: 0 24px; gap: 16px; }
+  nav { padding: 0 var(--gutter-mobile); gap: var(--space-4); }
   .nav-toggle { display: flex; }
   .nav-links {
     display: none;
@@ -500,16 +500,16 @@ footer a:hover { font-weight: 600; }
     gap: 0;
     background: var(--bg-subtle);
     border-bottom: 1px solid var(--nav-border);
-    padding: 8px 16px 16px;
+    padding: var(--space-2) var(--gutter-mobile) var(--space-4);
     margin: 0;
     backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
   }
-  .nav-links.is-open { display: flex; height: calc(100vh - 64px); justify-content: flex-start; padding: 24px; }
+  .nav-links.is-open { display: flex; height: calc(100vh - 64px); justify-content: flex-start; padding: var(--space-6); }
   .nav-links li { width: 100%; }
   .nav-links a,
-  .nav-links .nav-cta { width: 100%; padding: 24px 0; font-size: 2rem; }
-  footer { padding: 24px; flex-direction: column; text-align: center; }
+  .nav-links .nav-cta { width: 100%; padding: var(--space-6) 0; font-size: 2rem; }
+  footer { padding: var(--space-6) var(--gutter-mobile); flex-direction: column; text-align: center; }
 }
 
 /* Visually hidden but accessible to screen readers / SEO crawlers.
@@ -526,3 +526,34 @@ footer a:hover { font-weight: 600; }
   white-space: nowrap;
   border: 0;
 }
+
+
+/* ── Accessibility helpers (v1.4.1) ─────────────────────── */
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 1001;
+  padding: var(--space-3) var(--space-4); border-radius: var(--r-md, 8px);
+  background: var(--bg-inverse); color: var(--bg);
+  font-family: var(--f-ui); font-size: 0.875rem; font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+:where(a, button, [role="button"], [tabindex]:not([tabindex="-1"]), summary):focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Pause/play control for autoplaying videos (WCAG 2.2.2) */
+.has-video-toggle { position: relative; }
+.video-frame { display: block; }
+.video-toggle {
+  position: absolute; right: 12px; bottom: 12px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(23,23,23,0.72); color: #fff; cursor: pointer;
+}
+.video-toggle svg { width: 14px; height: 14px; fill: currentColor; }
+.video-toggle:hover { background: rgba(23,23,23,0.9); }
+.video-toggle.video-expand { right: 56px; }
+.graphic-grid__media .video-frame { height: 100%; }

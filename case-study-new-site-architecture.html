@@ -55,7 +55,8 @@
     body.cs3-locked > *:not(#cs3-gate) { display: none !important; }
     /* #cs3-gate only shows while locked — this was previously unconditional,
        which meant the overlay never disappeared even after a correct
-       password removed .cs3-locked from <body>. */
+       password removed .cs3-locked from <body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>. */
     #cs3-gate { display: none; }
     body.cs3-locked #cs3-gate {
       position: fixed;
@@ -182,7 +183,7 @@
     </ol>
   </nav>
 
-  <main class="page-wrap">
+  <main id="main" class="page-wrap">
 
     <div class="hero-facts">
       <div class="hero-facts__col">

@@ -61,6 +61,7 @@
     <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
 
 <nav>
   <a class="nav-name" href="index.html" data-i18n="nav.brand">HAB</a>
@@ -88,17 +89,17 @@
 </nav>
 
 <!-- ── MAIN ── -->
-<main class="about-wrap">
+<main id="main" class="about-wrap">
 
   <!-- BIO -->
   <section class="about-bio reveal">
     <h1 class="sr-only" data-i18n="about.h1">About Ariel Baiz, Senior Product Designer</h1>
     <div class="about-bio__text">
       
-      <p data-i18n="about.p1">Hi! I'm Ariel, a product designer based in Buenos Aires with 6+ years building B2B SaaS tools, most recently at Bitsight, a cybersecurity company.</p>
-      <p data-i18n="about.p2">Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both: the structured, systems-thinking of electronics, and the direct, human side of building software people actually use.</p>
+      <p data-i18n="about.p1">Hi! I'm Ariel, a senior product designer based in Buenos Aires. I've spent more than six years building B2B SaaS tools, most recently at Bitsight, a cybersecurity company.</p>
+      <p data-i18n="about.p2">Before design, I trained as an electronics technician in high school, which is where I took my first steps in programming. I later studied Graphic Design at Universidad de Buenos Aires. Digital products turned out to be a mix of both. They need the structured, systems thinking I learned in electronics and the human side of building software people actually use.</p>
       <p class="about-gd-para" data-i18n="about.p3">
-        I spent more than 10 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.
+        I spent more than 15 years working in graphic design, specializing in branding and editorial design. That background is still the reason I care so much about type, rhythm, and hierarchy in product work.
       </p>
       <div class="testimonial-card testimonial-card--inline">
         <div class="quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div>
@@ -158,12 +159,12 @@
       <div class="about-skills__col">
         <h3 class="about-skills__subhead" data-i18n="about.skills.subhead">Skills</h3>
         <ul class="plain-list">
-          <li><span class="plain-list__name">Design Systems</span></li>
-          <li><span class="plain-list__name">Interaction Design</span></li>
-          <li><span class="plain-list__name">UX/UI</span></li>
-          <li><span class="plain-list__name">Human-Centered Design (HCD)</span></li>
-          <li><span class="plain-list__name">WCAG/A11y</span></li>
-          <li><span class="plain-list__name">Graphic Design</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item1">Design Systems</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item2">Interaction Design</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item3">UX/UI</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item4">Human-Centered Design (HCD)</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item5">WCAG/A11y</span></li>
+          <li><span class="plain-list__name" data-i18n="about.skills.item6">Graphic Design</span></li>
         </ul>
       </div>
       <div class="about-skills__col">
@@ -174,7 +175,7 @@
           <li><span class="plain-list__name">Adobe Creative Suite</span></li>
           <li><span class="plain-list__name">Jira</span></li>
           <li><span class="plain-list__name">HTML/CSS</span></li>
-          <li><span class="plain-list__name">Github</span></li>
+          <li><span class="plain-list__name">GitHub</span></li>
           <li><span class="plain-list__name">Pendo</span></li>
         </ul>
       </div>
@@ -187,8 +188,8 @@
 </main>
 
 <!-- ── CONTACT ── -->
-<section class="contact-dark">
-  <h2 data-i18n="contact.title">Let's work <em>together</em></h2>
+<section class="contact-dark" aria-labelledby="contact-title">
+  <h2 id="contact-title" data-i18n="contact.title">Let's work <em>together</em></h2>
   <p data-i18n="contact.sub">Open to product design and design systems roles. Remote-friendly.</p>
   <div class="contact-links">
     <span class="email-copy-group">
