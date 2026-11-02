@@ -36,7 +36,7 @@
   margin: 0 auto;
   padding-bottom: var(--space-6);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.25px;
@@ -98,7 +98,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.15s, border-color 0.15s, opacity 0.15s;
   z-index: 2;
   padding: 0;
@@ -181,7 +180,7 @@
 /* ── SKILLS ─────────────────────────────────────────────── */
 .about-skills { padding: var(--space-12) 0; }
 .about-skills h2 {
-  font-family: var(--f-ui); font-weight: 600;
+  font-family: var(--f-ui); font-weight: 500;
   font-size: 24px; line-height: 32px;
   letter-spacing: -0.25px; color: var(--text); margin-bottom: var(--space-6);
 }
@@ -192,7 +191,7 @@
   gap: 0 var(--space-12);
 }
 .about-skills__subhead {
-  font-family: var(--f-ui); font-weight: 600;
+  font-family: var(--f-ui); font-weight: 500;
   font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--text-3); margin: 0 0 var(--space-2);
 }
@@ -207,33 +206,11 @@
 }
 .about-skills--plain .plain-list li:first-child { border-top: 1px solid var(--border); }
 .plain-list__name {
-  font-family: var(--f-ui); font-weight: 600;
+  font-family: var(--f-ui); font-weight: 500;
   font-size: 15px; color: var(--text);
 }
 
-/* ── CONTACT ────────────────────────────────────────────── */
-.contact-dark {
-  background: var(--bg-muted); padding: var(--space-24) var(--gutter); text-align: center;
-}
-.contact-dark h2 {
-  font-family: var(--f-display); font-weight: 600;
-  font-size: clamp(2rem, 4vw, 40px);
-  line-height: 1.1; 
-  letter-spacing: .5px;
-  color: var(--text); 
-  margin-bottom: var(--space-3);
-}
-.contact-dark h2 em { font-style: italic; }
-.contact-dark > p {
-  font-family: var(--f-body); font-size: 16px;
-  line-height: 26px; color: var(--text-3); margin-bottom: var(--space-8);
-}
-.contact-links { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
-
 /* ── RESPONSIVE ─────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .contact-dark { padding: var(--space-20) var(--gutter-mobile); }
-}
 @media (max-width: 768px) {
   .about-skills--plain .plain-list li { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
@@ -242,6 +219,28 @@
 }
 @media (max-width: 640px) {
   .about-wrap { padding: var(--space-12) var(--space-6) var(--space-16); }
-  .contact-dark { padding: var(--space-16) var(--gutter-mobile); }
-  .contact-links { flex-direction: column; align-items: center;}
 }
+
+/* ══════════════════════════════════════════════════════════
+   PAGE GRID — <body class="on-grid"> (shared pieces in base.css)
+   ══════════════════════════════════════════════════════════ */
+body.on-grid .about-wrap {
+  max-width: calc(var(--text-w) + 2 * var(--grid-margin));
+  padding-inline: var(--grid-margin);
+}
+
+/* Carousel: full-bleed from the frame width; first card starts on the
+   text column's left edge and each card is one text width (6 cols). */
+body.on-grid .graphic-grid { width: 100cqw; margin-left: calc(-50cqw + 50%); }
+body.on-grid .graphic-grid__title { max-width: var(--text-w); padding-inline: 0; }
+body.on-grid .graphic-grid__items {
+  gap: var(--grid-gap);
+  padding-left: calc((100cqw - var(--text-w)) / 2);
+  scroll-padding-left: calc((100cqw - var(--text-w)) / 2);
+}
+@media (min-width: 641px) {
+  body.on-grid .graphic-grid__item { flex-basis: var(--text-w); }
+}
+
+body.on-grid .about-skills__columns { column-gap: var(--grid-gap); }
+

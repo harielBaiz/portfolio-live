@@ -31,11 +31,11 @@
  */
 
 /* ── 1. FONTS ──────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,800;1,9..40,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@400;500&display=swap');
 
-/* Display — General Sans (self-hosted, Fontshare / ITF Free Font License) */
-@font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: 'General Sans'; src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+/* Raveo (display + UI) — variable, subsetted Regular–Bold, self-hosted. OFL 1.1, license in fonts/Raveo-OFL.txt (ships with the site).
+   Numeric weights follow classic Inter positions (500 = Inter Medium; the named Medium is 520). */
+@font-face { font-family: 'Raveo'; src: url('../fonts/RaveoVF-subsetted.woff2') format('woff2'); font-weight: 400 730; font-style: normal; font-display: swap; }
 
 
 /* ── 2. PRIMITIVES ─────────────────────────────────────── */
@@ -47,10 +47,15 @@
   --n-100: #f5f5f5;
   --n-200: #e8e8e8;
   --n-300: #d4d4d4;
+  --n-350: #c4c4c4;
+  --n-375: #b3b3b3;  /* dark-mode secondary: 9.4:1 on #0a0a0a */
   --n-400: #a3a3a3;
+  --n-450: #919191;  /* dark-mode tertiary: 4.8:1 on #262626 */
   --n-500: #737373;
+  --n-525: #6e6e6e;  /* light-mode tertiary: 4.7:1 on #f5f5f5 (AA) */
   --n-550: #666666;  /* AA text on --bg-muted (#f5f5f5): 5.10:1 */
   --n-600: #525252;
+  --n-650: #4a4a4a;  /* light-mode secondary: 8.9:1 on #fff */
   --n-700: #3d3d3d;
   --n-800: #262626;
   --n-900: #171717;
@@ -91,11 +96,14 @@
   --surface-card:    var(--n-100);
   --surface-card-inverse: var(--n-800);  /* dark card surface, e.g. outcome stats */
   --surface-overlay: rgba(255,255,255,0.95);
+  /* Raised surfaces (floating panels, popovers, inputs on them). Rules: a surface above another is lighter,
+     never darker; separation is a 1px border, never a shadow. Page base is --bg-subtle (n-50 / n-900). */
+  --surface-raised:   var(--n-0);    /* lighter than the n-50 page */
 
   /* Text */
   --text:    var(--n-950);   /* primary   #0a0a0a */
-  --text-2:  var(--n-600);   /* secondary #525252 */
-  --text-3:  var(--n-550);   /* tertiary  #666666 (was #737373: 4.34:1 on #f5f5f5, failed AA) */
+  --text-2:  var(--n-600);   /* secondary #525252 — 7.8:1 on #fff */
+  --text-3:  var(--n-525);   /* tertiary  #6e6e6e — 5.1:1 on #fff, 4.7:1 on #f5f5f5 (AA) */
   --text-on-inverse: var(--n-0);
   --text-on-inverse-2: var(--n-300);
   /* Paired with --surface-card-inverse (brand-blue fill) — verified AA against
@@ -154,11 +162,12 @@
   --surface-card:    var(--n-800);
   --surface-card-inverse: var(--n-200);  /* light card surface, e.g. outcome stats */
   --surface-overlay: rgba(10,10,10,0.95);
+  --surface-raised:   var(--n-800);  /* lighter than the n-900 page */
 
   /* Text */
   --text:    var(--n-0);     /* #ffffff */
-  --text-2:  var(--n-200);   /* #a3a3a3 */
-  --text-3:  var(--n-400);   /* #737373 */
+  --text-2:  var(--n-375);   /* secondary #b3b3b3 — 9.4:1 on #0a0a0a */
+  --text-3:  var(--n-450);   /* tertiary  #919191 — 6:1 on #0a0a0a, 4.8:1 on #262626 (AA) */
   --text-on-inverse: var(--n-950);
   --text-on-inverse-2: var(--n-600);
 
@@ -201,34 +210,35 @@
 
 /* ── 5. TYPOGRAPHY TOKENS ───────────────────────────────── */
 :root {
-  --f-display: 'General Sans', 'DM Sans', sans-serif;
-  --f-ui:      'General Sans', 'DM Sans', system-ui, sans-serif;
+  /* Raveo for display + UI (OFL, self-hosted). DM Sans is the fallback. */
+  --f-display: 'Raveo', 'DM Sans', sans-serif;
+  --f-ui:      'Raveo', 'DM Sans', system-ui, sans-serif;
   --f-body:    'Lora', Georgia, serif;
   --f-mono:    'DM Mono', monospace;
 
-  /* Font weights — the site uses two: Regular and Semibold */
+  /* Font weights — the site uses two: Regular and Medium */
   --fw-regular:  400;
-  --fw-semibold: 600;
+  --fw-medium:   500;
 
-  /* Display — General Sans Semibold */
-  --t-display-2xl: 600 72px/80px var(--f-display);
-  --t-display-xl:  600 56px/64px var(--f-display);
-  --t-display-lg:  600 40px/48px var(--f-display);
+  /* Display — Raveo Medium */
+  --t-display-2xl: 500 72px/80px var(--f-display);
+  --t-display-xl:  500 56px/64px var(--f-display);
+  --t-display-lg:  500 40px/48px var(--f-display);
 
   /* Heading — DM Sans */
-  --t-heading-xl: 600 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
-  --t-heading-lg: 600 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
-  --t-heading-md: 600 20px/28px var(--f-ui);
-  --t-heading-sm: 600 18px/26px var(--f-ui);
+  --t-heading-xl: 500 32px/40px var(--f-ui);   /* letter-spacing: -0.5px */
+  --t-heading-lg: 500 24px/32px var(--f-ui);   /* letter-spacing: -0.25px */
+  --t-heading-md: 500 20px/28px var(--f-ui);
+  --t-heading-sm: 500 18px/26px var(--f-ui);
 
   /* Body — Lora */
   --t-body-lg: 400 18px/30px var(--f-body);
   --t-body-md: 400 16px/26px var(--f-body);
 
   /* UI — DM Sans */
-  --t-label-lg: 600 16px/24px var(--f-ui);
-  --t-label-md: 600 14px/20px var(--f-ui);
-  --t-label-sm: 600 12px/16px var(--f-ui);
+  --t-label-lg: 500 16px/24px var(--f-ui);
+  --t-label-md: 500 14px/20px var(--f-ui);
+  --t-label-sm: 500 12px/16px var(--f-ui);
   --t-caption:  400 12px/16px var(--f-ui);
   --t-nav:      400 14px/20px var(--f-ui);
 }
@@ -267,6 +277,17 @@
   --gutter-mobile: var(--space-6); /* 24px side padding on tablet and phone */
   --section-gap: var(--space-24);  /* same gap between all top-level sections */
 
+  /* Layout grid — 12 cols desktop / 8 tablet / 4 phone.
+     Content is --container-max wide with --grid-margin outside it.
+     Nav and footer content align to this container; only the 1680px hero
+     band (--band-max) is wider. */
+  --container-max: 1280px;
+  --band-max:      1680px;
+  --grid-cols:     12;
+  --grid-gap:      var(--space-8);   /* 32px */
+  --grid-margin:   var(--gutter);    /* 48px */
+  --col-module:    320px;            /* min card width for auto-fit grids */
+
   /* Legacy aliases — referenced by case study components */
   --radius-sm:  var(--r-sm);
   --radius-md:  var(--r-md);
@@ -282,4 +303,11 @@
 
 @media (max-width: 640px) {
   :root { --section-gap: var(--space-16); }
+}
+
+@media (max-width: 1024px) {
+  :root { --grid-cols: 8; --grid-gap: var(--space-6); --grid-margin: var(--gutter-mobile); }
+}
+@media (max-width: 640px) {
+  :root { --grid-cols: 4; --grid-gap: var(--space-4); }
 }

@@ -2,11 +2,13 @@
 <html lang="en" data-i18n-title="meta.title.cs2" data-i18n-desc="meta.desc.cs2">
 <head>
   <meta charset="UTF-8" />
-  <link rel="preload" href="fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="fonts/RaveoVF-subsetted.woff2" as="font" type="font/woff2" crossorigin/>
   <link rel="stylesheet" href="css/tokens.css"/>
   <link rel="stylesheet" href="css/base.css"/>
   <link rel="stylesheet" href="css/case-study.css"/>
-  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="css/ask.css"/>
+  <link rel="icon" href="images/favicon.ico" sizes="32x32"/>
+  <link rel="icon" type="image/svg+xml" href="images/SVG/favicon.svg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>InfoSec Questionnaire Redesign — Hariel Baiz</title>
   <meta name="description" content="Case study: redesigning Bitsight's security review workflow after the ThirdPartyTrust acquisition. 100% task success in usability testing."/>
@@ -62,12 +64,12 @@
     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c79aaa6e01bc4ab7bf9d7ee2a056df8a"}'></script>
     <!-- End Cloudflare Web Analytics -->
 </head>
-<body>
+<body class="on-grid">
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
 
 <!-- ── NAV ── -->
 <nav>
-  <a class="nav-name" href="index.html" data-i18n="nav.brand">HAB</a>
+  <a class="nav-name nav-logo" href="index.html" aria-label="H. Ariel Baiz — Home">H. Ariel Baiz</a>
   <ul class="nav-links">
     <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
     <li><a href="about.html" data-i18n="nav.about">About</a></li>
@@ -76,6 +78,7 @@
     <li><a href="https://www.linkedin.com/in/hariel-baiz" class="nav-cta" target="_blank"><span data-i18n="nav.linkedin">LinkedIn</span></a></li>
   </ul>
   <div class="nav-controls">
+    <button type="button" class="nav-ask" data-ask-open hidden aria-haspopup="dialog" data-i18n-aria="nav.ask" aria-label="Ask AI"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></button>
     <button class="theme-toggle" aria-label="Toggle theme">
       <span class="icon-moon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></span>
       <span class="icon-sun"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
@@ -123,6 +126,7 @@
   </ol>
 </nav>
 
+<div class="cs-frame">
 <main id="main" class="page-wrap">
 
   <div class="hero-facts">
@@ -503,13 +507,41 @@
   </section>
 
 </main>
+</div><!-- /.cs-frame -->
 
 </div><!-- /cs-layout -->
 
 <!-- ── FOOTER ── -->
-<footer>
-  <p><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> <span data-i18n="footer.back">Back to all work</span></a></p>
+<footer class="site-footer" aria-labelledby="footer-title">
+  <div class="footer-cta">
+    <div>
+      <h2 id="footer-title" data-i18n="contact.title">Let's work <em>together</em></h2>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <p class="footer-label" data-i18n="footer.contact">Contact me</p>
+      <span class="email-copy-group">
+        <a href="#" class="btn-text-dark" data-email>hariel.baiz@gmail.com</a>
+        <button type="button" class="copy-btn" data-copy-email data-aria-title data-i18n-aria="contact.copy" aria-label="Copy email address" title="Copy email address">
+          <svg class="icon-copy" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg class="icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></button>
+      </span>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label" data-i18n="footer.connect">Let's connect</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/hariel-baiz" class="btn-text-dark" target="_blank" rel="noopener"><span data-i18n="nav.linkedin">LinkedIn</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+        <a href="downloads/Hariel-Baiz-Resume-EN.pdf" data-i18n-href="resume.href" target="_blank" class="btn-text-dark"><span data-i18n="nav.resume">Resume</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col footer-col--meta">
+      <p class="footer-label" data-i18n="footer.copy">© 2026 H. Ariel Baiz</p>
+      <p class="footer-credit"><a href="case-study-building-with-ai.html" data-i18n="footer.credit">Designed and built with Claude</a></p>
+    </div>
+  </div>
 </footer>
   <script src="js/site.js" defer></script>
+  <script src="js/ask.js" defer></script>
 </body>
 </html

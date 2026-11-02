@@ -32,7 +32,8 @@ nav {
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--nav-border);
   height: 64px;
-  padding: 0 var(--space-12);
+  /* Full-width bar; content aligns to the 1280px grid container */
+  padding: 0 max(var(--grid-margin), calc((100% - var(--container-max)) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,16 +42,24 @@ nav {
 
 /* Logo — Space Grotesk Bold 18px */
 .nav-name {
-  font-family: var(--f-display);
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-family: 'Raveo', var(--f-display);   /* name wordmark is always Raveo */
+  font-weight: 500;
+  font-size: 1.5rem;
   line-height: 1;
-  letter-spacing: .5px;
+  letter-spacing: -0.2px;
   color: var(--text);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
 }
+
+/* Name wordmark in the nav bar (text, not an image) */
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--r-sm, 4px);
+}
+.nav-logo:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 
 .nav-links {
   display: flex;
@@ -83,23 +92,6 @@ nav {
   color: var(--nav-link);
 }
 
-/* Contact CTA — DM Sans Medium 14px brand */
-.nav-cta {
-  font-family: var(--f-ui);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.1px;
-  color: var(--nav-text);
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: opacity 0.15s;
-}
-.nav-cta:hover { 
-  font-weight: 600; 
-  color: var(--nav-link);
-}
 
 /* ── NAV CONTROLS (theme + lang) ────────────────────────── */
 .nav-controls {
@@ -153,7 +145,7 @@ nav {
   gap: var(--space-1);
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0 var(--space-3);
   line-height: 1;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
@@ -218,7 +210,7 @@ nav {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
@@ -242,7 +234,7 @@ nav {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
@@ -267,7 +259,7 @@ nav {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
@@ -286,7 +278,7 @@ nav {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--f-ui);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: var(--text-on-inverse);
@@ -300,7 +292,7 @@ nav {
 }
 .btn-ghost-dark:hover { border-color: var(--text-on-inverse); }
 
-/* Email + copy-to-clipboard button, sits next to the email pill in .contact-dark */
+/* Email + copy-to-clipboard button, sits next to the email link in the footer */
 .email-copy-group {
   display: inline-flex;
   align-items: center;
@@ -359,13 +351,13 @@ nav {
 .chip, .card-tag, .tag {
   display: inline-flex;
   align-items: center;
-  font-family: var(--f-ui);
+  font-family: var(--f-mono);
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: .4px;
+  letter-spacing: 1px;
   color: var(--text-2);
   background: var(--brand-tag-bg);
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-2) var(--space-3);
   border-radius: var(--r-pill);
   white-space: nowrap;
   text-transform: uppercase;
@@ -382,7 +374,7 @@ nav {
    Shared across case studies and about.html — single source
    so the two stop drifting out of sync with each other. */
 .testimonial-card { margin: var(--space-12) 0 var(--space-20); }
-.testimonial-quote { font-family: var(--f-body); font-size: 2.5rem; line-height: 1.25; color: var(--text); margin-bottom: var(--space-6); }
+.testimonial-quote { font-family: var(--f-body); font-size: 2rem; line-height: 1.25; color: var(--text); margin-bottom: var(--space-6); }
 .quote-icon {
   margin-bottom: var(--space-2);
   width: 3rem;
@@ -391,7 +383,7 @@ nav {
 .quote-icon svg { width: 100%; height: auto; }
 .testimonial-quote code { font-family: var(--f-mono); font-size: 0.85em; background: var(--bg-muted); padding: 0.1em 0.4em; border-radius: var(--r-sm); color: var(--text-2); font-style: normal; }
 .testimonial-meta { display: flex; flex-direction: row; gap: var(--space-2); }
-.t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 600; color: var(--text); white-space: nowrap; flex-shrink: 0; }
+.t-role   { font-family: var(--f-ui); font-size: 1rem; font-weight: 500; color: var(--text); white-space: nowrap; flex-shrink: 0; }
 .t-moment { font-family: var(--f-ui); font-size: 1rem; color: var(--text-3); }
 
 /* Word-by-word reveal — as if the person were speaking the quote */
@@ -423,29 +415,68 @@ nav {
   .t-role, .t-moment { font-size: 0.8rem; }
 }
 
-/* ── FOOTER ─────────────────────────────────────────────── */
+/* ── FOOTER (same on every page) ───────────────────────────
+   Top: call to action (title, line, buttons + email copy). Bottom bar: copyright, credit.
+   Surface: --bg-muted, separated from the page by a 1px border (no shadow). */
 footer {
-  background: var(--bg-subtle);
-  padding: var(--space-6) var(--space-12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
+  background: var(--bg-muted);
+  border-top: 1px solid var(--border);
+  padding: var(--space-20) max(var(--grid-margin), calc((100% - var(--container-max)) / 2)) var(--space-8);
 }
-footer p,
-footer a {
+.footer-cta h2 {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 2.4vw, 40px);   /* same as the case-study h2 */
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin: 0;
+}
+.footer-cta h2 em { font-style: italic; }
+.footer-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-6);
+  margin-bottom: var(--space-16);
+}
+
+/* Three groups on the page grid: Contact me · Let's connect · copyright + credit */
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  column-gap: var(--grid-gap);
+  row-gap: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+.footer-col { grid-column: span 4; display: flex; flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+.footer-col--meta { align-items: flex-end; text-align: right; }
+/* Same recipe as .section-label (landing.css / case-study.css) */
+.footer-label {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  display: block;
+  margin: 0;
+}
+.footer-credit { margin: 0; font-size: 14px; line-height: 20px; }
+.footer-credit a {
   font-family: var(--f-ui);
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
   color: var(--text-3);
   text-decoration: none;
 }
-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-}
-footer a:hover { font-weight: 600; }
+.footer-credit a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+/* LinkedIn | Resume, split by a thin divider as in the reference */
+.footer-links { display: flex; align-items: center; margin-left: calc(-1 * var(--space-1)); }
+.footer-links a + a { border-left: 1px solid var(--border-mid); padding-left: var(--space-4); margin-left: var(--space-3); }
+.footer-col .email-copy-group { margin-left: calc(-1 * var(--space-1)); }
+.footer-col .btn-text-dark { padding-block: 0; line-height: 20px; }
 
 /* ── ANIMATIONS ─────────────────────────────────────────── */
 @keyframes fadeUp {
@@ -485,7 +516,8 @@ footer a:hover { font-weight: 600; }
 /* ── RESPONSIVE SHARED ─────────────────────────────────── */
 @media (max-width: 1024px) {
   nav { padding: 0 var(--gutter-mobile); }
-  footer { padding: var(--space-6) var(--gutter-mobile); }
+  .footer-col--meta { grid-column: 1 / -1; align-items: flex-start; text-align: left; }
+  footer { padding: var(--space-16) var(--gutter-mobile) var(--space-6); }
 }
 @media (max-width: 640px) {
   nav { padding: 0 var(--gutter-mobile); gap: var(--space-4); }
@@ -510,7 +542,10 @@ footer a:hover { font-weight: 600; }
   .nav-links li { width: 100%; }
   .nav-links a,
   .nav-links .nav-cta { width: 100%; padding: var(--space-6) 0; font-size: 2rem; }
-  footer { padding: var(--space-6) var(--gutter-mobile); flex-direction: column; text-align: center; }
+  footer { padding: var(--space-12) var(--gutter-mobile) var(--space-6); }
+  .footer-cta { margin-bottom: var(--space-12); }
+  .footer-col { grid-column: 1 / -1; }
+  .footer-col--meta { align-items: flex-start; text-align: left; }
 }
 
 /* Visually hidden but accessible to screen readers / SEO crawlers.
@@ -534,7 +569,7 @@ footer a:hover { font-weight: 600; }
   position: absolute; left: 16px; top: -100px; z-index: 1001;
   padding: var(--space-3) var(--space-4); border-radius: var(--r-md, 8px);
   background: var(--bg-inverse); color: var(--bg);
-  font-family: var(--f-ui); font-size: 0.875rem; font-weight: 600; text-decoration: none;
+  font-family: var(--f-ui); font-size: 0.875rem; font-weight: 500; text-decoration: none;
 }
 .skip-link:focus { top: 12px; }
 
@@ -558,3 +593,25 @@ footer a:hover { font-weight: 600; }
 .video-toggle:hover { background: rgba(23,23,23,0.9); }
 .video-toggle.video-expand { right: 56px; }
 .graphic-grid__media .video-frame { height: 100%; }
+
+/* ══════════════════════════════════════════════════════════
+   PAGE GRID — shared by pages with <body class="on-grid">
+   ══════════════════════════════════════════════════════════
+   Column tokens live in tokens.css (12 / 8 / 4 columns).
+   Tiers, all centered: text = 6 cols (about 60 characters per
+   line in Lora 20px, floor 540px), media = 8 cols, wide = 10.
+   .cs-frame wraps <main> and is a size container, so widths come
+   from the grid (cqw) instead of 100vw, which ignores the scrollbar. */
+.cs-frame { container-type: inline-size; }
+
+body.on-grid { --text-span: 6; --media-span: 8; --wide-span: 10; }
+@media (max-width: 1024px) { body.on-grid { --media-span: 8; --wide-span: 8; } }
+@media (max-width: 640px)  { body.on-grid { --text-span: 4; --media-span: 4; --wide-span: 4; } }
+
+body.on-grid :is(.page-wrap, .about-wrap, .hero-inner, .media-block) {
+  --grid-w: min(100cqw - 2 * var(--grid-margin), var(--container-max));
+  --text-w: max(
+    calc((var(--text-span) * var(--grid-w) - (var(--grid-cols) - var(--text-span)) * var(--grid-gap)) / var(--grid-cols)),
+    min(540px, var(--grid-w))
+  );
+}

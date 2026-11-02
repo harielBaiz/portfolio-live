@@ -84,10 +84,9 @@ const i18n = {
 
     /* Landing — contact (em tag intentional, rendered via innerHTML) */
     'contact.title': "Let's work together",
-    'contact.sub':   'Open to product design and design systems roles. Remote-friendly.',
 
     /* Footer */
-    'footer.copy': '© 2026 H. Ariel Baiz · Senior Product Designer',
+    'footer.copy': '© 2026 H. Ariel Baiz',
 
     /* Page titles */
     'meta.title.index': 'Hariel Baiz — Senior Product Designer',
@@ -193,7 +192,6 @@ const i18n = {
     'howiwork.manifesto': "I want the distance between an idea and its implementation to stay short, and the thinking inside it to stay deep. Evidence informs judgment. AI can make the work faster and wider in scope, but the decisions and the responsibility stay with me. The goal was never more design, or more code. It's whether people trust the product enough to keep using it.",
 
     /* Shared case-study footer link */
-    'footer.back': 'Back to all work',
 
     /* ═══ Case Study 1 — Design Tokens ═══ */
     'meta.title.cs1': "Design Tokens Case Study — Hariel Baiz",
@@ -599,6 +597,50 @@ const i18n = {
     'cs4.lessons.p6': "Setting up a design system's foundation used to take me hours, from grid values to every color variable and token hierarchy. With AI, that groundwork took minutes and gave me a solid starting point.",
     'cs4.lessons.p7': "If I started over, I'd set up <code>design.md</code> in the first session. Most of those 151 dead classes came from sessions where Claude had nothing to check against, so it kept inventing instead of reusing.",
     'cs4.lessons.p9': "My next step would be exploring a real component library, something like Storybook, instead of <code>design.md</code>. I'd like to see if I can keep the same design consistency and improve execution speed, but with a more robust, documented component system.",
+
+    'contact.copy': 'Copy email address',
+    'contact.copied': 'Copied!',
+    'footer.credit': 'Designed and built with Claude',
+    'footer.contact': 'Contact me',
+    'footer.connect': "Let's connect",
+    'hero.h1': 'Ariel Baiz, Senior Product Designer',
+    /* Ask AI */
+    'nav.ask': 'Ask AI',
+    'ask.title': 'Ask about Ariel',
+    'ask.sub': 'AI assistant · answers from this portfolio and his resume',
+    'ask.close': 'Close',
+    'ask.new': 'New chat',
+    'ask.intro': 'Ask me anything about Ariel\'s work, process or experience. I answer from the portfolio and his resume.',
+    'ask.chip1': 'What does Ariel do?',
+    'ask.chip2': 'Tell me about the design tokens case study',
+    'ask.chip3': 'What is his experience with design systems?',
+    'ask.chip4': 'How does he work with engineers?',
+    'ask.placeholder': 'Ask a question…',
+    'ask.send': 'Send',
+    'ask.disclaimer': 'AI-generated answers can be wrong. For anything important, check with Ariel directly.',
+    'ask.thinking': 'Thinking…',
+    'ask.thinking2': 'Looking through the portfolio…',
+    'ask.thinking3': 'Taking longer than usual…',
+    'ask.err.network': 'I couldn\'t reach the assistant. Check your connection and try again.',
+    'ask.err.server': 'Something went wrong on my side. Please try again in a moment.',
+    'ask.err.timeout': 'This is taking too long. Please try again.',
+    'ask.err.rate': 'Too many questions in a short time. You can try again in {n}s.',
+    'ask.retry': 'Try again',
+    'ask.noanswer.title': 'I don\'t have that information',
+    'ask.noanswer.body': 'Ariel can answer this directly:',
+    'ask.noanswer.email': 'Email Ariel',
+    'ask.noanswer.try': 'Or try asking',
+    'ask.left2': 'Only 2 questions left today. Choose wisely: each one comes out of Ariel\'s coffee budget.',
+    'ask.left1': 'Last question. Make it count.',
+    'ask.limit.title': 'That\'s all for today',
+    'ask.limit.body': 'Ariel can\'t afford more tokens today, but he answers email for free:',
+    'ask.busy.title': 'The assistant is out of budget for today',
+    'ask.busy.body': 'It answered a lot of questions today. Come back tomorrow, or reach Ariel directly:',
+    'ask.inline.label': 'Ask the AI assistant about Ariel',
+    'ask.inline.placeholder': 'Ask the AI about my work…',
+    'ask.inline.btn': 'Ask',
+    'ask.you': 'You',
+    'ask.bot': 'Assistant',
   },
 
   es: {
@@ -626,10 +668,9 @@ const i18n = {
 
     /* Landing — contact (em tag intentional, rendered via innerHTML) */
     'contact.title': 'Trabajemos juntos',
-    'contact.sub':   'Abierto a roles de diseño de producto y design systems. Trabajo remoto.',
 
     /* Footer */
-    'footer.copy': '© 2026 H. Ariel Baiz · Diseñador de Producto Senior',
+    'footer.copy': '© 2026 H. Ariel Baiz',
 
     /* Page titles */
     'meta.title.index': 'Hariel Baiz — Diseñador de Producto Senior',
@@ -735,7 +776,6 @@ const i18n = {
     'howiwork.manifesto': 'Quiero que la distancia entre una idea y su implementación sea corta, y que el pensamiento adentro de esa idea siga siendo profundo. La evidencia informa el criterio. La IA puede hacer el trabajo más rápido y de mayor alcance, pero las decisiones y la responsabilidad siguen siendo mías. El objetivo nunca fue más diseño, ni más código. Es si la gente termina confiando lo suficiente en el producto como para seguir usándolo.',
 
     /* Shared case-study footer link */
-    'footer.back': 'Volver a todos los proyectos',
 
     /* ═══ Case Study 1 — Design Tokens ═══ */
     'meta.title.cs1': 'Caso de Estudio: Design Tokens — Hariel Baiz',
@@ -1142,6 +1182,50 @@ const i18n = {
     'cs4.lessons.p6': "Armar las bases de un design system me llevaba horas, desde los valores de grilla hasta cada variable de color y la jerarquía de tokens. Con IA, ese trabajo me llevó minutos y me dio un punto de partida sólido.",
     'cs4.lessons.p7': "Si empezara de nuevo, armaría el <code>design.md</code> en la primera sesión. La mayoría de esas 151 clases muertas salieron de sesiones en las que Claude no tenía contra qué comparar, así que inventaba en lugar de reutilizar.",
     'cs4.lessons.p9': "Mi próximo paso sería explorar una librería de componentes real, algo como Storybook, en lugar de <code>design.md</code>. Me gustaría ver si puedo mantener la misma consistencia de diseño y mejorar la velocidad de ejecución, pero con un sistema de componentes más robusto y documentado.",
+
+    'contact.copy': 'Copiar dirección de email',
+    'contact.copied': '¡Copiado!',
+    'footer.credit': 'Diseñado y desarrollado con Claude',
+    'footer.contact': 'Escribime',
+    'footer.connect': 'Conectemos',
+    'hero.h1': 'Ariel Baiz, Diseñador de Producto Senior',
+    /* Ask AI */
+    'nav.ask': 'Preguntá a la IA',
+    'ask.title': 'Preguntá sobre Ariel',
+    'ask.sub': 'Asistente de IA · responde desde este portfolio y su CV',
+    'ask.close': 'Cerrar',
+    'ask.new': 'Nuevo chat',
+    'ask.intro': 'Preguntame lo que quieras sobre el trabajo, el proceso o la experiencia de Ariel. Respondo con lo que hay en el portfolio y en su CV.',
+    'ask.chip1': '¿A qué se dedica Ariel?',
+    'ask.chip2': 'Contame del caso de estudio de design tokens',
+    'ask.chip3': '¿Qué experiencia tiene con design systems?',
+    'ask.chip4': '¿Cómo trabaja con ingeniería?',
+    'ask.placeholder': 'Hacé una pregunta…',
+    'ask.send': 'Enviar',
+    'ask.disclaimer': 'Las respuestas generadas por IA pueden tener errores. Si es algo importante, consultalo directamente con Ariel.',
+    'ask.thinking': 'Pensando…',
+    'ask.thinking2': 'Revisando el portfolio…',
+    'ask.thinking3': 'Está tardando más de lo normal…',
+    'ask.err.network': 'No pude conectarme con el asistente. Revisá tu conexión e intentá de nuevo.',
+    'ask.err.server': 'Algo salió mal de mi lado. Intentá de nuevo en un momento.',
+    'ask.err.timeout': 'Está tardando demasiado. Intentá de nuevo.',
+    'ask.err.rate': 'Hiciste muchas preguntas en poco tiempo. Podés volver a intentar en {n}s.',
+    'ask.retry': 'Reintentar',
+    'ask.noanswer.title': 'No tengo esa información',
+    'ask.noanswer.body': 'Ariel te lo puede responder directamente:',
+    'ask.noanswer.email': 'Escribile a Ariel',
+    'ask.noanswer.try': 'O probá preguntar',
+    'ask.left2': 'Te quedan solo 2 preguntas por hoy. Elegilas bien: cada una sale del presupuesto de café de Ariel.',
+    'ask.left1': 'Última pregunta. Que valga la pena.',
+    'ask.limit.title': 'Eso es todo por hoy',
+    'ask.limit.body': 'Ariel no puede pagar más tokens hoy, pero responde los mails gratis:',
+    'ask.busy.title': 'El asistente se quedó sin presupuesto por hoy',
+    'ask.busy.body': 'Hoy respondió muchísimas preguntas. Volvé mañana o escribile directo a Ariel:',
+    'ask.inline.label': 'Preguntale al asistente de IA sobre Ariel',
+    'ask.inline.placeholder': 'Preguntale a la IA sobre mi trabajo…',
+    'ask.inline.btn': 'Preguntar',
+    'ask.you': 'Vos',
+    'ask.bot': 'Asistente',
   },
 };
 
@@ -1173,7 +1257,10 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     const key = el.dataset.i18nAria;
     const str = i18n[lang][key];
-    if (str !== undefined) el.setAttribute('aria-label', str);
+    if (str !== undefined) {
+      el.setAttribute('aria-label', str);
+      if (el.hasAttribute('data-aria-title')) el.setAttribute('title', str); // same text as a native tooltip
+    }
   });
 
   // Update all elements with data-i18n-href (e.g. language-specific downloads)
@@ -1634,8 +1721,13 @@ function initCopyEmail() {
 
       navigator.clipboard.writeText(email).then(() => {
         btn.classList.add('is-copied');
+        const copiedMsg = i18n[currentLang]?.['contact.copied'] || 'Copied!';
+        btn.setAttribute('title', copiedMsg);
         clearTimeout(timer);
-        timer = setTimeout(() => btn.classList.remove('is-copied'), 1800);
+        timer = setTimeout(() => {
+          btn.classList.remove('is-copied');
+          btn.setAttribute('title', btn.getAttribute('aria-label') || '');
+        }, 1800);
       }).catch(() => {});
     });
   });
@@ -1748,5 +1840,13 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('is-visible', scrolledPast);
     }, { threshold: 0 });
     heroObserver.observe(heroSub);
+  }
+
+  // The footer is taller than the old one: hide the rail while the footer reaches the middle of the screen
+  const footer = document.querySelector('footer');
+  if (nav && footer) {
+    new IntersectionObserver(([entry]) => {
+      nav.classList.toggle('is-over-footer', entry.isIntersecting);
+    }, { rootMargin: '0px 0px -40% 0px' }).observe(footer);
   }
 })();

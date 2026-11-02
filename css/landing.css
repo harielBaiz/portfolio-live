@@ -5,19 +5,20 @@
 
 /* ── LAYOUT ─────────────────────────────────────────────── */
 .section {
-  max-width: 1280px;
+  /* Content is --container-max wide; --grid-margin sits outside it */
+  max-width: calc(var(--container-max) + 2 * var(--grid-margin));
   margin: 0 auto;
   /* No top padding: the section above already provides --section-gap */
-  padding: var(--space-12) var(--gutter) var(--space-12);
+  padding: var(--space-12) var(--grid-margin) var(--space-12);
 }
 
 /* Matches .graphic-grid__title on the About page */
 .section h2 {
   font-family: var(--f-ui);
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.25px;
+  font-weight: 500;
+  font-size: clamp(2rem, 2.4vw, 40px);   /* same as the case-study h2 */
+  line-height: 1.25;
+  letter-spacing: -0.5px;
   color: var(--text);
 }
 
@@ -34,23 +35,30 @@
 
 /* ── HERO — single column ───────────────────────────────── */
 .hero {
-  max-width: 1280px;
+  max-width: calc(var(--container-max) + 2 * var(--grid-margin));
   width:100%;
   margin: 0 auto;
-  padding: var(--space-24) var(--gutter) var(--section-gap);
+  padding: var(--space-24) var(--grid-margin) var(--section-gap);
 }
 
-.hero h1 {
+/* Hero copy is left aligned and spans 10 of the 12 grid columns on large screens.
+   % in max-width is relative to the hero's content box, which is the grid width. */
+.hero > div { text-align: left; }
+@media (min-width: 1025px) {
+  .hero > div { max-width: calc(10 * (100% - 11 * var(--grid-gap)) / 12 + 9 * var(--grid-gap)); }
+}
+
+.hero-intro {
   font-family: var(--f-display);
   font-weight: 400;
-  font-size: clamp(2.5rem, 3.3vw, 56px);
+  font-size: clamp(2.5rem, 3.3vw, 46px);
   line-height: 1.2;
   letter-spacing: 0px;
-  color: var(--text);
+  color: var(--text-2);          /* body of the statement: secondary */
   margin-bottom: 0; /* gap below comes from --section-gap */
 }
-.hero h1 em { font-style: italic; }
-.hero h1 .hero-lead { font-weight: 600; } /* lead sentence Semibold, rest Regular */
+.hero-intro em { font-style: italic; }
+.hero-intro .hero-lead { font-weight: 400; color: var(--text); } /* lead sentence: same weight, primary color */
 
 .hero-sub {
   font-family: var(--f-body);
@@ -61,13 +69,16 @@
   max-width: 640px;
 }
 
-/* ── CASE LIST — 2-column grid, image-led cards ─────────── */
+/* ── CASE LIST — image-led cards on the page grid ───────── */
+/* Cards span half the grid: 6 of 12 cols (desktop), 4 of 8 (tablet),
+   full width on phones. Wide cards span every column. */
 .case-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-12) var(--space-8);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  gap: var(--space-12) var(--grid-gap);
   margin-top: var(--space-6);
 }
+.case-list > .case-row:not(.case-row--wide) { grid-column: span 6; }
 
 .case-row {
   display: flex;
@@ -85,7 +96,7 @@
 /* Wide card — spans both columns so the grid has no empty cells
    (first Featured Work card and the single Side Projects card).
    A wider 21:9 crop keeps the image from getting too tall. */
-.case-row--wide { grid-column: 1 / -1; }
+.case-list > .case-row--wide { grid-column: 1 / -1; }
 .case-row--wide .case-row__image { aspect-ratio: 21 / 9; }
 .case-row--wide .case-row__desc { max-width: 720px; }
 
@@ -135,7 +146,7 @@
   gap: var(--space-1);
   font-family: var(--f-ui);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--text);
   background: var(--surface-overlay);
@@ -157,7 +168,7 @@
   gap: var(--space-1);
   font-family: var(--f-ui);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--text);
   background: var(--surface-overlay);
@@ -191,7 +202,7 @@
 
 .case-row__title {
   font-family: var(--f-display);
-  font-weight: 600;
+  font-weight: 400;
   font-size: clamp(1.25rem, 1.4vw, 24px);
   line-height: 1.2;
   letter-spacing: -0.3px;
@@ -242,54 +253,21 @@
 
 .case-row__title { order: 1; }
 
-/* ── CONTACT ────────────────────────────────────────────── */
-.contact-dark {
-  background: var(--bg-muted);
-  padding: var(--space-24) var(--gutter);
-  text-align: center;
-  transition: background 0.25s ease;
-}
-
-.contact-dark h2 {
-  font-family: var(--f-display);
-  font-weight: 600;
-  font-size: clamp(2rem, 4vw, 48px);
-  line-height: 1.1;
-  letter-spacing: 0px;
-  color: var(--text);
-  margin-bottom: var(--space-4);
-}
-.contact-dark h2 em { font-style: italic; }
-
-.contact-dark > p {
-  font-family: var(--f-body);
-  font-size: 16px;
-  line-height: 26px;
-  color: var(--text-3);
-  margin-bottom: var(--space-8);
-}
-
-.contact-links {
-  display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;
-}
-
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .hero { padding: var(--space-20) var(--gutter-mobile) var(--section-gap); }
-  .section { padding: 0 var(--gutter-mobile) var(--section-gap); }
-  .contact-dark { padding: var(--space-20) var(--gutter-mobile); }
+  .hero { padding: var(--space-20) var(--grid-margin) var(--section-gap); }
+  .section { padding: 0 var(--grid-margin) var(--section-gap); }
+  .case-list > .case-row:not(.case-row--wide) { grid-column: span 4; }
 }
 
 @media (max-width: 768px) {
-  .case-list { grid-template-columns: 1fr; gap: var(--space-12); }
+  .case-list { gap: var(--space-12); }
+  .case-list > .case-row { grid-column: 1 / -1; }
   .case-row--wide .case-row__image { aspect-ratio: 16 / 9; }
 }
 
 @media (max-width: 640px) {
-  .hero { padding: var(--space-8) var(--gutter-mobile) var(--section-gap); }
-  .hero h1 { font-size: clamp(2rem, 8vw, 40px); letter-spacing: -.5px; }
-  .section { padding: 0 var(--gutter-mobile) var(--section-gap); }
-  .contact-dark { padding: var(--space-16) var(--gutter-mobile); }
-  .contact-links { flex-direction: column; align-items: center;}
-  
+  .hero { padding: var(--space-8) var(--grid-margin) var(--section-gap); }
+  .hero-intro { font-size: clamp(2rem, 8vw, 40px); letter-spacing: -.5px; }
+  .section { padding: 0 var(--grid-margin) var(--section-gap); }
 }
